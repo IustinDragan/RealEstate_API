@@ -24,7 +24,7 @@ namespace RealEstate.API.Controllers
             {
                 if(createUsersRequestModel.Company.CompanyName == null )
                 {
-                    return BadRequest("You need to specify the Company name");
+                    return BadRequest("You need to specify the Company name_test");
                 }
                 else if(createUsersRequestModel.Company.CUI == null)
                 {
