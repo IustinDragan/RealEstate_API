@@ -1,0 +1,3 @@
+﻿1. Implementig a custom Email service: https://app.pluralsight.com/course-player?clipId=fcb70223-100f-4916-b811-e1f6646b33ab
+2. Safety DB connection saved in Environment Variable (from windows): https://app.pluralsight.com/course-player?clipId=3aec5663-1891-4c20-ac99-6d0c96c53f3e
+3. Implementation for Get Company
