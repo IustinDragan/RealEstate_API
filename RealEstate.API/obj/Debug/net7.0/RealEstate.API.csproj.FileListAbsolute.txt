@@ -3,7 +3,6 @@ C:\Users\idragan\source\repos\RealEstate\RealEstate.API\obj\Debug\net7.0\RealEst
 C:\Users\idragan\source\repos\RealEstate\RealEstate.API\obj\Debug\net7.0\RealEstate.API.AssemblyInfoInputs.cache
 C:\Users\idragan\source\repos\RealEstate\RealEstate.API\obj\Debug\net7.0\RealEstate.API.AssemblyInfo.cs
 C:\Users\idragan\source\repos\RealEstate\RealEstate.API\obj\Debug\net7.0\RealEstate.API.csproj.CoreCompileInputs.cache
-C:\Users\idragan\source\repos\RealEstate\RealEstate.API\obj\Debug\net7.0\RealEstate.API.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\idragan\source\repos\RealEstate\RealEstate.API\obj\Debug\net7.0\RealEstate.API.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\idragan\source\repos\RealEstate\RealEstate.API\bin\Debug\net7.0\appsettings.Development.json
 C:\Users\idragan\source\repos\RealEstate\RealEstate.API\bin\Debug\net7.0\appsettings.json
@@ -74,3 +73,9 @@ C:\Users\idragan\source\repos\RealEstate\RealEstate.API\obj\Debug\net7.0\refint\
 C:\Users\idragan\source\repos\RealEstate\RealEstate.API\obj\Debug\net7.0\RealEstate.API.pdb
 C:\Users\idragan\source\repos\RealEstate\RealEstate.API\obj\Debug\net7.0\RealEstate.API.genruntimeconfig.cache
 C:\Users\idragan\source\repos\RealEstate\RealEstate.API\obj\Debug\net7.0\ref\RealEstate.API.dll
+C:\Users\idragan\source\repos\RealEstate\RealEstate.API\bin\Debug\net7.0\RealEstate.Application.dll
+C:\Users\idragan\source\repos\RealEstate\RealEstate.API\bin\Debug\net7.0\RealEstate.DataAccess.dll
+C:\Users\idragan\source\repos\RealEstate\RealEstate.API\bin\Debug\net7.0\RealEstate.Application.pdb
+C:\Users\idragan\source\repos\RealEstate\RealEstate.API\bin\Debug\net7.0\RealEstate.DataAccess.pdb
+C:\Users\idragan\source\repos\RealEstate\RealEstate.API\obj\Debug\net7.0\RealEstate.API.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\idragan\source\repos\RealEstate\RealEstate.API\bin\Debug\net7.0\FluentValidation.dll

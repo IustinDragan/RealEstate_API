@@ -1,17 +1,21 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using FluentValidation;
+using FluentValidation.Results;
+using Microsoft.EntityFrameworkCore;
 using RealEstate.API.DataAccess;
 using RealEstate.API.DataAccess.Users;
 using RealEstate.API.Models;
+using RealEstate.Application.Validators;
 
 namespace RealEstate.API.Services
 {
     public class UserRepository : IUserRepository
     {
         private readonly DatabaseContext _databaseContext;
-
+     
         public UserRepository(DatabaseContext databaseContext)
         {
             this._databaseContext = databaseContext ?? throw new ArgumentNullException(nameof(databaseContext));
+           
         }
 
         public async Task<CreateUsersResponseModel> CreateUserAsync(CreateUsersRequestModel createUsersRequestModel)
@@ -30,6 +34,9 @@ namespace RealEstate.API.Services
                     CUI = createUsersRequestModel.Company.CUI,
                 }
             };
+
+
+
             _databaseContext.Users.Add(users);
             await _databaseContext.SaveChangesAsync();
 
@@ -42,6 +49,7 @@ namespace RealEstate.API.Services
                 PhoneNumber = users.PhoneNumber,
                 Role = users.Role
             };
+
             return createUsersResponseModel;
         }
 

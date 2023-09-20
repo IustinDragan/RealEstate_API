@@ -1,7 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using FluentValidation;
+using FluentValidation.Results;
+using Microsoft.AspNetCore.Mvc;
+using RealEstate.API.DataAccess.Users;
 using RealEstate.API.Models;
 using RealEstate.API.Services;
 using RealEstate.API.Utility;
+using RealEstate.Application.Validators;
+using System.ComponentModel.DataAnnotations;
 
 namespace RealEstate.API.Controllers
 {
@@ -10,29 +15,32 @@ namespace RealEstate.API.Controllers
     public class UsersController : ControllerBase
     {
         private readonly IUserRepository _userRepository;
+        private readonly IValidator<CreateUsersRequestModel> _validator;
 
-        public UsersController(IUserRepository userRepository)
+        public UsersController(IUserRepository userRepository, IValidator<CreateUsersRequestModel> validator)
         {
             this._userRepository = userRepository ?? throw new ArgumentNullException(nameof(userRepository));
+            this._validator = validator;
         }
 
 
         [HttpPost]
         public async Task<IActionResult> CreateUsersAsync(CreateUsersRequestModel createUsersRequestModel)
         {
-            if (createUsersRequestModel.isAgent)
+            UserValidator validationRules = new UserValidator();
+
+            var result = validationRules.Validate(createUsersRequestModel);
+
+            if (!result.IsValid)
             {
-                if(createUsersRequestModel.Company.CompanyName == null )
+                foreach (ValidationFailure failure in result.Errors)
                 {
-                    return BadRequest("You need to specify the Company name_test");
-                }
-                else if(createUsersRequestModel.Company.CUI == null)
-                {
-                    return BadRequest("You need to specify the Company CUI");
+                    return BadRequest(failure);
                 }
             }
 
-            if (await _userRepository.isEmailUnique(createUsersRequestModel.Email))
+
+            if (!(await _userRepository.isEmailUnique(createUsersRequestModel.Email)))
                 return BadRequest(ErrorMessages.EmailAlreadyAssociatedWithAnAccount);
 
             var createUserEntity = await _userRepository.CreateUserAsync(createUsersRequestModel);
@@ -71,7 +79,7 @@ namespace RealEstate.API.Controllers
                 }
             }
 
-            if (await _userRepository.isEmailUnique(createUsersRequestModel.Email))
+            if (!(await _userRepository.isEmailUnique(createUsersRequestModel.Email)))
                 return BadRequest(ErrorMessages.EmailAlreadyAssociatedWithAnAccount);
 
             var userEntityByIdforUpdate = await _userRepository.UpdateUserAsync(id, createUsersRequestModel);

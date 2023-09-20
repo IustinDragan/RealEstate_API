@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "AfqqKdGSaS5ZXAq6yNAWG2SQDLYojDmBFRILn3Vqbzi1optOzLbcbakZVqqmbS9Q73Q5kE6Xwnn5JgxwLJjaWQ==",
+  "dgSpecHash": "2oiQPxN5MugkDK9+C5c6GN1KH+jVytpZrVODU67aCx7u49FRX6ubTbPYj+EPze2OvU0veahGzkr29RqVFOJ50A==",
   "success": true,
   "projectFilePath": "C:\\Users\\idragan\\source\\repos\\RealEstate\\RealEstate.API\\RealEstate.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\idragan\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\idragan\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
+    "C:\\Users\\idragan\\.nuget\\packages\\fluentvalidation\\11.7.1\\fluentvalidation.11.7.1.nupkg.sha512",
     "C:\\Users\\idragan\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\idragan\\.nuget\\packages\\microsoft.aspnetcore.openapi\\7.0.10\\microsoft.aspnetcore.openapi.7.0.10.nupkg.sha512",
     "C:\\Users\\idragan\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
