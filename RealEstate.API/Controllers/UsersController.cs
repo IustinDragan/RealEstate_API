@@ -36,7 +36,7 @@ namespace RealEstate.API.Controllers
                 return BadRequest(ErrorMessages.EmailAlreadyAssociatedWithAnAccount);
 
             var createUserEntity = await _userRepository.CreateUserAsync(createUsersRequestModel);
-            return Created("", createUserEntity);
+            return Created("", createUserEntity); 
         }
 
         [HttpGet]
