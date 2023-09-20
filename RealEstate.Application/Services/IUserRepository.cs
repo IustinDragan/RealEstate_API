@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using RealEstate.API.DataAccess.Users;
+﻿using RealEstate.API.DataAccess.Users;
 using RealEstate.API.Models;
 
 namespace RealEstate.API.Services

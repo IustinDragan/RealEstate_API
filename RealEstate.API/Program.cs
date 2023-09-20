@@ -1,6 +1,9 @@
+using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 using RealEstate.API.DataAccess;
+using RealEstate.API.Models;
 using RealEstate.API.Services;
+using RealEstate.Application.Validators;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,6 +18,7 @@ builder.Services.AddDbContext<DatabaseContext>(dbContextOptions => dbContextOpti
 
 //initializare user repository
 builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IValidator<CreateUsersRequestModel>, UserValidator>();
 
 
 
