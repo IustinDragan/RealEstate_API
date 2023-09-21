@@ -14,8 +14,6 @@ namespace RealEstate.API.Models
         public CreateUserCompanyRequestModel Company { get; set; }
     }
 
-
-
     public class CreateUserCompanyRequestModel
     {
         public string CompanyName { get; set; }

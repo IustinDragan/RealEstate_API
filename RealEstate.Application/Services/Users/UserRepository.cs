@@ -1,21 +1,19 @@
 ﻿using FluentValidation;
-using FluentValidation.Results;
 using Microsoft.EntityFrameworkCore;
 using RealEstate.API.DataAccess;
 using RealEstate.API.DataAccess.Users;
 using RealEstate.API.Models;
-using RealEstate.Application.Validators;
 
-namespace RealEstate.API.Services
+namespace RealEstate.Application.Services.Users
 {
     public class UserRepository : IUserRepository
     {
         private readonly DatabaseContext _databaseContext;
-     
+
         public UserRepository(DatabaseContext databaseContext)
         {
-            this._databaseContext = databaseContext ?? throw new ArgumentNullException(nameof(databaseContext));
-           
+            _databaseContext = databaseContext ?? throw new ArgumentNullException(nameof(databaseContext));
+
         }
 
         public async Task<CreateUsersResponseModel> CreateUserAsync(CreateUsersRequestModel createUsersRequestModel)
@@ -86,36 +84,42 @@ namespace RealEstate.API.Services
         public async Task<CreateUsersResponseModel> UpdateUserAsync(int id, CreateUsersRequestModel updateUsersRequestModel)
         {
             var userFromDb = await _databaseContext.Users.Where(x => x.Id == id).FirstAsync();
+            if (userFromDb == null)
+            {
+                throw new NullReferenceException("The user doesn't exist");
+            }
 
-            User users = new User
+            _databaseContext.Attach(userFromDb);
+
+            userFromDb.FirstName = updateUsersRequestModel.FirstName;
+            userFromDb.LastName = updateUsersRequestModel.LastName;
+            userFromDb.Email = updateUsersRequestModel.Email;
+            userFromDb.Password = updateUsersRequestModel.Password;
+            userFromDb.PhoneNumber = updateUsersRequestModel.PhoneNumber;
+            userFromDb.Role = updateUsersRequestModel.isAgent ? Role.SalesAgent : Role.Customer;
+
+            if (updateUsersRequestModel.isAgent)
             {
 
-                FirstName = updateUsersRequestModel.FirstName,
-                LastName = updateUsersRequestModel.LastName,
-                Email = updateUsersRequestModel.Email,
-                Password = updateUsersRequestModel.Password,
-                PhoneNumber = updateUsersRequestModel.PhoneNumber,
-                Role = updateUsersRequestModel.isAgent ? Role.SalesAgent : Role.Customer,
-                Company = !updateUsersRequestModel.isAgent ? null : new Company
+                if (userFromDb.Company == null)
                 {
-                    CompanyName = updateUsersRequestModel.Company.CompanyName,
-                    CUI = updateUsersRequestModel.Company.CUI,
+                    userFromDb.Company = new Company();
                 }
-            };
+                userFromDb.Company.CompanyName = updateUsersRequestModel.Company.CompanyName;
+                userFromDb.Company.CUI = updateUsersRequestModel.Company.CUI;
+            }
+
+            await _databaseContext.SaveChangesAsync();
 
             CreateUsersResponseModel updateUsersResponseModel = new CreateUsersResponseModel
             {
-                Id = id, //aici intoarce Id = 0.
-                         //TODO: de investigat
-                FirstName = updateUsersRequestModel.FirstName,
-                LastName = updateUsersRequestModel.LastName,
-                EmailAddress = updateUsersRequestModel.Email,
-                PhoneNumber = updateUsersRequestModel.PhoneNumber,
-                Role = users.Role
+                Id = userFromDb.Id,
+                FirstName = userFromDb.FirstName,
+                LastName = userFromDb.LastName,
+                EmailAddress = userFromDb.Email,
+                PhoneNumber = userFromDb.PhoneNumber,
+                Role = userFromDb.Role
             };
-
-            _databaseContext.Users.Update(users);
-            await _databaseContext.SaveChangesAsync();
 
             return updateUsersResponseModel;
         }
@@ -123,23 +127,42 @@ namespace RealEstate.API.Services
         public async void DeleteUserAsync(int id)
         {
             var userForDelete = _databaseContext.Users.Where(u => u.Id == id).First();
-            if(userForDelete != null)
+            if (userForDelete != null)
             {
                 _databaseContext.Users.Remove(userForDelete);
-            }   
+            }
             _databaseContext.SaveChanges();
         }
 
-
         public async Task<bool> SaveChangesAsync()
         {
-            return (await _databaseContext.SaveChangesAsync() >= 0);
+            return await _databaseContext.SaveChangesAsync() >= 0;
         }
 
 
         public async Task<bool> isEmailUnique(string email)
         {
             return !_databaseContext.Users.Any(u => u.Email == email);
+        }
+
+        public async Task<List<User?>> GetUserByNameAsync(string userName, bool includeCompanyDetails)
+        {
+            var usersWithSameName = await _databaseContext.Users.Include(c => c.Company).Where(c => c.FirstName == userName || c.LastName == userName).ToListAsync();
+
+            if (includeCompanyDetails)
+            {
+                if (includeCompanyDetails == true && _databaseContext.Company == null)
+                {
+                    Console.WriteLine("There are no info about company");
+                }
+            }
+
+            //if(_databaseContext.Users.Any(c=> (c.FirstName +" "+ c.LastName) == userName))
+            //{
+            //    return usersWithSameName;
+            //}
+
+            return usersWithSameName;
         }
     }
 }

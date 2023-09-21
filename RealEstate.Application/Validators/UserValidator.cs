@@ -1,6 +1,5 @@
 ﻿using FluentValidation;
 using RealEstate.API.Models;
-using RealEstate.API.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -38,25 +37,18 @@ namespace RealEstate.Application.Validators
             RuleFor(u => u.Password)
                 .Cascade(CascadeMode.StopOnFirstFailure)
                 .MinimumLength(7).WithMessage("{PropertyName} should have at least 7 characters")
-                .NotEmpty().WithMessage("{PropertyName} shouldn't ne empty");
-            
+                .NotEmpty().WithMessage("{PropertyName} shouldn't be empty");
 
             RuleFor(u => u.isAgent)
-                       .NotEmpty().WithMessage("{PropertyName} field is required");
+                       .NotNull().WithMessage("{PropertyName} field is required");
 
             RuleFor(u => u)
-                .Must((model, _) => model.isAgent && (model.Company == null || model.Company.CompanyName == null))
-                .WithMessage("When 'isAgent' is true, Company name field is required.");
-
-            RuleFor(u => u)
-                .Must((model, _) => model.isAgent && (model.Company == null || model.Company.CUI == null))
-                .WithMessage("When 'isAgent' is true, CUI field is required.");
+                        .Cascade(CascadeMode.StopOnFirstFailure)
+                        .Must(model => !(model.isAgent && (string.IsNullOrWhiteSpace(model.Company?.CompanyName) || string.IsNullOrWhiteSpace(model.Company?.CUI))))
+                        .WithMessage("When 'isAgent' is true, Company name and CUI fields are required.");
         }
 
         //add failure + error message: min 15:00 -> https://www.youtube.com/watch?v=Zh1ccvTFzs8
-
-        
-
 
         protected bool BeAValidName(string name)
         {
@@ -66,6 +58,9 @@ namespace RealEstate.Application.Validators
             return name.All(char.IsLetter);
         }
 
-        //protected bool isUniqueEmail(string email) => !_userRepository.isEmailUnique(email);
+        //protected bool isUniqueEmail(string email) => !_userRepository.isEmailUnique();
+
+       
+
     }
 }
