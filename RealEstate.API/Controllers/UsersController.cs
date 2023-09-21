@@ -1,12 +1,9 @@
 ﻿using FluentValidation;
-using FluentValidation.Results;
 using Microsoft.AspNetCore.Mvc;
-using RealEstate.API.DataAccess.Users;
 using RealEstate.API.Models;
-using RealEstate.API.Services;
 using RealEstate.API.Utility;
+using RealEstate.Application.Services.Users;
 using RealEstate.Application.Validators;
-using System.ComponentModel.DataAnnotations;
 
 namespace RealEstate.API.Controllers
 {
@@ -16,35 +13,32 @@ namespace RealEstate.API.Controllers
     {
         private readonly IUserRepository _userRepository;
         private readonly IValidator<CreateUsersRequestModel> _validator;
+        private readonly UserValidationService _userValidationService;
+        //private readonly UserValidator _userValidatorRules = new UserValidator();
 
-        public UsersController(IUserRepository userRepository, IValidator<CreateUsersRequestModel> validator)
+        public UsersController(IUserRepository userRepository, IValidator<CreateUsersRequestModel> validator, UserValidationService userValidationService)
         {
             this._userRepository = userRepository ?? throw new ArgumentNullException(nameof(userRepository));
             this._validator = validator;
+            _userValidationService = userValidationService;
         }
 
 
         [HttpPost]
         public async Task<IActionResult> CreateUsersAsync(CreateUsersRequestModel createUsersRequestModel)
         {
-            UserValidator validationRules = new UserValidator();
+            var validationResponse = _userValidationService.ValidateUserModel(createUsersRequestModel);
 
-            var result = validationRules.Validate(createUsersRequestModel);
-
-            if (!result.IsValid)
-            {
-                foreach (ValidationFailure failure in result.Errors)
-                {
-                    return BadRequest(failure);
-                }
-            }
-
+            if (validationResponse != null)
+                return validationResponse;
+            
 
             if (!(await _userRepository.isEmailUnique(createUsersRequestModel.Email)))
                 return BadRequest(ErrorMessages.EmailAlreadyAssociatedWithAnAccount);
 
             var createUserEntity = await _userRepository.CreateUserAsync(createUsersRequestModel);
-            return Created("", createUserEntity); 
+            
+            return Created("", createUserEntity);
         }
 
         [HttpGet]
@@ -55,7 +49,7 @@ namespace RealEstate.API.Controllers
             return Ok(userEntities);
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("id/{id:int}")]
         public async Task<IActionResult> GetUserByIdAsync(int id, bool includeCompanyDetails)
         {
             var userEntityById = await _userRepository.GetUserByIdAsync(id, includeCompanyDetails);
@@ -63,21 +57,21 @@ namespace RealEstate.API.Controllers
             return Ok(userEntityById);
         }
 
+        [HttpGet("name/{name}")]
+        public async Task<IActionResult> GetUserByName(string name, bool includeCompanyDetails)
+        {
+            var userEntityByName = await _userRepository.GetUserByNameAsync(name, includeCompanyDetails);
+
+            return Ok(userEntityByName);
+        }
+
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateUserAsync(int id, CreateUsersRequestModel createUsersRequestModel)
         {
+            var validationResponse = _userValidationService.ValidateUserModel(createUsersRequestModel);
 
-            if (createUsersRequestModel.isAgent)
-            {
-                if (createUsersRequestModel.Company.CompanyName == null)
-                {
-                    return BadRequest("You need to specify the Company name");
-                }
-                else if (createUsersRequestModel.Company.CUI == null)
-                {
-                    return BadRequest("You need to specify the Company CUI");
-                }
-            }
+            if (validationResponse != null)
+                return validationResponse;
 
             if (!(await _userRepository.isEmailUnique(createUsersRequestModel.Email)))
                 return BadRequest(ErrorMessages.EmailAlreadyAssociatedWithAnAccount);

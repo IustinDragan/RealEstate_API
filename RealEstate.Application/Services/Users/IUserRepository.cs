@@ -1,17 +1,16 @@
 ﻿using RealEstate.API.DataAccess.Users;
 using RealEstate.API.Models;
 
-namespace RealEstate.API.Services
+namespace RealEstate.Application.Services.Users
 {
     public interface IUserRepository
     {
         Task<IEnumerable<User>> GetUsersAsync();
         Task<User?> GetUserByIdAsync(int cityId, bool includeCompanyDetails);
-        //Task<User?> GetUserByNameAsync(string userName);
+        Task<List<User?>> GetUserByNameAsync(string userName, bool includeCompanyDetails);
         Task<CreateUsersResponseModel> CreateUserAsync(CreateUsersRequestModel createUsersRequestModel);
         Task<CreateUsersResponseModel> UpdateUserAsync(int id, CreateUsersRequestModel updateUsersRequestModel);
         void DeleteUserAsync(int id);
-
 
         Task<bool> SaveChangesAsync();
         Task<bool> isEmailUnique(string email);
