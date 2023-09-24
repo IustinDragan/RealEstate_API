@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "1KpyFLBaJbbWexviHDOvekq7/PaplJ1fhVcEJpnxzPICA9Yb8Sihr+mKbf3g5itrN3qbfeRSle0nV04WAi3yiA==",
+  "dgSpecHash": "LGLrlAdKDl6EDVVauaTfvyR7EP6zrsAvrmtVYr3grF/J67lymTaDreJxANu9YLS7Cku7rbjejo9HUyvyXYYyuA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\idragan\\source\\repos\\RealEstate\\RealEstate.API\\RealEstate.API.csproj",
+  "projectFilePath": "C:\\Users\\idragan\\RiderProjects\\RealEstate_API\\RealEstate.API\\RealEstate.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\idragan\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\idragan\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
