@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\idragan\\source\\repos\\RealEstate\\RealEstate.DataAccess\\RealEstate.DataAccess.csproj": {}
+    "C:\\Users\\idragan\\RiderProjects\\RealEstate_API\\RealEstate.DataAccess\\RealEstate.DataAccess.csproj": {}
   },
   "projects": {
-    "C:\\Users\\idragan\\source\\repos\\RealEstate\\RealEstate.DataAccess\\RealEstate.DataAccess.csproj": {
+    "C:\\Users\\idragan\\RiderProjects\\RealEstate_API\\RealEstate.DataAccess\\RealEstate.DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\idragan\\source\\repos\\RealEstate\\RealEstate.DataAccess\\RealEstate.DataAccess.csproj",
+        "projectUniqueName": "C:\\Users\\idragan\\RiderProjects\\RealEstate_API\\RealEstate.DataAccess\\RealEstate.DataAccess.csproj",
         "projectName": "RealEstate.DataAccess",
-        "projectPath": "C:\\Users\\idragan\\source\\repos\\RealEstate\\RealEstate.DataAccess\\RealEstate.DataAccess.csproj",
+        "projectPath": "C:\\Users\\idragan\\RiderProjects\\RealEstate_API\\RealEstate.DataAccess\\RealEstate.DataAccess.csproj",
         "packagesPath": "C:\\Users\\idragan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\idragan\\source\\repos\\RealEstate\\RealEstate.DataAccess\\obj\\",
+        "outputPath": "C:\\Users\\idragan\\RiderProjects\\RealEstate_API\\RealEstate.DataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\idragan\\AppData\\Roaming\\NuGet\\NuGet.Config",

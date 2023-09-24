@@ -8,4 +8,4 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = RealEstate.DataAccess
-build_property.ProjectDir = C:\Users\idragan\source\repos\RealEstate\RealEstate.DataAccess\
+build_property.ProjectDir = C:\Users\idragan\RiderProjects\RealEstate_API\RealEstate.DataAccess\

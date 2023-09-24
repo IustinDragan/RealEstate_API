@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "6rdM0dwutCK/G3jPOhcVEB7MPczEZ7H0Uf10HU6pQFKq/EGz63pb8hwwNrs3vua66q0NXDPL+FDB8PHBXWLh3w==",
+  "dgSpecHash": "jrp3d7h20NG52i3S37xZYZvIMEu1Y2vUpM0W7RtqiDZy9UfmtCp7mKiiX9gnIqJ5zDdPo3mj371T1V+kOF52UA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\idragan\\source\\repos\\RealEstate\\RealEstate.Application\\RealEstate.Application.csproj",
+  "projectFilePath": "C:\\Users\\idragan\\RiderProjects\\RealEstate_API\\RealEstate.Application\\RealEstate.Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\idragan\\.nuget\\packages\\fluentvalidation\\11.7.1\\fluentvalidation.11.7.1.nupkg.sha512",
     "C:\\Users\\idragan\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",

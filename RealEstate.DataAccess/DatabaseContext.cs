@@ -1,13 +1,14 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using RealEstate.API.DataAccess.Users;
+using RealEstate.DataAccess.Users;
 
-namespace RealEstate.API.DataAccess
+namespace RealEstate.DataAccess;
+
+public class DatabaseContext : DbContext
 {
-    public class DatabaseContext : DbContext
+    public DatabaseContext(DbContextOptions<DatabaseContext> options) : base(options)
     {
-        public DbSet<User> Users { get; set; }
-        public DbSet<Company> Company { get; set; }
-
-        public DatabaseContext(DbContextOptions<DatabaseContext> options): base(options) { }
     }
+
+    public DbSet<User> Users { get; set; }
+    public DbSet<Company> Company { get; set; }
 }
