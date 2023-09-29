@@ -1,4 +1,4 @@
-﻿using RealEstate.Application.Models;
+﻿using RealEstate.Application.Models.UsersModels;
 
 namespace RealEstate.Application.Services.Users;
 

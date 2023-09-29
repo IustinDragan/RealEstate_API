@@ -1,7 +1,7 @@
 ﻿using FluentValidation;
 using Microsoft.AspNetCore.Mvc;
 using RealEstate.API.Utility;
-using RealEstate.Application.Models;
+using RealEstate.Application.Models.UsersModels;
 using RealEstate.Application.Services.Users;
 using RealEstate.Application.Validators;
 

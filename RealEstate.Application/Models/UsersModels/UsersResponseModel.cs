@@ -1,7 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using RealEstate.DataAccess.Users;
+using RealEstate.DataAccess;
+using RealEstate.DataAccess.Enums;
 
-namespace RealEstate.Application.Models;
+namespace RealEstate.Application.Models.UsersModels;
 
 public class UsersResponseModel
 {
