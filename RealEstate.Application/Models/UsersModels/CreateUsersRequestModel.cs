@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using RealEstate.DataAccess.Users;
+using RealEstate.DataAccess;
 
-namespace RealEstate.Application.Models;
+namespace RealEstate.Application.Models.UsersModels;
 
 public class CreateUsersRequestModel
 {
@@ -31,10 +31,4 @@ public class CreateUsersRequestModel
                 }
         };
     }
-}
-
-public class CreateUserCompanyRequestModel
-{
-    public string CompanyName { get; set; }
-    public string CUI { get; set; }
 }

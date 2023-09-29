@@ -1,6 +1,8 @@
 using FluentValidation;
 using Microsoft.EntityFrameworkCore;
-using RealEstate.Application.Models;
+using RealEstate.Application.Models.UsersModels;
+using RealEstate.Application.Services.AnnouncementService;
+using RealEstate.Application.Services.PropertyService;
 using RealEstate.Application.Services.Users;
 using RealEstate.Application.Validators;
 using RealEstate.DataAccess;
@@ -20,8 +22,25 @@ builder.Services.AddDbContext<DatabaseContext>(dbContextOptions =>
 //initializare user repository
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IValidator<CreateUsersRequestModel>, CrreateUserRequestModelValidator>();
-//builder.Services.AddScoped<UserValidationService>();
+builder.Services.AddScoped<IAnnouncementService, AnnouncementService>();
+builder.Services.AddScoped<IPropertyService, PropertyService>();
 
+
+builder.Services.AddControllers()
+    .AddJsonOptions(options =>
+    {
+        // options.JsonSerializerOptions.Converters.Add(new PropertyConverter());
+        // options.JsonSerializerOptions.Converters.Add(new AdressConverter());
+        //options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.Preserve;
+    });
+
+// var jsonOptions = new JsonSerializerOptions
+// {
+//     Converters = { new PropertyConverter() }
+// };
+
+// Serialize a Property object to JSON with the configured options
+//string jsonString = JsonSerializer.Serialize("completeAddress", jsonOptions);
 
 var app = builder.Build();
 

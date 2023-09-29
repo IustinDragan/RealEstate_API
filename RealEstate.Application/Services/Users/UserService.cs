@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using RealEstate.Application.Models;
+using RealEstate.Application.Models.UsersModels;
 using RealEstate.DataAccess;
-using RealEstate.DataAccess.Users;
+using RealEstate.DataAccess.Enums;
 
 namespace RealEstate.Application.Services.Users;
 

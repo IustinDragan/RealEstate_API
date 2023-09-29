@@ -1,14 +1,15 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using RealEstate.DataAccess.Announcement;
+using RealEstate.DataAccess.Enums;
 
-namespace RealEstate.DataAccess.Users;
+namespace RealEstate.DataAccess;
 
 public class User
 {
     [Key]
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)] //pt autoincrement
     public int Id { get; set; }
+
     public string FirstName { get; set; }
     public string LastName { get; set; }
     [EmailAddress] public string Email { get; set; }
@@ -21,10 +22,4 @@ public class User
     public int? CompanyId { get; set; } // cheie straina referinta la USER  
 
     public ICollection<UserAnnouncement> UserAnnouncements { get; set; } = new List<UserAnnouncement>();
-}
-
-public enum Role
-{
-    SalesAgent = 1,
-    Customer = 2
 }
