@@ -21,7 +21,7 @@ public class UpdatePropertyRequestModel
     public HouseLandDetails HouseLandDetails { get; set; }
     public HeatingSource HeatingSource { get; set; }
     public Utilities Utilities { get; set; }
-    public CreateAdressRequestModel AdressRequestModel { get; set; }
+    public CreateAdressRequestModel Adress { get; set; }
 
 
     public Property ToPropertyUpdate()
@@ -43,7 +43,7 @@ public class UpdatePropertyRequestModel
             HouseLandDetails = HouseLandDetails,
             HeatingSource = HeatingSource,
             Utilities = Utilities,
-            Adress = AdressRequestModel.toAdress()
+            Adress = Adress.toAdress()
         };
     }
 }

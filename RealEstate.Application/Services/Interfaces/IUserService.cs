@@ -1,6 +1,6 @@
 ﻿using RealEstate.Application.Models.UsersModels;
 
-namespace RealEstate.Application.Services.Users;
+namespace RealEstate.Application.Services.Interfaces;
 
 public interface IUserService
 {
@@ -13,7 +13,4 @@ public interface IUserService
 
     Task<bool> SaveChangesAsync();
     Task<bool> isEmailUniqueAsync(string email);
-
-    //Task<IEnumerable<Company>> GetCompaniesForUserAsync(int userId);
-    //Task<Company?> GetCompanyByIdAsync(int userId, int companyId);
 }
