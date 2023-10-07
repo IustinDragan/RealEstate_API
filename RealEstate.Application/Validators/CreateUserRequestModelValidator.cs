@@ -3,9 +3,9 @@ using RealEstate.Application.Models.UsersModels;
 
 namespace RealEstate.Application.Validators;
 
-public class CrreateUserRequestModelValidator : AbstractValidator<CreateUsersRequestModel>
+public class CreateUserRequestModelValidator : AbstractValidator<CreateUsersRequestModel>
 {
-    public CrreateUserRequestModelValidator()
+    public CreateUserRequestModelValidator()
     {
         RuleFor(u => u.FirstName)
             .NotEmpty().WithMessage("{PropertyName} shouldn't be empty")

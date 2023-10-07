@@ -1,6 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using FluentValidation;
+using Microsoft.AspNetCore.Mvc;
+using RealEstate.Application.Models.AdressModels;
+using RealEstate.Application.Models.AnnouncementModels;
 using RealEstate.Application.Models.PropertyModels;
-using RealEstate.Application.Services.PropertyService;
+using RealEstate.Application.Services.Interfaces;
+using RealEstate.Application.Validators;
 
 namespace RealEstate.API.Controllers;
 
@@ -9,24 +13,31 @@ namespace RealEstate.API.Controllers;
 public class PropertyController : ControllerBase
 {
     private readonly IPropertyService _propertyService;
+    private readonly IValidator<CreateAdressRequestModel> _validator;
 
-    public PropertyController(IPropertyService propertyService)
+    public PropertyController(IPropertyService propertyService,
+        IValidator<CreateAdressRequestModel> validator)
     {
         _propertyService = propertyService ?? throw new ArgumentNullException(nameof(propertyService));
+        _validator = validator;
     }
 
     [HttpPost]
     public async Task<IActionResult> CreatePropertyAsync(CreatePropertyRequestModel createPropertyRequestModel)
     {
+        var validationResponse = _validator.GetValidationResult(createPropertyRequestModel.Adress);
+        if (validationResponse != null)
+            return validationResponse;
+
         var createPropertyEntity = await _propertyService.CreatePropertyAsync(createPropertyRequestModel);
 
         return Created("", createPropertyEntity);
     }
 
     [HttpGet]
-    public async Task<IActionResult> GetAllPropertiesAsync()
+    public async Task<IActionResult> GetAllPropertiesAsync([FromQuery] ReadPropertyRequestModel requestModel)
     {
-        var propertyEntity = await _propertyService.GetPropertiesAsync();
+        var propertyEntity = await _propertyService.GetPropertiesAsync(requestModel);
 
         return Ok(propertyEntity);
     }
@@ -42,7 +53,13 @@ public class PropertyController : ControllerBase
     [HttpPut("{id}")]
     public async Task<IActionResult> UpdatePropertyAsync(int id, UpdatePropertyRequestModel updatePropertyRequestModel)
     {
-        var propertyEntityByIdForUpdate = await _propertyService.UpdatePropertyAsync(id, updatePropertyRequestModel);
+        var validationResponse = _validator.GetValidationResult(updatePropertyRequestModel.Adress);
+
+        if (validationResponse != null)
+            return validationResponse;
+
+        var propertyEntityByIdForUpdate =
+            await _propertyService.UpdatePropertyAsync(id, updatePropertyRequestModel);
 
         return Ok(propertyEntityByIdForUpdate);
     }
@@ -50,8 +67,7 @@ public class PropertyController : ControllerBase
     [HttpDelete("{id}")]
     public async Task<IActionResult> DeletePropertyById(int id)
     {
-        _propertyService.DeletePropertyAsync(id);
-        await _propertyService.SaveChangesAsync();
+        await _propertyService.DeletePropertyAsync(id);
 
         return NoContent();
     }

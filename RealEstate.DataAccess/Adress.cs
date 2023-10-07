@@ -11,12 +11,12 @@ public class Adress
 
     public string Street { get; set; }
     public int StreetNumber { get; set; }
-    public string Country { get; set; }
-    public string City { get; set; }
+    public string District { get; set; } //judet
+    public string City { get; set; } //oras/comuna
+    public string Locality { get; set; } //localitate/sat
     public int Floors { get; set; } //etaj
     public string Scale { get; set; } //scara
     public int AppartamentNumber { get; set; }
-    public string GoogleMapsCoordinates { get; set; }
 
     [ForeignKey("PropertyId")] public Property? Property { get; set; }
     public int? PropertyId { get; set; }
@@ -25,6 +25,6 @@ public class Adress
     public override string ToString()
     {
         return
-            $"Strada: {Street}, Numarul + {StreetNumber}, Tara: {Country}, Oras: {City}, Etaj: {Floors}, Scara: {Scale}";
+            $"Strada: {Street}, Numarul + {StreetNumber}, Tara: {District}, Oras: {City}, Etaj: {Floors}, Scara: {Scale}";
     }
 }

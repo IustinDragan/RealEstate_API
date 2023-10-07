@@ -1,21 +1,23 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using RealEstate.Application.Models.UsersModels;
+using RealEstate.Application.Services.Interfaces;
 using RealEstate.DataAccess;
 using RealEstate.DataAccess.Enums;
 
-namespace RealEstate.Application.Services.Users;
+namespace RealEstate.Application.Services;
 
 public class UserService : IUserService
 {
     private readonly DatabaseContext _databaseContext;
 
-//ToDo Repository - min 20:00
+
+    //ToDo Repository - min 20:00
     public UserService(DatabaseContext databaseContext)
     {
         _databaseContext = databaseContext ?? throw new ArgumentNullException(nameof(databaseContext));
     }
 
-    public async Task<UsersResponseModel> CreateUserAsync(CreateUsersRequestModel createUsersRequestModel)
+    public async Task<UsersResponseModel> CreateUserAsync(CreateUsersRequestModel createUsersRequestModel) //AddAsync
     {
         var user = createUsersRequestModel.ToUser();
         user.Role = createUsersRequestModel.isAgent ? Role.SalesAgent : Role.Customer;
@@ -42,7 +44,7 @@ public class UserService : IUserService
             .FirstOrDefaultAsync();
     }
 
-    public async Task<IEnumerable<UsersResponseModel>> GetUsersAsync()
+    public async Task<IEnumerable<UsersResponseModel>> GetUsersAsync() //ReadAllAsync
     {
         var usersFromDbQuery = _databaseContext.Users.Include(c => c.Company);
         var usersFromDb = await usersFromDbQuery.Select(user => UsersResponseModel.FromUser(user)).ToListAsync();

@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using RealEstate.API.Utility;
 using RealEstate.Application.Models.UsersModels;
-using RealEstate.Application.Services.Users;
+using RealEstate.Application.Services.Interfaces;
 using RealEstate.Application.Validators;
 
 namespace RealEstate.API.Controllers;

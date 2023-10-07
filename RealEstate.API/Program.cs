@@ -1,11 +1,13 @@
 using FluentValidation;
 using Microsoft.EntityFrameworkCore;
+using RealEstate.Application.Models.AdressModels;
 using RealEstate.Application.Models.UsersModels;
-using RealEstate.Application.Services.AnnouncementService;
-using RealEstate.Application.Services.PropertyService;
-using RealEstate.Application.Services.Users;
+using RealEstate.Application.Services;
+using RealEstate.Application.Services.Interfaces;
 using RealEstate.Application.Validators;
 using RealEstate.DataAccess;
+using RealEstate.DataAccess.Repositories;
+using RealEstate.DataAccess.Repositories.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -21,8 +23,11 @@ builder.Services.AddDbContext<DatabaseContext>(dbContextOptions =>
 
 //initializare user repository
 builder.Services.AddScoped<IUserService, UserService>();
-builder.Services.AddScoped<IValidator<CreateUsersRequestModel>, CrreateUserRequestModelValidator>();
+builder.Services.AddScoped<IValidator<CreateUsersRequestModel>, CreateUserRequestModelValidator>();
+builder.Services.AddScoped<IValidator<CreateAdressRequestModel>, AddressRequestModelValidator>();
 builder.Services.AddScoped<IAnnouncementService, AnnouncementService>();
+builder.Services.AddScoped<IAnnouncementRepository, AnnouncementRepository>();
+builder.Services.AddScoped<IPropertyRepository, PropertyRepository>();
 builder.Services.AddScoped<IPropertyService, PropertyService>();
 
 
