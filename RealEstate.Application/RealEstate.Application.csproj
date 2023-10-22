@@ -10,10 +10,12 @@
         <PackageReference Include="FluentValidation" Version="11.7.1"/>
         <PackageReference Include="Microsoft.AspNetCore.Mvc.Abstractions" Version="2.2.0"/>
         <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5"/>
+        <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.21.0"/>
     </ItemGroup>
 
     <ItemGroup>
         <ProjectReference Include="..\RealEstate.DataAccess\RealEstate.DataAccess.csproj"/>
+        <ProjectReference Include="..\RealEstate.Shared\RealEstate.Shared.csproj"/>
     </ItemGroup>
 
 </Project>

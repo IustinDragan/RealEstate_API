@@ -17,7 +17,9 @@ C:\Users\idragan\RiderProjects\RealEstate_API\RealEstate.Application\bin\Debug\n
 C:\Users\idragan\RiderProjects\RealEstate_API\RealEstate.Application\bin\Debug\net7.0\RealEstate.Application.dll
 C:\Users\idragan\RiderProjects\RealEstate_API\RealEstate.Application\bin\Debug\net7.0\RealEstate.Application.pdb
 C:\Users\idragan\RiderProjects\RealEstate_API\RealEstate.Application\bin\Debug\net7.0\RealEstate.DataAccess.dll
+C:\Users\idragan\RiderProjects\RealEstate_API\RealEstate.Application\bin\Debug\net7.0\RealEstate.Shared.dll
 C:\Users\idragan\RiderProjects\RealEstate_API\RealEstate.Application\bin\Debug\net7.0\RealEstate.DataAccess.pdb
+C:\Users\idragan\RiderProjects\RealEstate_API\RealEstate.Application\bin\Debug\net7.0\RealEstate.Shared.pdb
 C:\Users\idragan\RiderProjects\RealEstate_API\RealEstate.Application\obj\Debug\net7.0\RealEstate.Application.csproj.AssemblyReference.cache
 C:\Users\idragan\RiderProjects\RealEstate_API\RealEstate.Application\obj\Debug\net7.0\RealEstate.Application.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\idragan\RiderProjects\RealEstate_API\RealEstate.Application\obj\Debug\net7.0\RealEstate.Application.AssemblyInfoInputs.cache

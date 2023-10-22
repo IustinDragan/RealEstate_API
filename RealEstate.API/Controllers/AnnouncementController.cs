@@ -1,4 +1,5 @@
 ﻿using FluentValidation;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using RealEstate.Application.Models.AdressModels;
 using RealEstate.Application.Models.AnnouncementModels;
@@ -9,6 +10,8 @@ namespace RealEstate.API.Controllers;
 
 [ApiController]
 [Route("announcement")]
+[Authorize(Roles = "SalesAgent")]
+[AllowAnonymous]
 public class AnnouncementController : ControllerBase
 {
     private readonly IAnnouncementService _announcementService;
@@ -36,6 +39,7 @@ public class AnnouncementController : ControllerBase
     }
 
     [HttpGet]
+    [Authorize(Roles = "SalesAgent, Customer")]
     public async Task<IActionResult> GetAllAnnouncementsAsync([FromQuery] ReadAnnouncementRequestModel requestModel)
     {
         var announcementEntity = await _announcementService.RealAllAsync(requestModel);
@@ -69,7 +73,6 @@ public class AnnouncementController : ControllerBase
     public async Task<IActionResult> DeleteAnnouncementById(int id)
     {
         await _announcementService.DeleteAsync(id);
-
 
         return NoContent();
     }

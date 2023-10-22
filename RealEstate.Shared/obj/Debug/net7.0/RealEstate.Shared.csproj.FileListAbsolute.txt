@@ -1,0 +1,11 @@
+C:\Users\idragan\RiderProjects\RealEstate_API\RealEstate.Shared\bin\Debug\net7.0\RealEstate.Shared.deps.json
+C:\Users\idragan\RiderProjects\RealEstate_API\RealEstate.Shared\bin\Debug\net7.0\RealEstate.Shared.dll
+C:\Users\idragan\RiderProjects\RealEstate_API\RealEstate.Shared\bin\Debug\net7.0\RealEstate.Shared.pdb
+C:\Users\idragan\RiderProjects\RealEstate_API\RealEstate.Shared\obj\Debug\net7.0\RealEstate.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\idragan\RiderProjects\RealEstate_API\RealEstate.Shared\obj\Debug\net7.0\RealEstate.Shared.AssemblyInfoInputs.cache
+C:\Users\idragan\RiderProjects\RealEstate_API\RealEstate.Shared\obj\Debug\net7.0\RealEstate.Shared.AssemblyInfo.cs
+C:\Users\idragan\RiderProjects\RealEstate_API\RealEstate.Shared\obj\Debug\net7.0\RealEstate.Shared.csproj.CoreCompileInputs.cache
+C:\Users\idragan\RiderProjects\RealEstate_API\RealEstate.Shared\obj\Debug\net7.0\RealEstate.Shared.dll
+C:\Users\idragan\RiderProjects\RealEstate_API\RealEstate.Shared\obj\Debug\net7.0\refint\RealEstate.Shared.dll
+C:\Users\idragan\RiderProjects\RealEstate_API\RealEstate.Shared\obj\Debug\net7.0\RealEstate.Shared.pdb
+C:\Users\idragan\RiderProjects\RealEstate_API\RealEstate.Shared\obj\Debug\net7.0\ref\RealEstate.Shared.dll

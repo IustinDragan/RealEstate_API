@@ -1,14 +1,18 @@
 ﻿using FluentValidation;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using RealEstate.API.Utility;
+using RealEstate.Application.Exceptions;
 using RealEstate.Application.Models.UsersModels;
 using RealEstate.Application.Services.Interfaces;
 using RealEstate.Application.Validators;
+using RealEstate.Shared.Models.Users;
 
 namespace RealEstate.API.Controllers;
 
 [ApiController]
 [Route("users")]
+[Authorize(Roles = "SalesAgent")]
 public class UsersController : ControllerBase
 {
     private readonly IUserService _userService;
@@ -22,6 +26,7 @@ public class UsersController : ControllerBase
     }
 
     [HttpPost]
+    [AllowAnonymous]
     public async Task<IActionResult> CreateUsersAsync(CreateUsersRequestModel createUsersRequestModel)
     {
         var validationResponse = _validator.GetValidationResult(createUsersRequestModel);
@@ -37,13 +42,30 @@ public class UsersController : ControllerBase
         return Created("", createUserEntity);
     }
 
+    [HttpPost("login")]
+    [AllowAnonymous]
+    public async Task<IActionResult> LoginAsync(LoginRequestModel requestModel)
+    {
+        try
+        {
+            var response = await _userService.LoginAsync(requestModel);
+
+            return Ok(response);
+        }
+        catch (NotFoundException ex)
+        {
+            return BadRequest(ex.Message);
+        }
+    }
+
     [HttpGet]
     public async Task<IActionResult> GetAllUsersAsync()
     {
-        var userEntities = await _userService.GetUsersAsync();
+        var userEntities = await _userService.RealAllUsersAsync();
 
         return Ok(userEntities);
     }
+
 
     [HttpGet("id/{id:int}")]
     public async Task<IActionResult> GetUserByIdAsync(int id, bool includeCompanyDetails)
@@ -81,8 +103,7 @@ public class UsersController : ControllerBase
     [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteUsersByIdAsync(int id)
     {
-        _userService.DeleteUserAsync(id);
-        await _userService.SaveChangesAsync();
+        await _userService.DeleteUserAsync(id);
 
         return NoContent();
     }
