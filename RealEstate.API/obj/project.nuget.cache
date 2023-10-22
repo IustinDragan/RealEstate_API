@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "LGLrlAdKDl6EDVVauaTfvyR7EP6zrsAvrmtVYr3grF/J67lymTaDreJxANu9YLS7Cku7rbjejo9HUyvyXYYyuA==",
+  "dgSpecHash": "lSDJi+vIm2ZbOSTeSSl4P+55UXe/7wUlr0qIuXeml4XwgOUQkvedbp1dNAeydNsaJuThHRzcoKeIWxVMMGz5mQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\idragan\\RiderProjects\\RealEstate_API\\RealEstate.API\\RealEstate.API.csproj",
   "expectedPackageFiles": [
@@ -10,6 +10,7 @@
     "C:\\Users\\idragan\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\idragan\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\idragan\\.nuget\\packages\\microsoft.aspnetcore.authentication.core\\2.2.0\\microsoft.aspnetcore.authentication.core.2.2.0.nupkg.sha512",
+    "C:\\Users\\idragan\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\7.0.12\\microsoft.aspnetcore.authentication.jwtbearer.7.0.12.nupkg.sha512",
     "C:\\Users\\idragan\\.nuget\\packages\\microsoft.aspnetcore.authorization\\2.2.0\\microsoft.aspnetcore.authorization.2.2.0.nupkg.sha512",
     "C:\\Users\\idragan\\.nuget\\packages\\microsoft.aspnetcore.authorization.policy\\2.2.0\\microsoft.aspnetcore.authorization.policy.2.2.0.nupkg.sha512",
     "C:\\Users\\idragan\\.nuget\\packages\\microsoft.aspnetcore.hosting.abstractions\\2.2.0\\microsoft.aspnetcore.hosting.abstractions.2.2.0.nupkg.sha512",

@@ -21,20 +21,20 @@ main[b-p98c1wqpsg] {
     align-items: center;
 }
 
-    .top-row[b-p98c1wqpsg]  a, .top-row[b-p98c1wqpsg]  .btn-link {
-        white-space: nowrap;
-        margin-left: 1.5rem;
-        text-decoration: none;
-    }
+.top-row[b-p98c1wqpsg]  a, .top-row[b-p98c1wqpsg]  .btn-link {
+    white-space: nowrap;
+    margin-left: 1.5rem;
+    text-decoration: none;
+}
 
-    .top-row[b-p98c1wqpsg]  a:hover, .top-row[b-p98c1wqpsg]  .btn-link:hover {
-        text-decoration: underline;
-    }
+.top-row[b-p98c1wqpsg]  a:hover, .top-row[b-p98c1wqpsg]  .btn-link:hover {
+    text-decoration: underline;
+}
 
-    .top-row[b-p98c1wqpsg]  a:first-child {
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
+.top-row[b-p98c1wqpsg]  a:first-child {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 
 @media (max-width: 640.98px) {
     .top-row:not(.auth)[b-p98c1wqpsg] {

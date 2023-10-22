@@ -18,7 +18,7 @@ public class CreateUserRequestModelValidator : AbstractValidator<CreateUsersRequ
         RuleFor(u => u.Email)
             .Cascade(CascadeMode.StopOnFirstFailure)
             .EmailAddress().WithMessage("The format is not correct")
-            .NotEmpty().WithMessage("{PropertyName} adress shouldn't be empty");
+            .NotEmpty().WithMessage("{PropertyName} address shouldn't be empty");
 
         RuleFor(u => u.PhoneNumber)
             .Cascade(CascadeMode.StopOnFirstFailure)
@@ -42,13 +42,11 @@ public class CreateUserRequestModelValidator : AbstractValidator<CreateUsersRequ
 
     //add failure + error message: min 15:00 -> https://www.youtube.com/watch?v=Zh1ccvTFzs8
 
-    protected bool BeAValidName(string name)
+    private bool BeAValidName(string name)
     {
         name = name.Replace(" ", "");
         name = name.Replace("-", "");
 
         return name.All(char.IsLetter);
     }
-
-    //protected bool isUniqueEmail(string email) => !_userRepository.isEmailUnique();
 }

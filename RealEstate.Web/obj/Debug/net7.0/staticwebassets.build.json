@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "sSeQZVFbdFJ5TTHdr1Cv70jbwei0ZEQuNtSGrUdTZQ8=",
+  "Hash": "g9b5zv+2LSNWst+qfWfhxRrqUiRoPLXKGvDVuPlu3ic=",
   "Source": "RealEstate.Web",
   "BasePath": "/",
   "Mode": "Root",
@@ -49,6 +49,23 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\idragan\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly\\7.0.10\\build\\net7.0\\blazor.webassembly.js"
+    },
+    {
+      "Identity": "C:\\Users\\idragan\\RiderProjects\\RealEstate_API\\RealEstate.Web\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Blazored.LocalStorage.dll",
+      "SourceId": "RealEstate.Web",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\idragan\\RiderProjects\\RealEstate_API\\RealEstate.Web\\bin\\Debug\\net7.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Blazored.LocalStorage.dll",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorWebAssemblyResource",
+      "AssetTraitValue": "runtime",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\idragan\\.nuget\\packages\\blazored.localstorage\\4.4.0\\lib\\net7.0\\Blazored.LocalStorage.dll"
     },
     {
       "Identity": "C:\\Users\\idragan\\RiderProjects\\RealEstate_API\\RealEstate.Web\\bin\\Debug\\net7.0\\wwwroot\\_framework\\dotnet.7.0.10.i2esxkmhxs.js",
@@ -184,7 +201,24 @@
       "AssetTraitValue": "runtime",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\idragan\\.nuget\\packages\\microsoft.aspnetcore.authorization\\7.0.10\\lib\\net7.0\\Microsoft.AspNetCore.Authorization.dll"
+      "OriginalItemSpec": "C:\\Users\\idragan\\.nuget\\packages\\microsoft.aspnetcore.authorization\\7.0.12\\lib\\net7.0\\Microsoft.AspNetCore.Authorization.dll"
+    },
+    {
+      "Identity": "C:\\Users\\idragan\\RiderProjects\\RealEstate_API\\RealEstate.Web\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Components.Authorization.dll",
+      "SourceId": "RealEstate.Web",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\idragan\\RiderProjects\\RealEstate_API\\RealEstate.Web\\bin\\Debug\\net7.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.AspNetCore.Components.Authorization.dll",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorWebAssemblyResource",
+      "AssetTraitValue": "runtime",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\idragan\\.nuget\\packages\\microsoft.aspnetcore.components.authorization\\7.0.12\\lib\\net7.0\\Microsoft.AspNetCore.Components.Authorization.dll"
     },
     {
       "Identity": "C:\\Users\\idragan\\RiderProjects\\RealEstate_API\\RealEstate.Web\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Components.dll",
@@ -201,7 +235,7 @@
       "AssetTraitValue": "runtime",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\idragan\\.nuget\\packages\\microsoft.aspnetcore.components\\7.0.10\\lib\\net7.0\\Microsoft.AspNetCore.Components.dll"
+      "OriginalItemSpec": "C:\\Users\\idragan\\.nuget\\packages\\microsoft.aspnetcore.components\\7.0.12\\lib\\net7.0\\Microsoft.AspNetCore.Components.dll"
     },
     {
       "Identity": "C:\\Users\\idragan\\RiderProjects\\RealEstate_API\\RealEstate.Web\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Components.Forms.dll",
@@ -269,7 +303,7 @@
       "AssetTraitValue": "runtime",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\idragan\\.nuget\\packages\\microsoft.aspnetcore.metadata\\7.0.10\\lib\\net7.0\\Microsoft.AspNetCore.Metadata.dll"
+      "OriginalItemSpec": "C:\\Users\\idragan\\.nuget\\packages\\microsoft.aspnetcore.metadata\\7.0.12\\lib\\net7.0\\Microsoft.AspNetCore.Metadata.dll"
     },
     {
       "Identity": "C:\\Users\\idragan\\RiderProjects\\RealEstate_API\\RealEstate.Web\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.CSharp.dll",
@@ -661,6 +695,40 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\idragan\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\7.0.10\\runtimes\\browser-wasm\\lib\\net7.0\\netstandard.dll"
+    },
+    {
+      "Identity": "C:\\Users\\idragan\\RiderProjects\\RealEstate_API\\RealEstate.Web\\bin\\Debug\\net7.0\\wwwroot\\_framework\\RealEstate.Shared.dll",
+      "SourceId": "RealEstate.Web",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\idragan\\RiderProjects\\RealEstate_API\\RealEstate.Web\\bin\\Debug\\net7.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/RealEstate.Shared.dll",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorWebAssemblyResource",
+      "AssetTraitValue": "runtime",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\idragan\\RiderProjects\\RealEstate_API\\RealEstate.Shared\\bin\\Debug\\net7.0\\RealEstate.Shared.dll"
+    },
+    {
+      "Identity": "C:\\Users\\idragan\\RiderProjects\\RealEstate_API\\RealEstate.Web\\bin\\Debug\\net7.0\\wwwroot\\_framework\\RealEstate.Shared.pdb",
+      "SourceId": "RealEstate.Web",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\idragan\\RiderProjects\\RealEstate_API\\RealEstate.Web\\bin\\Debug\\net7.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/RealEstate.Shared.pdb",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorWebAssemblyResource",
+      "AssetTraitValue": "symbol",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\idragan\\RiderProjects\\RealEstate_API\\RealEstate.Shared\\bin\\Debug\\net7.0\\RealEstate.Shared.pdb"
     },
     {
       "Identity": "C:\\Users\\idragan\\RiderProjects\\RealEstate_API\\RealEstate.Web\\bin\\Debug\\net7.0\\wwwroot\\_framework\\RealEstate.Web.dll",
@@ -3655,6 +3723,23 @@
       "OriginalItemSpec": "C:\\Users\\idragan\\RiderProjects\\RealEstate_API\\RealEstate.Web\\bin\\Debug\\net7.0\\wwwroot\\_framework\\System.Resources.ResourceManager.dll"
     },
     {
+      "Identity": "C:\\Users\\idragan\\RiderProjects\\RealEstate_API\\RealEstate.Web\\obj\\Debug\\net7.0\\build-gz\\1+oAqdh4.gz",
+      "SourceId": "RealEstate.Web",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\idragan\\RiderProjects\\RealEstate_API\\RealEstate.Web\\bin\\Debug\\net7.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.AspNetCore.Components.Authorization.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "C:\\Users\\idragan\\RiderProjects\\RealEstate_API\\RealEstate.Web\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Components.Authorization.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\idragan\\RiderProjects\\RealEstate_API\\RealEstate.Web\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Components.Authorization.dll"
+    },
+    {
       "Identity": "C:\\Users\\idragan\\RiderProjects\\RealEstate_API\\RealEstate.Web\\obj\\Debug\\net7.0\\build-gz\\10CsIIfb.gz",
       "SourceId": "RealEstate.Web",
       "SourceType": "Computed",
@@ -3706,6 +3791,23 @@
       "OriginalItemSpec": "C:\\Users\\idragan\\RiderProjects\\RealEstate_API\\RealEstate.Web\\bin\\Debug\\net7.0\\wwwroot\\_framework\\System.Net.WebClient.dll"
     },
     {
+      "Identity": "C:\\Users\\idragan\\RiderProjects\\RealEstate_API\\RealEstate.Web\\obj\\Debug\\net7.0\\build-gz\\1tnrEJE0.gz",
+      "SourceId": "RealEstate.Web",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\idragan\\RiderProjects\\RealEstate_API\\RealEstate.Web\\bin\\Debug\\net7.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.AspNetCore.Metadata.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "C:\\Users\\idragan\\RiderProjects\\RealEstate_API\\RealEstate.Web\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Metadata.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\idragan\\RiderProjects\\RealEstate_API\\RealEstate.Web\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Metadata.dll"
+    },
+    {
       "Identity": "C:\\Users\\idragan\\RiderProjects\\RealEstate_API\\RealEstate.Web\\obj\\Debug\\net7.0\\build-gz\\1x0PegAX.gz",
       "SourceId": "RealEstate.Web",
       "SourceType": "Computed",
@@ -3738,6 +3840,23 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\idragan\\RiderProjects\\RealEstate_API\\RealEstate.Web\\bin\\Debug\\net7.0\\wwwroot\\_framework\\System.Net.Mail.dll"
+    },
+    {
+      "Identity": "C:\\Users\\idragan\\RiderProjects\\RealEstate_API\\RealEstate.Web\\obj\\Debug\\net7.0\\build-gz\\22dl4UuA.gz",
+      "SourceId": "RealEstate.Web",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\idragan\\RiderProjects\\RealEstate_API\\RealEstate.Web\\bin\\Debug\\net7.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.AspNetCore.Authorization.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "C:\\Users\\idragan\\RiderProjects\\RealEstate_API\\RealEstate.Web\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Authorization.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\idragan\\RiderProjects\\RealEstate_API\\RealEstate.Web\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Authorization.dll"
     },
     {
       "Identity": "C:\\Users\\idragan\\RiderProjects\\RealEstate_API\\RealEstate.Web\\obj\\Debug\\net7.0\\build-gz\\2IkHtx06.gz",
@@ -5066,6 +5185,23 @@
       "OriginalItemSpec": "C:\\Users\\idragan\\RiderProjects\\RealEstate_API\\RealEstate.Web\\bin\\Debug\\net7.0\\wwwroot\\_framework\\System.Net.WebProxy.dll"
     },
     {
+      "Identity": "C:\\Users\\idragan\\RiderProjects\\RealEstate_API\\RealEstate.Web\\obj\\Debug\\net7.0\\build-gz\\KeYCevOE.gz",
+      "SourceId": "RealEstate.Web",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\idragan\\RiderProjects\\RealEstate_API\\RealEstate.Web\\bin\\Debug\\net7.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/RealEstate.Shared.pdb.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "C:\\Users\\idragan\\RiderProjects\\RealEstate_API\\RealEstate.Web\\bin\\Debug\\net7.0\\wwwroot\\_framework\\RealEstate.Shared.pdb",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\idragan\\RiderProjects\\RealEstate_API\\RealEstate.Web\\bin\\Debug\\net7.0\\wwwroot\\_framework\\RealEstate.Shared.pdb"
+    },
+    {
       "Identity": "C:\\Users\\idragan\\RiderProjects\\RealEstate_API\\RealEstate.Web\\obj\\Debug\\net7.0\\build-gz\\KnkzVFa5.gz",
       "SourceId": "RealEstate.Web",
       "SourceType": "Computed",
@@ -5115,6 +5251,23 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\idragan\\RiderProjects\\RealEstate_API\\RealEstate.Web\\bin\\Debug\\net7.0\\wwwroot\\_framework\\System.Security.Cryptography.X509Certificates.dll"
+    },
+    {
+      "Identity": "C:\\Users\\idragan\\RiderProjects\\RealEstate_API\\RealEstate.Web\\obj\\Debug\\net7.0\\build-gz\\kYOIPw0g.gz",
+      "SourceId": "RealEstate.Web",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\idragan\\RiderProjects\\RealEstate_API\\RealEstate.Web\\bin\\Debug\\net7.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.AspNetCore.Components.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "C:\\Users\\idragan\\RiderProjects\\RealEstate_API\\RealEstate.Web\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Components.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\idragan\\RiderProjects\\RealEstate_API\\RealEstate.Web\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Components.dll"
     },
     {
       "Identity": "C:\\Users\\idragan\\RiderProjects\\RealEstate_API\\RealEstate.Web\\obj\\Debug\\net7.0\\build-gz\\kZyvyoCx.gz",
@@ -5183,6 +5336,23 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\idragan\\RiderProjects\\RealEstate_API\\RealEstate.Web\\bin\\Debug\\net7.0\\wwwroot\\_framework\\System.Data.dll"
+    },
+    {
+      "Identity": "C:\\Users\\idragan\\RiderProjects\\RealEstate_API\\RealEstate.Web\\obj\\Debug\\net7.0\\build-gz\\l9XDapdw.gz",
+      "SourceId": "RealEstate.Web",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\idragan\\RiderProjects\\RealEstate_API\\RealEstate.Web\\bin\\Debug\\net7.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Blazored.LocalStorage.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "C:\\Users\\idragan\\RiderProjects\\RealEstate_API\\RealEstate.Web\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Blazored.LocalStorage.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\idragan\\RiderProjects\\RealEstate_API\\RealEstate.Web\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Blazored.LocalStorage.dll"
     },
     {
       "Identity": "C:\\Users\\idragan\\RiderProjects\\RealEstate_API\\RealEstate.Web\\obj\\Debug\\net7.0\\build-gz\\lBmXmcy3.gz",
@@ -5287,23 +5457,6 @@
       "OriginalItemSpec": "C:\\Users\\idragan\\RiderProjects\\RealEstate_API\\RealEstate.Web\\bin\\Debug\\net7.0\\wwwroot\\_framework\\System.Numerics.Vectors.dll"
     },
     {
-      "Identity": "C:\\Users\\idragan\\RiderProjects\\RealEstate_API\\RealEstate.Web\\obj\\Debug\\net7.0\\build-gz\\MAt3rIkF.gz",
-      "SourceId": "RealEstate.Web",
-      "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\idragan\\RiderProjects\\RealEstate_API\\RealEstate.Web\\bin\\Debug\\net7.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/Microsoft.AspNetCore.Metadata.dll.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "RelatedAsset": "C:\\Users\\idragan\\RiderProjects\\RealEstate_API\\RealEstate.Web\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Metadata.dll",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\idragan\\RiderProjects\\RealEstate_API\\RealEstate.Web\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Metadata.dll"
-    },
-    {
       "Identity": "C:\\Users\\idragan\\RiderProjects\\RealEstate_API\\RealEstate.Web\\obj\\Debug\\net7.0\\build-gz\\MbxQunG1.gz",
       "SourceId": "RealEstate.Web",
       "SourceType": "Computed",
@@ -5389,23 +5542,6 @@
       "OriginalItemSpec": "C:\\Users\\idragan\\RiderProjects\\RealEstate_API\\RealEstate.Web\\bin\\Debug\\net7.0\\wwwroot\\_framework\\System.Globalization.Calendars.dll"
     },
     {
-      "Identity": "C:\\Users\\idragan\\RiderProjects\\RealEstate_API\\RealEstate.Web\\obj\\Debug\\net7.0\\build-gz\\nJIJSJbG.gz",
-      "SourceId": "RealEstate.Web",
-      "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\idragan\\RiderProjects\\RealEstate_API\\RealEstate.Web\\bin\\Debug\\net7.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/Microsoft.AspNetCore.Components.dll.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "RelatedAsset": "C:\\Users\\idragan\\RiderProjects\\RealEstate_API\\RealEstate.Web\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Components.dll",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\idragan\\RiderProjects\\RealEstate_API\\RealEstate.Web\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Components.dll"
-    },
-    {
       "Identity": "C:\\Users\\idragan\\RiderProjects\\RealEstate_API\\RealEstate.Web\\obj\\Debug\\net7.0\\build-gz\\nmwHyEKT.gz",
       "SourceId": "RealEstate.Web",
       "SourceType": "Computed",
@@ -5438,6 +5574,23 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\idragan\\RiderProjects\\RealEstate_API\\RealEstate.Web\\bin\\Debug\\net7.0\\wwwroot\\_framework\\System.Linq.Expressions.dll"
+    },
+    {
+      "Identity": "C:\\Users\\idragan\\RiderProjects\\RealEstate_API\\RealEstate.Web\\obj\\Debug\\net7.0\\build-gz\\nVS4Rf9Z.gz",
+      "SourceId": "RealEstate.Web",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\idragan\\RiderProjects\\RealEstate_API\\RealEstate.Web\\bin\\Debug\\net7.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/RealEstate.Shared.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "C:\\Users\\idragan\\RiderProjects\\RealEstate_API\\RealEstate.Web\\bin\\Debug\\net7.0\\wwwroot\\_framework\\RealEstate.Shared.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\idragan\\RiderProjects\\RealEstate_API\\RealEstate.Web\\bin\\Debug\\net7.0\\wwwroot\\_framework\\RealEstate.Shared.dll"
     },
     {
       "Identity": "C:\\Users\\idragan\\RiderProjects\\RealEstate_API\\RealEstate.Web\\obj\\Debug\\net7.0\\build-gz\\Nym8c5qb.gz",
@@ -5625,23 +5778,6 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\idragan\\RiderProjects\\RealEstate_API\\RealEstate.Web\\bin\\Debug\\net7.0\\wwwroot\\_framework\\System.Diagnostics.TextWriterTraceListener.dll"
-    },
-    {
-      "Identity": "C:\\Users\\idragan\\RiderProjects\\RealEstate_API\\RealEstate.Web\\obj\\Debug\\net7.0\\build-gz\\p9wPadum.gz",
-      "SourceId": "RealEstate.Web",
-      "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\idragan\\RiderProjects\\RealEstate_API\\RealEstate.Web\\bin\\Debug\\net7.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/Microsoft.AspNetCore.Authorization.dll.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "RelatedAsset": "C:\\Users\\idragan\\RiderProjects\\RealEstate_API\\RealEstate.Web\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Authorization.dll",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\idragan\\RiderProjects\\RealEstate_API\\RealEstate.Web\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Authorization.dll"
     },
     {
       "Identity": "C:\\Users\\idragan\\RiderProjects\\RealEstate_API\\RealEstate.Web\\obj\\Debug\\net7.0\\build-gz\\pD+rQeJf.gz",

@@ -108,6 +108,25 @@
           }
         }
       },
+      "Microsoft.AspNetCore.Authentication.JwtBearer/7.0.12": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.IdentityModel.Protocols.OpenIdConnect": "6.15.1"
+        },
+        "compile": {
+          "lib/net7.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll": {
+            "related": ".xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
       "Microsoft.AspNetCore.Authorization/2.2.0": {
         "type": "package",
         "dependencies": {
@@ -1617,7 +1636,9 @@
           "FluentValidation": "11.7.1",
           "Microsoft.AspNetCore.Mvc.Abstractions": "2.2.0",
           "Microsoft.AspNetCore.Mvc.Core": "2.2.5",
-          "RealEstate.DataAccess": "1.0.0"
+          "RealEstate.DataAccess": "1.0.0",
+          "RealEstate.Shared": "1.0.0",
+          "System.IdentityModel.Tokens.Jwt": "6.21.0"
         },
         "compile": {
           "bin/placeholder/RealEstate.Application.dll": {}
@@ -1638,6 +1659,16 @@
         },
         "runtime": {
           "bin/placeholder/RealEstate.DataAccess.dll": {}
+        }
+      },
+      "RealEstate.Shared/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/RealEstate.Shared.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/RealEstate.Shared.dll": {}
         }
       }
     }
@@ -1746,6 +1777,21 @@
         "lib/netstandard2.0/Microsoft.AspNetCore.Authentication.Core.xml",
         "microsoft.aspnetcore.authentication.core.2.2.0.nupkg.sha512",
         "microsoft.aspnetcore.authentication.core.nuspec"
+      ]
+    },
+    "Microsoft.AspNetCore.Authentication.JwtBearer/7.0.12": {
+      "sha512": "KlSupL6h5oUwjMAoNJO2vp0MrqGYeO6nfdGjAEriK8xUccQndmQW9zQwF7d1R80abrZD/T9b01hmhk3v3LX05g==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.authentication.jwtbearer/7.0.12",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net7.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll",
+        "lib/net7.0/Microsoft.AspNetCore.Authentication.JwtBearer.xml",
+        "microsoft.aspnetcore.authentication.jwtbearer.7.0.12.nupkg.sha512",
+        "microsoft.aspnetcore.authentication.jwtbearer.nuspec"
       ]
     },
     "Microsoft.AspNetCore.Authorization/2.2.0": {
@@ -4604,11 +4650,17 @@
       "type": "project",
       "path": "../RealEstate.DataAccess/RealEstate.DataAccess.csproj",
       "msbuildProject": "../RealEstate.DataAccess/RealEstate.DataAccess.csproj"
+    },
+    "RealEstate.Shared/1.0.0": {
+      "type": "project",
+      "path": "../RealEstate.Shared/RealEstate.Shared.csproj",
+      "msbuildProject": "../RealEstate.Shared/RealEstate.Shared.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0": [
       "FluentValidation >= 11.7.1",
+      "Microsoft.AspNetCore.Authentication.JwtBearer >= 7.0.12",
       "Microsoft.AspNetCore.OpenApi >= 7.0.10",
       "Microsoft.EntityFrameworkCore >= 7.0.10",
       "Microsoft.EntityFrameworkCore.Design >= 7.0.10",
@@ -4664,6 +4716,10 @@
           "FluentValidation": {
             "target": "Package",
             "version": "[11.7.1, )"
+          },
+          "Microsoft.AspNetCore.Authentication.JwtBearer": {
+            "target": "Package",
+            "version": "[7.0.12, )"
           },
           "Microsoft.AspNetCore.OpenApi": {
             "target": "Package",

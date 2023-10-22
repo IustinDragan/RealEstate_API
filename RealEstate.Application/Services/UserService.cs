@@ -1,122 +1,127 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using RealEstate.Application.Exceptions;
+using RealEstate.Application.Helpers;
 using RealEstate.Application.Models.UsersModels;
 using RealEstate.Application.Services.Interfaces;
-using RealEstate.DataAccess;
 using RealEstate.DataAccess.Enums;
+using RealEstate.DataAccess.Repositories.Interfaces;
+using RealEstate.Shared.Models.Users;
 
 namespace RealEstate.Application.Services;
 
 public class UserService : IUserService
 {
-    private readonly DatabaseContext _databaseContext;
+    private readonly IUserRepository _userRepository;
 
-
-    //ToDo Repository - min 20:00
-    public UserService(DatabaseContext databaseContext)
+    public UserService(IUserRepository userRepository)
     {
-        _databaseContext = databaseContext ?? throw new ArgumentNullException(nameof(databaseContext));
+        _userRepository = userRepository;
     }
 
-    public async Task<UsersResponseModel> CreateUserAsync(CreateUsersRequestModel createUsersRequestModel) //AddAsync
+    public async Task<IEnumerable<UsersResponseModel>> RealAllUsersAsync()
     {
-        var user = createUsersRequestModel.ToUser();
-        user.Role = createUsersRequestModel.isAgent ? Role.SalesAgent : Role.Customer;
+        var users = await _userRepository.ReadAllAsync();
 
-        _databaseContext.Users.Add(user);
-        await _databaseContext.SaveChangesAsync();
-
-        return UsersResponseModel.FromUser(user);
+        return users.Select(UsersResponseModel.FromUser).ToList();
     }
 
     public async Task<UsersResponseModel?> GetUserByIdAsync(int id, bool includeCompanyDetails)
     {
         if (includeCompanyDetails)
-        {
-            if (includeCompanyDetails && _databaseContext.Company == null)
+            if (includeCompanyDetails && _userRepository.GetById(id).Result.Company == null)
                 Console.WriteLine("There are no info about company");
 
-            return await _databaseContext.Users.Where(c => c.Id == id).Include(c => c.Company)
-                .Select(user => UsersResponseModel.FromUser(user))
-                .FirstOrDefaultAsync();
-        }
-
-        return await _databaseContext.Users.Where(C => C.Id == id).Select(user => UsersResponseModel.FromUser(user))
-            .FirstOrDefaultAsync();
+        var userFromDb = await _userRepository.GetById(id);
+        var fromUser = UsersResponseModel.FromUser(userFromDb);
+        return fromUser;
     }
 
-    public async Task<IEnumerable<UsersResponseModel>> GetUsersAsync() //ReadAllAsync
+    public async Task<UsersResponseModel> GetUserByNameAsync(string userName, bool includeCompanyDetails)
     {
-        var usersFromDbQuery = _databaseContext.Users.Include(c => c.Company);
-        var usersFromDb = await usersFromDbQuery.Select(user => UsersResponseModel.FromUser(user)).ToListAsync();
+        if (includeCompanyDetails)
+            if (includeCompanyDetails && _userRepository.GetByUsername(userName).Result.Company == null)
+                Console.WriteLine("There are no info about company");
 
-        return usersFromDb;
+        var userFromDb = await _userRepository.GetByUsername(userName);
+
+        var fromUser = UsersResponseModel.FromUser(userFromDb);
+        return fromUser;
     }
 
-    public async Task<UsersResponseModel> UpdateUserAsync(int id, CreateUsersRequestModel updateUsersRequestModel)
+    public async Task<UsersResponseModel> CreateUserAsync(CreateUsersRequestModel requestModel)
     {
-        var userFromDb = await _databaseContext.Users.Where(x => x.Id == id).Include(x => x.Company).FirstAsync();
+        var user = requestModel.ToUser();
+        user.Role = requestModel.isAgent ? Role.SalesAgent : Role.Customer;
+
+        await _userRepository.AddAsync(user);
+
+        return UsersResponseModel.FromUser(user);
+    }
+
+    public async Task<UsersResponseModel> UpdateUserAsync(int id, CreateUsersRequestModel requestModel)
+    {
+        var userFromDb = _userRepository.GetById(id);
+
         if (userFromDb == null) throw new NullReferenceException("The user doesn't exist");
 
-        _databaseContext.Attach(userFromDb);
+        userFromDb.Result.FirstName = requestModel.FirstName;
+        userFromDb.Result.LastName = requestModel.LastName;
+        userFromDb.Result.Email = requestModel.Email;
+        userFromDb.Result.Password = requestModel.Password;
+        userFromDb.Result.PhoneNumber = requestModel.PhoneNumber;
+        userFromDb.Result.Role = requestModel.isAgent ? Role.SalesAgent : Role.Customer;
 
-        userFromDb.FirstName = updateUsersRequestModel.FirstName;
-        userFromDb.LastName = updateUsersRequestModel.LastName;
-        userFromDb.Email = updateUsersRequestModel.Email;
-        userFromDb.Password = updateUsersRequestModel.Password;
-        userFromDb.PhoneNumber = updateUsersRequestModel.PhoneNumber;
-        userFromDb.Role = updateUsersRequestModel.isAgent ? Role.SalesAgent : Role.Customer;
-
-        if (updateUsersRequestModel.isAgent)
+        if (requestModel.isAgent)
         {
-            userFromDb.Company.CompanyName = updateUsersRequestModel.Company.CompanyName;
-            userFromDb.Company.CUI = updateUsersRequestModel.Company.CUI;
+            userFromDb.Result.Company.CompanyName = requestModel.Company.CompanyName;
+            userFromDb.Result.Company.CUI = requestModel.Company.CUI;
         }
 
-        await _databaseContext.SaveChangesAsync();
+        await _userRepository.UpdateAsync(id);
 
         var updateUsersResponseModel = new UsersResponseModel
         {
             Id = userFromDb.Id,
-            FirstName = userFromDb.FirstName,
-            LastName = userFromDb.LastName,
-            EmailAddress = userFromDb.Email,
-            PhoneNumber = userFromDb.PhoneNumber,
-            Role = userFromDb.Role
+            FirstName = userFromDb.Result.FirstName,
+            LastName = userFromDb.Result.LastName,
+            EmailAddress = userFromDb.Result.Email,
+            PhoneNumber = userFromDb.Result.PhoneNumber,
+            Role = userFromDb.Result.Role
         };
 
         return updateUsersResponseModel;
     }
 
-    public async void DeleteUserAsync(int id)
+    public async Task DeleteUserAsync(int id)
     {
-        var userForDelete = _databaseContext.Users.Where(u => u.Id == id).First();
-        if (userForDelete != null) _databaseContext.Users.Remove(userForDelete);
-        _databaseContext.SaveChanges();
+        await _userRepository.DeleteAsync(id);
     }
 
-    public async Task<bool> SaveChangesAsync()
+    public async Task<LoginResponseModel> LoginAsync(LoginRequestModel model)
     {
-        return await _databaseContext.SaveChangesAsync() >= 0;
-    }
+        var user = await _userRepository.GetByUsername(model.Username);
 
+        if (user == null) throw new NotFoundException("Username or password is incorrect.");
+
+        if (user.Password != model.Password) throw new NotFoundException("Username or password is incorrect.");
+
+        var token = JwtHelper.GenerateToken(user, "MySuperSecretKey");
+
+        return new LoginResponseModel
+        {
+            Username = user.UserName,
+            Id = user.Id,
+            Email = user.Email,
+            Token = token
+        };
+    }
 
     public async Task<bool> isEmailUniqueAsync(string email)
     {
-        return !_databaseContext.Users.Any(u => u.Email == email);
-    }
+        var emailAddress = _userRepository.GetEmail(email).Result;
 
-    public async Task<List<UsersResponseModel>> GetUserByNameAsync(string userName, bool includeCompanyDetails)
-    {
-        var userNames = userName.Split(" ");
+        if (emailAddress)
+            return false;
 
-        var usersWithSameNameQuery = _databaseContext.Users.Include(c => c.Company);
-
-        foreach (var userNAme in userNames)
-            usersWithSameNameQuery.Where(x => x.FirstName == userNAme || x.LastName == userName);
-
-        var usersWithSameName =
-            await usersWithSameNameQuery.Select(user => UsersResponseModel.FromUser(user)).ToListAsync();
-
-        return usersWithSameName;
+        return true;
     }
 }

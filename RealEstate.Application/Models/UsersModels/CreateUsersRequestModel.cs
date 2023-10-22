@@ -7,6 +7,7 @@ public class CreateUsersRequestModel
 {
     public string FirstName { get; set; }
     public string LastName { get; set; }
+    public string UserName { get; set; }
     [EmailAddress] public string Email { get; set; }
     public string Password { get; set; }
     public string PhoneNumber { get; set; }
@@ -19,6 +20,7 @@ public class CreateUsersRequestModel
         {
             FirstName = FirstName,
             LastName = LastName,
+            UserName = UserName,
             Email = Email,
             Password = Password,
             PhoneNumber = PhoneNumber,

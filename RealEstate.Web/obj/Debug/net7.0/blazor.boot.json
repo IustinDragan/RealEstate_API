@@ -7,12 +7,14 @@
   "linkerEnabled": false,
   "resources": {
     "assembly": {
-      "Microsoft.AspNetCore.Authorization.dll": "sha256-t7KDwXpfEy\/UbmAIpuMJI0h+MMOTr8jLi1ei0lP44QI=",
-      "Microsoft.AspNetCore.Components.dll": "sha256-CCnE1pQ8XDRrJWlqnelqinQo1pisIEK3lPSLNsOThy8=",
+      "Blazored.LocalStorage.dll": "sha256-5V8ovY1srbIIz7lzzMhLd3nNJ9LJ6bHoBOnLJahv8Go=",
+      "Microsoft.AspNetCore.Authorization.dll": "sha256-8f3B2YKtr38X\/o9azir1JiTTvPB3b+xEcluEyMAk1iE=",
+      "Microsoft.AspNetCore.Components.dll": "sha256-4ILNFgB643G5ZkreiD24BGeHIeuV3whK+n6lzWroM3s=",
+      "Microsoft.AspNetCore.Components.Authorization.dll": "sha256-g0avXoQ3+yzqfe9j7EDyl8QHepV6t3Rp80vvvK3lvQc=",
       "Microsoft.AspNetCore.Components.Forms.dll": "sha256-QzTuKWoRJMXfL9hnE338kn0jp1s5RyTvzlKtY1mr1ZQ=",
       "Microsoft.AspNetCore.Components.Web.dll": "sha256-es5EQEcHWBF8ODFSPvMmOCwAQE0oNRsux0Q\/mz2fjbw=",
       "Microsoft.AspNetCore.Components.WebAssembly.dll": "sha256-PhWInDnd+vAmRQjfVe9AYpvPWG\/F8ZwGZy\/AOoAn2es=",
-      "Microsoft.AspNetCore.Metadata.dll": "sha256-kPXVJCMrOaPMeROMUupDKmP\/scgPWWjfViLaUJ85LL8=",
+      "Microsoft.AspNetCore.Metadata.dll": "sha256-5OT92qfeapjjii4zL6P1UAdAP2RjF9seKDAnBzFHhlg=",
       "Microsoft.Extensions.Configuration.dll": "sha256-PqQvp77oZ4+uuy2ElXk8AU9I6RfZSf18UGTrd4rulOo=",
       "Microsoft.Extensions.Configuration.Abstractions.dll": "sha256-CnS3b9EMFQmETBUVEgtcron4DBsfFdcVt3zfCP6Uflg=",
       "Microsoft.Extensions.Configuration.Binder.dll": "sha256-7GY9+7Cm0Z8DJ+JCFwgCx9OfFtUvXlFHaaLlBYmXfIE=",
@@ -198,13 +200,15 @@
       "mscorlib.dll": "sha256-Xo3wdLenBZ41X73hGjkWTbEQZDKcQsnPFtlkePUxLY0=",
       "netstandard.dll": "sha256-qjqaAEP3hdLnU\/TnoCd8HaSa+0ruV1TpdaB2GUujGMw=",
       "System.Private.CoreLib.dll": "sha256-\/7uQ+eNo9u3H1mpgMko4D3tKZHeGRfsRjna0Dqsu62k=",
-      "RealEstate.Web.dll": "sha256-gaSBjxaz5HyrfKOKfIPXMURrdQuPkaxica4j2L9WEmE="
+      "RealEstate.Shared.dll": "sha256-ax23n5plpJ3AOZoZeq8whIGZ7UBxaEDnSHlEPAunjLM=",
+      "RealEstate.Web.dll": "sha256-EffqTQvHPeul+pasyb3WvI3RKUAFuIS+tOTDuPmix6I="
     },
     "extensions": null,
     "lazyAssembly": null,
     "libraryInitializers": null,
     "pdb": {
-      "RealEstate.Web.pdb": "sha256-zSqH7vxyAc7hplGg4nVuy6GKpQWL3Co2wZTwiCG6T9Y="
+      "RealEstate.Shared.pdb": "sha256-\/t49Iwc\/dk55KKoSvMMeuBnqH3usvmj8dVZbNGT1usI=",
+      "RealEstate.Web.pdb": "sha256-hcFa65HbHt1e7fJmFqQj3emOOTDaoiQH3YknNjpXPJ4="
     },
     "runtime": {
       "dotnet.7.0.10.i2esxkmhxs.js": "sha256-qJB30QURoyH3y3WyayHu6nMFIx2XNOkXCez7tagGpvE=",

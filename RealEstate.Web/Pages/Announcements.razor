@@ -1,0 +1,53 @@
+﻿@page "/Announcements"
+@using RealEstate.Web.Models
+@inject HttpClient Http
+@inject NavigationManager NavManager
+
+
+<div class ="row">
+    @if (announcements.Count == 0)
+    {
+        <div class="col-12">
+            <p class="text-muted">No announcements found. Still loading...</p>
+        </div>
+    }
+    else
+    {
+        @foreach (var announcement in announcements)
+        {
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="https://st3.idealista.it/cms/archivie/styles/idcms_social_large_desktop/public/2018-02/news/luxury.jpg?fv=V7Bci5SA&itok=2qsC_ZxF" class="card-img-top" alt="@announcement.Title">
+                    <div class="card-body">
+                        <h5 class="card-title">@announcement.Title</h5>
+                        @* <p class="card-text">@product.Description</p> *@
+                        <p class="card-text">Price: @announcement.Property.Price LEI</p>
+                        <p class="card-text">Start Date: @announcement.StartDate.Date</p>
+                        <p class="card-text">End Date: @announcement.EndDate.Date</p>
+                        <button class="btn btn-secondary" @onclick="@(() => { NavManager.NavigateTo($"/announcements/{announcement.Id}");})">View More</button>
+                        <button class="btn btn-danger" @onclick="@(async () => await DeleteCurrentAnnouncementAsync(announcement.Id))">Delete</button>
+                    </div>
+                </div>
+            </div>  
+        }
+    }
+</div>
+
+@code {
+    private List<AnnouncementResponseModel> announcements = new List<AnnouncementResponseModel>();
+    
+    protected override async Task OnInitializedAsync()
+    {
+        announcements = await Http.GetFromJsonAsync<List<AnnouncementResponseModel>>("announcement?orderBy=startDate");
+
+    }
+    
+    private async Task DeleteCurrentAnnouncementAsync(int announcementId)
+    {
+        await Http.DeleteAsync($"announcement/{announcementId}");
+
+    // SERVER
+        announcements = await Http.GetFromJsonAsync<List<AnnouncementResponseModel>>("announcement");
+
+    }
+}
