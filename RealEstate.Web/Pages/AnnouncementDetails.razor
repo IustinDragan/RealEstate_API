@@ -1,0 +1,49 @@
+﻿@page "/announcements/{Id:int}"
+@using RealEstate.Web.Models
+@inject HttpClient Http
+<h3>AnnouncementDetails</h3>
+
+<button class="btn btn-light">
+    <a href="announcements">Go to Announcements</a>
+</button>
+
+@if (announcement != null)
+{
+    <div class="announcement-details">
+        <p>Title: @announcement.Title</p>
+        <p>Pret: @announcement.Property.Price </p>
+        <p>Numar camere: @announcement.Property.RoomsNumber</p>
+        <p>Numar bai: @announcement.Property.BathroomsNumber</p>
+        <p>Suprafata teren: @announcement.Property.LandArea</p>
+        <p>Suprafata utila: @announcement.Property.HouseUsableArea</p>
+        <p>Suprafata totala: @announcement.Property.HouseTotalArea</p>
+        <p>An constructie: @announcement.Property.ConstructionYear</p>
+        <p>Numar etaje cladire: @announcement.Property.FloorsTotalNumber</p>
+        <p>Etaj apartament: @announcement.Property.ApartamentFloor</p>
+        <p>Lift: @announcement.Property.Elevator</p>
+        <p>Tipul proprietatii: @announcement.Property.PropertyType</p>
+        <p>Tip teren: @announcement.Property.HouseLandDetails</p>
+        <p>Tip incalzire: @announcement.Property.HeatingSource</p>
+        <p>Utilitati: @announcement.Property.Utilities</p>
+        <p>Adresa: @announcement.Property.Adress</p>
+        <p>Detalii: @announcement.Property.Details </p>
+    </div>
+}
+else
+{
+    <p> Announcement not found </p>
+}
+
+@code {
+
+    [Parameter]
+    public int Id { get; set; }
+
+    AnnouncementResponseModel? announcement;
+
+    protected override async Task OnInitializedAsync()
+    {
+        announcement = await Http.GetFromJsonAsync<AnnouncementResponseModel>($"/announcement/{Id}");
+    }
+
+}

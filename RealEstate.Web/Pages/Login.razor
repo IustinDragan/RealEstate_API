@@ -7,25 +7,25 @@
 @inject NavigationManager NavManager
 
 <div class="login-box">
-  <h2 >Login</h2>
-  <EditForm Model="@requestModel" OnSubmit="HandleSubmitAsync">
-      <div class="user-box">
-          <label >Username</label>
-          <input type="text" name="" required="" @bind-value="requestModel.Username">
-      </div>
-      <div class="user-box">
-          <label>Password</label>
-          <input type="password" name="" required="" @bind-value="requestModel.Password">
-      </div>
-    <button class="btn btn-light" type="submit">
-        Submit
-    </button>
-  </EditForm>
+    <h2 >Login</h2>
+    <EditForm Model="@requestModel" OnSubmit="HandleSubmitAsync">
+        <div class="user-box">
+            <label >Username</label>
+            <input type="text" name="" required="" @bind-value="requestModel.Username">
+        </div>
+        <div class="user-box">
+            <label>Password</label>
+            <input type="password" name="" required="" @bind-value="requestModel.Password">
+        </div>
+        <button class="btn btn-light" type="submit">
+            Submit
+        </button>
+    </EditForm>
 </div>
 
 
 @code {
-    private LoginRequestModel requestModel = new();
+    private readonly LoginRequestModel requestModel = new();
 
     protected override async Task OnInitializedAsync()
     {
@@ -40,15 +40,16 @@
 
     public async Task HandleSubmitAsync()
     {
-        var responseHttp = await this.Http.PostAsJsonAsync("users/login", requestModel);
+        var responseHttp = await Http.PostAsJsonAsync("users/login", requestModel);
 
         var response = await responseHttp.Content.ReadFromJsonAsync<LoginResponseModel>();
 
         await LocalStorage.SetItemAsync("user", response);
 
         await AuthState.GetAuthenticationStateAsync();
-    
+
     // Redirect to announcements after user is authenticated
         NavManager.NavigateTo("/announcements");
     }
+
 }

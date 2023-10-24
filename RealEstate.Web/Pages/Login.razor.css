@@ -1,9 +1,10 @@
 ﻿html {
     height: 100%;
 }
+
 body {
-    margin:0;
-    padding:0;
+    margin: 0;
+    padding: 0;
     font-family: sans-serif;
     background: linear-gradient(#141e30, #243b55);
 }
@@ -18,7 +19,7 @@ body {
     /*color: #6a6f8c;*/
     background: #5862b9; /*rgba(0, 0, 0, 0);*/
     box-sizing: border-box;
-    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
     border-radius: 10px;
     /*background-image: url("");*/
 }
@@ -50,9 +51,10 @@ body {
     border-radius: 10px;
 
 }
+
 .login-box .user-box label {
     position: relative;
-    top:0;
+    top: 0;
     left: 0;
     padding: 10px 0;
     font-size: 16px;
@@ -115,7 +117,7 @@ body {
     0% {
         left: -100%;
     }
-    50%,100% {
+    50%, 100% {
         left: 100%;
     }
 }
@@ -135,7 +137,7 @@ body {
     0% {
         top: -100%;
     }
-    50%,100% {
+    50%, 100% {
         top: 100%;
     }
 }
@@ -155,7 +157,7 @@ body {
     0% {
         right: -100%;
     }
-    50%,100% {
+    50%, 100% {
         right: 100%;
     }
 }
@@ -175,7 +177,7 @@ body {
     0% {
         bottom: -100%;
     }
-    50%,100% {
+    50%, 100% {
         bottom: 100%;
     }
 }
