@@ -201,14 +201,14 @@
       "netstandard.dll": "sha256-qjqaAEP3hdLnU\/TnoCd8HaSa+0ruV1TpdaB2GUujGMw=",
       "System.Private.CoreLib.dll": "sha256-\/7uQ+eNo9u3H1mpgMko4D3tKZHeGRfsRjna0Dqsu62k=",
       "RealEstate.Shared.dll": "sha256-ax23n5plpJ3AOZoZeq8whIGZ7UBxaEDnSHlEPAunjLM=",
-      "RealEstate.Web.dll": "sha256-EffqTQvHPeul+pasyb3WvI3RKUAFuIS+tOTDuPmix6I="
+      "RealEstate.Web.dll": "sha256-z4w6MTQdZskeTmt+uoP46lW5PzVj4jBAT9BDalXG4s0="
     },
     "extensions": null,
     "lazyAssembly": null,
     "libraryInitializers": null,
     "pdb": {
       "RealEstate.Shared.pdb": "sha256-\/t49Iwc\/dk55KKoSvMMeuBnqH3usvmj8dVZbNGT1usI=",
-      "RealEstate.Web.pdb": "sha256-hcFa65HbHt1e7fJmFqQj3emOOTDaoiQH3YknNjpXPJ4="
+      "RealEstate.Web.pdb": "sha256-76o8DiEH3iz8eTONNU7FDzccD68wb2f+mlh5WBsaVic="
     },
     "runtime": {
       "dotnet.7.0.10.i2esxkmhxs.js": "sha256-qJB30QURoyH3y3WyayHu6nMFIx2XNOkXCez7tagGpvE=",

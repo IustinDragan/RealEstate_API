@@ -7,5 +7,4 @@ public class AnnouncementResponseModel
     public DateTime StartDate { get; set; }
     public DateTime EndDate { get; set; }
     public PropertyResponseModel Property { get; set; }
-    
 }

@@ -1,0 +1,158 @@
+﻿@page "/announcement/create"
+@using RealEstate.Web.Models
+@using RealEstate.Web.Models.Enums
+@inject HttpClient Http
+
+<h3>CreateAnnouncement</h3>
+
+<EditForm class="d-flex flex-column align-items-center" Model="@announcementRequestModel" OnValidSubmit="HandleValidSubmitAsync">
+    @* <DataAnnotationsValidator/> *@
+    <div class="m-2">
+        <label for="title">Titlu: </label>
+        <InputText id="title" @bind-Value="@announcementRequestModel.Title"></InputText>
+        @* <ValidationMessage For="@(() => announcementRequestModel.Title)"></ValidationMessage> *@
+    </div>
+    <div class="m-2">
+        <label for="startDate: ">Data inceput: </label>
+        <InputDate id="startDate" @bind-Value="@announcementRequestModel.StartDate"></InputDate>
+        @* <ValidationMessage For="@(() => announcementRequestModel.StartDate)"></ValidationMessage> *@
+    </div>
+    <div class="m-2">
+        <label for="endDate">Data sfarsit: </label>
+        <InputDate id="endDate" @bind-Value="@announcementRequestModel.EndDate"></InputDate>
+        @* <ValidationMessage For="@(() => announcementRequestModel.EndDate)"></ValidationMessage> *@
+    </div>
+
+    <div class="m-2">
+        <label for="roomsNumber">Numar camere: </label>
+        <InputNumber id="roomsNumber" @bind-Value="@announcementRequestModel.Property.RoomsNumber"></InputNumber>
+    </div>
+    <div class="m-2">
+        <label for="bathroomNumber">Numar bai: </label>
+        <InputNumber id="bathroomNumber" @bind-Value="@announcementRequestModel.Property.BathroomsNumber"></InputNumber>
+    </div>
+    <div class="m-2">
+        <label for="landArea">Suprafata teren: </label>
+        <InputNumber id="landArea" @bind-Value="@announcementRequestModel.Property.LandArea"></InputNumber>
+    </div>
+    <div class="m-2">
+        <label for="houseUsableArea">Suprafata utila locuinta: </label>
+        <InputNumber id="houseUsableArea" @bind-Value="@announcementRequestModel.Property.HouseUsableArea"></InputNumber>
+    </div>
+    <div class="m-2">
+        <label for="houseTotalArea">Suprafata totala locuinta: </label>
+        <InputNumber id="houseTotalArea" @bind-Value="@announcementRequestModel.Property.HouseTotalArea"></InputNumber>
+    </div>
+    <div class="m-2">
+        <label for="constructionYear">An constructie: </label>
+        <InputNumber id="constructionYear" @bind-Value="@announcementRequestModel.Property.ConstructionYear"></InputNumber>
+    </div>
+    <div class="m-2">
+        <label for="floorTotalNumber">Numar etaje: </label>
+        <InputNumber id="floorTotalNumber" @bind-Value="@announcementRequestModel.Property.FloorsTotalNumber"></InputNumber>
+    </div>
+    <div class="m-2">
+        <label for="apartamentFloor">Etajul apartamentului: </label>
+        <InputNumber id="apartamentFloor" @bind-Value="@announcementRequestModel.Property.ApartamentFloor"></InputNumber>
+    </div>
+    <div class="m-2">
+        <label for="elevator">lift: </label>
+        <InputCheckbox id="elevator" @bind-Value="@announcementRequestModel.Property.Elevator"></InputCheckbox>
+        @* <input type="checkbox" @onchange="eventArgs => { CheckboxClicked(eventArgs.Value); }" /> *@
+        @* <TextEdit Text="@(announcementRequestModel.Property.Elevator ? "Yes" : "No")" Disabled="true"> </TextEdit> *@
+
+    </div>
+    <div class="m-2">
+        <label for="details">Detalii : </label>
+        <InputText id="details" @bind-Value="@announcementRequestModel.Property.Details"></InputText>
+    </div>
+    <div class="m-2">
+        <label for="price">Pret : </label>
+        <InputNumber id="price" @bind-Value="@announcementRequestModel.Property.Price"></InputNumber>
+    </div>
+    <div class="m-2">
+        <label for="propertyType">Tip de proprietate: </label>
+        <InputSelect id="propertyType" @bind-Value="@announcementRequestModel.Property.PropertyType">
+            @foreach (var propertyType in Enum.GetValues<PropertyType>())
+            {
+                <option value="@propertyType">@propertyType</option>
+            }
+        </InputSelect>
+    </div>
+    <div class="m-2">
+        <label for="houseLandDetails">Detalii teren: </label>
+        <InputSelect id="houseLandDetails" @bind-Value="@announcementRequestModel.Property.HouseLandDetails">
+            @foreach (var houseLandDetails in Enum.GetValues<HouseLandDetails>())
+            {
+                <option value="@houseLandDetails">@houseLandDetails</option>
+            }
+        </InputSelect>
+    </div>
+    <div class="m-2">
+        <label for="heatingSource">Sursa de incalzire: </label>
+        <InputSelect id="heatingSource" @bind-Value="@announcementRequestModel.Property.HeatingSource">
+            @foreach (var heatingSource in Enum.GetValues<HeatingSource>())
+            {
+                <option value="@heatingSource">@heatingSource</option>
+            }
+        </InputSelect>
+    </div>
+    <div class="m-2">
+        <label for="utilities">Utilitati: </label>
+        <InputSelect id="utilities" @bind-Value="@announcementRequestModel.Property.Utilities">
+            @foreach (var utilities in Enum.GetValues<Utilities>())
+            {
+                <option value="@utilities">@utilities</option>
+            }
+        </InputSelect>
+    </div>
+
+    <div class="m-2">
+        <label for="street">Strada : </label>
+        <InputText id="street" @bind-Value="@announcementRequestModel.Property.Adress.Street"></InputText>
+    </div>
+    <div class="m-2">
+        <label for="streetNumber">Numar : </label>
+        <InputNumber id="streetNumber" @bind-Value="@announcementRequestModel.Property.Adress.StreetNumber"></InputNumber>
+    </div>
+    <div class="m-2">
+        <label for="district">Judet : </label>
+        <InputText id="district" @bind-Value="@announcementRequestModel.Property.Adress.District"></InputText>
+    </div>
+    <div class="m-2">
+        <label for="city">Oras : </label>
+        <InputText id="city" @bind-Value="@announcementRequestModel.Property.Adress.City"></InputText>
+    </div>
+    <div class="m-2">
+        <label for="locality">Localitate : </label>
+        <InputText id="locality" @bind-Value="@announcementRequestModel.Property.Adress.Locality"></InputText>
+    </div>
+    <div class="m-2">
+        <label for="floors">Etaj : </label>
+        <InputNumber id="floors" @bind-Value="@announcementRequestModel.Property.Adress.Floors"></InputNumber>
+    </div>
+    <div class="m-2">
+        <label for="scale">Scara : </label>
+        <InputText id="scale" @bind-Value="@announcementRequestModel.Property.Adress.Scale"></InputText>
+    </div>
+    <div class="m-2">
+        <label for="appartamentNumber">Numarul locuintei : </label>
+        <InputNumber id="appartamentNumber" @bind-Value="@announcementRequestModel.Property.Adress.AppartamentNumber"></InputNumber>
+    </div>
+
+
+    <button type="submit" class="btn btn-primary">Create announcement</button>
+
+
+</EditForm>
+
+@code {
+    private CreateAnnouncementRequestModel announcementRequestModel = new();
+
+    public async Task HandleValidSubmitAsync()
+    {
+        await Http.PostAsJsonAsync("announcement", announcementRequestModel);
+        announcementRequestModel = new CreateAnnouncementRequestModel();
+    }
+
+}

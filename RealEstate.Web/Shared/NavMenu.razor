@@ -67,7 +67,7 @@
     {
         collapseNavMenu = !collapseNavMenu;
     }
-    
+
     private async Task HandleLogoutAsync()
     {
         await LocalStorage.RemoveItemAsync("user");
@@ -76,4 +76,5 @@
 
         NavManager.NavigateTo("login");
     }
+
 }

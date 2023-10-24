@@ -2,9 +2,13 @@
 
 namespace RealEstate.Web.Models;
 
-public class PropertyResponseModel
+public class CreatePropertyRequestModel
 {
-    public int Id { get; set; }
+    public CreatePropertyRequestModel()
+    {
+        Adress = new CreateAdressRequestModel();
+    }
+
     public int RoomsNumber { get; set; }
     public int BathroomsNumber { get; set; }
     public double LandArea { get; set; }
@@ -14,12 +18,11 @@ public class PropertyResponseModel
     public int FloorsTotalNumber { get; set; }
     public int ApartamentFloor { get; set; }
     public bool Elevator { get; set; }
-    public string Details { get; set; }
+    public string? Details { get; set; }
     public double Price { get; set; }
     public PropertyType PropertyType { get; set; }
     public HouseLandDetails HouseLandDetails { get; set; }
     public HeatingSource HeatingSource { get; set; }
     public Utilities Utilities { get; set; }
-    public int? AnnouncementId { get; set; }
-    public string? Adress { get; set; }
+    public CreateAdressRequestModel Adress { get; set; }
 }

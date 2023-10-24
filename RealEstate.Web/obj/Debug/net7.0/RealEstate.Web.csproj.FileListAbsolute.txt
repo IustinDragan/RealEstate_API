@@ -833,6 +833,7 @@ C:\Users\idragan\RiderProjects\RealEstate_API\RealEstate.Web\obj\Debug\net7.0\st
 C:\Users\idragan\RiderProjects\RealEstate_API\RealEstate.Web\obj\Debug\net7.0\staticwebassets.pack.json
 C:\Users\idragan\RiderProjects\RealEstate_API\RealEstate.Web\obj\Debug\net7.0\staticwebassets.build.json
 C:\Users\idragan\RiderProjects\RealEstate_API\RealEstate.Web\obj\Debug\net7.0\staticwebassets.development.json
+C:\Users\idragan\RiderProjects\RealEstate_API\RealEstate.Web\obj\Debug\net7.0\scopedcss\Pages\AnnouncementDetails.razor.rz.scp.css
 C:\Users\idragan\RiderProjects\RealEstate_API\RealEstate.Web\obj\Debug\net7.0\scopedcss\Pages\Login.razor.rz.scp.css
 C:\Users\idragan\RiderProjects\RealEstate_API\RealEstate.Web\obj\Debug\net7.0\scopedcss\Shared\MainLayout.razor.rz.scp.css
 C:\Users\idragan\RiderProjects\RealEstate_API\RealEstate.Web\obj\Debug\net7.0\scopedcss\Shared\NavMenu.razor.rz.scp.css
