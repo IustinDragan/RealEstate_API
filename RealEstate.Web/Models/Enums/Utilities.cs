@@ -6,7 +6,7 @@ public enum Utilities
     // Electricity = 2,
     // Sewage = 3,
     // InternetConnection = 4
-    
+
     Gaz = 1,
     Electricitate = 2,
     Canalizare = 3,

@@ -21,9 +21,9 @@ public class AnnouncementService : IAnnouncementService
         return AnnouncementResponseModel.FromAnnouncement(addedAnnouncement);
     }
 
-    public async Task<List<AnnouncementResponseModel>> RealAllAsync(ReadAnnouncementRequestModel requestModel)
+    public async Task<List<AnnouncementResponseModel>> ReadAllAsync(ReadAnnouncementRequestModel requestModel)
     {
-        var announcements = await _announcementRepository.ReadAllAsync(requestModel.OrderBy,
+        var announcements = await _announcementRepository.ReadAllAsync(requestModel.OrderBy, requestModel.SearchText,
             requestModel.page, requestModel.PageCount);
 
 
@@ -50,6 +50,11 @@ public class AnnouncementService : IAnnouncementService
 
         return AnnouncementResponseModel.FromAnnouncement(announcement);
     }
+
+    // public async Task<List<Announcement>> SearchAsync(string searchText)
+    // {
+    //     return await _announcementRepository.SearchAnnouncements(searchText);
+    // }
 
     public async Task DeleteAsync(int id)
     {

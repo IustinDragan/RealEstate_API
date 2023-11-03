@@ -1,3 +1,9 @@
+C:\Users\idragan\RiderProjects\RealEstate_API\RealEstate.Web\obj\Debug\net7.0\RealEstate.Web.csproj.AssemblyReference.cache
+C:\Users\idragan\RiderProjects\RealEstate_API\RealEstate.Web\obj\Debug\net7.0\RealEstate.Web.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\idragan\RiderProjects\RealEstate_API\RealEstate.Web\obj\Debug\net7.0\RealEstate.Web.AssemblyInfoInputs.cache
+C:\Users\idragan\RiderProjects\RealEstate_API\RealEstate.Web\obj\Debug\net7.0\RealEstate.Web.AssemblyInfo.cs
+C:\Users\idragan\RiderProjects\RealEstate_API\RealEstate.Web\obj\Debug\net7.0\RealEstate.Web.csproj.CoreCompileInputs.cache
+C:\Users\idragan\RiderProjects\RealEstate_API\RealEstate.Web\obj\Debug\net7.0\RealEstate.Web.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\idragan\RiderProjects\RealEstate_API\RealEstate.Web\bin\Debug\net7.0\wwwroot\_framework\blazor.boot.json
 C:\Users\idragan\RiderProjects\RealEstate_API\RealEstate.Web\bin\Debug\net7.0\wwwroot\_framework\blazor.webassembly.js
 C:\Users\idragan\RiderProjects\RealEstate_API\RealEstate.Web\bin\Debug\net7.0\wwwroot\_framework\Blazored.LocalStorage.dll
@@ -614,12 +620,6 @@ C:\Users\idragan\RiderProjects\RealEstate_API\RealEstate.Web\bin\Debug\net7.0\ic
 C:\Users\idragan\RiderProjects\RealEstate_API\RealEstate.Web\bin\Debug\net7.0\icudt_no_CJK.dat
 C:\Users\idragan\RiderProjects\RealEstate_API\RealEstate.Web\bin\Debug\net7.0\RealEstate.Shared.dll
 C:\Users\idragan\RiderProjects\RealEstate_API\RealEstate.Web\bin\Debug\net7.0\RealEstate.Shared.pdb
-C:\Users\idragan\RiderProjects\RealEstate_API\RealEstate.Web\obj\Debug\net7.0\RealEstate.Web.csproj.AssemblyReference.cache
-C:\Users\idragan\RiderProjects\RealEstate_API\RealEstate.Web\obj\Debug\net7.0\RealEstate.Web.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\idragan\RiderProjects\RealEstate_API\RealEstate.Web\obj\Debug\net7.0\RealEstate.Web.AssemblyInfoInputs.cache
-C:\Users\idragan\RiderProjects\RealEstate_API\RealEstate.Web\obj\Debug\net7.0\RealEstate.Web.AssemblyInfo.cs
-C:\Users\idragan\RiderProjects\RealEstate_API\RealEstate.Web\obj\Debug\net7.0\RealEstate.Web.csproj.CoreCompileInputs.cache
-C:\Users\idragan\RiderProjects\RealEstate_API\RealEstate.Web\obj\Debug\net7.0\RealEstate.Web.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\idragan\RiderProjects\RealEstate_API\RealEstate.Web\obj\Debug\net7.0\build-gz\l9XDapdw.gz
 C:\Users\idragan\RiderProjects\RealEstate_API\RealEstate.Web\obj\Debug\net7.0\build-gz\22dl4UuA.gz
 C:\Users\idragan\RiderProjects\RealEstate_API\RealEstate.Web\obj\Debug\net7.0\build-gz\kYOIPw0g.gz
@@ -834,7 +834,9 @@ C:\Users\idragan\RiderProjects\RealEstate_API\RealEstate.Web\obj\Debug\net7.0\st
 C:\Users\idragan\RiderProjects\RealEstate_API\RealEstate.Web\obj\Debug\net7.0\staticwebassets.build.json
 C:\Users\idragan\RiderProjects\RealEstate_API\RealEstate.Web\obj\Debug\net7.0\staticwebassets.development.json
 C:\Users\idragan\RiderProjects\RealEstate_API\RealEstate.Web\obj\Debug\net7.0\scopedcss\Pages\AnnouncementDetails.razor.rz.scp.css
+C:\Users\idragan\RiderProjects\RealEstate_API\RealEstate.Web\obj\Debug\net7.0\scopedcss\Pages\Announcements.razor.rz.scp.css
 C:\Users\idragan\RiderProjects\RealEstate_API\RealEstate.Web\obj\Debug\net7.0\scopedcss\Pages\Login.razor.rz.scp.css
+C:\Users\idragan\RiderProjects\RealEstate_API\RealEstate.Web\obj\Debug\net7.0\scopedcss\Pages\NotFoundPage.razor.rz.scp.css
 C:\Users\idragan\RiderProjects\RealEstate_API\RealEstate.Web\obj\Debug\net7.0\scopedcss\Shared\MainLayout.razor.rz.scp.css
 C:\Users\idragan\RiderProjects\RealEstate_API\RealEstate.Web\obj\Debug\net7.0\scopedcss\Shared\NavMenu.razor.rz.scp.css
 C:\Users\idragan\RiderProjects\RealEstate_API\RealEstate.Web\obj\Debug\net7.0\scopedcss\bundle\RealEstate.Web.styles.css

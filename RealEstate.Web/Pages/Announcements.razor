@@ -1,12 +1,33 @@
 ﻿@page "/Announcements"
 @using RealEstate.Web.Models
+@using System.Text
 @inject HttpClient Http
 @inject NavigationManager NavManager
 
-<div class="flex flex-row justify-content-between">
-    <p style="font-size: 25px">Announcements</p>
-    <button class="btn btn-primary" @onclick="@(() => { NavManager.NavigateTo("/announcement/create"); })">Create announcement</button>
+
+@* <div class="search-container"> *@
+@*     <input type="text" id="searchInput" placeholder="Search..."> *@
+@*     <button id="searchButton" onclick="@(() => SearchAnnouncement(searchText))" >Search</button> *@
+@* </div> *@
+
+<div>
+    <input @bind="startDate" placeholder="Start Date"/>
+    <input @bind="searchText" placeholder="Search Text"/>
+    <button @onclick="Search">Search</button>
 </div>
+
+<p>Generated Query String: @queryString</p>
+
+
+<p>Response: @responseContent</p>
+
+<div class="flex flex-row justify-content-between">
+    @* <p style="font-size: 25px">Creeaza anunt</p><br/> *@
+    <button class="btn btn-primary" @onclick="@(() => { NavManager.NavigateTo("/announcement/create"); })">Anunt nou</button>
+    <br>
+    <br>
+</div>
+
 
 <div class="row">
     @if (announcements.Count == 0)
@@ -24,11 +45,12 @@
                     <img src="https://st3.idealista.it/cms/archivie/styles/idcms_social_large_desktop/public/2018-02/news/luxury.jpg?fv=V7Bci5SA&itok=2qsC_ZxF" class="card-img-top" alt="@announcement.Title">
                     <div class="card-body">
                         <h5 class="card-title">@announcement.Title</h5>
-                        <p class="card-text">Price: @announcement.Property.Price Euro</p>
-                        <p class="card-text">Start Date: @announcement.StartDate.Date</p>
-                        <p class="card-text">End Date: @announcement.EndDate.Date</p>
-                        <button class="btn btn-secondary" @onclick="@(() => { NavManager.NavigateTo($"/announcements/{announcement.Id}"); })">View More</button>
-                        <button class="btn btn-danger" @onclick="@(async () => await DeleteCurrentAnnouncementAsync(announcement.Id))">Delete</button>
+                        <p class="card-text">Pret: @announcement.Property.Price Euro</p>
+                        <p class="card-text">Data inceput: @announcement.StartDate.Date</p>
+                        <p class="card-text">Data sfarsit: @announcement.EndDate.Date</p>
+                        <p class="card-text">Descriere: @announcement.Property.Details</p>
+                        <button class="btn btn-secondary" @onclick="@(() => { NavManager.NavigateTo($"/announcements/{announcement.Id}"); })">Detalii</button>
+                        <button class="btn btn-danger" @onclick="@(async () => await DeleteCurrentAnnouncementAsync(announcement.Id))">Sterge</button>
                     </div>
                 </div>
             </div>
@@ -36,12 +58,98 @@
     }
 </div>
 
+
 @code {
+
+    private string startDate = string.Empty;
+    private string searchText = string.Empty;
+    private string queryString = string.Empty;
+    // private string responseContent = string.Empty;
+    private List<AnnouncementResponseModel> responseContent = new();
+
+    // private void Search()
+    // {
+    //     queryString = BuildQueryString(startDate, searchText);
+    //     
+    // }
+
+    private async Task Search()
+    {
+        queryString = BuildQueryString(searchText);
+        var apiUrl = queryString;
+
+    //var response = await Http.GetAsync(apiUrl);
+
+        announcements = await Http.GetFromJsonAsync<List<AnnouncementResponseModel>>(apiUrl);
+    }
+
+    private string BuildQueryString(string searchText)
+    {
+        var queryBuilder = new StringBuilder("announcement?");
+
+        if (!string.IsNullOrEmpty(startDate))
+        {
+            queryBuilder.Append($"startDate={startDate}&");
+        }
+
+        if (!string.IsNullOrEmpty(searchText))
+        {
+            queryBuilder.Append($"searchText={searchText}&");
+        }
+
+        if (queryBuilder.Length > 0)
+        {
+            queryBuilder.Length--;
+        }
+
+        var apiUrl = "announcement" + (!string.IsNullOrEmpty(queryString) ? "?" + queryString : "");
+
+        return queryBuilder.ToString();
+    }
+
+    private async Task SendQuery()
+    {
+        responseContent = await Http.GetFromJsonAsync<List<AnnouncementResponseModel>>("announcement?searchText=copou");
+
+    // var apiUrl = "announcement";
+    // var fullUrl = apiUrl+  queryString;
+    //
+    // using (var client = new HttpClient())
+    // {
+    //     var response = await client.GetAsync(fullUrl);
+    //
+    //     
+    //     if (response.IsSuccessStatusCode)
+    //     {
+    //         // responseContent = await response.Content.ReadAsStringAsync();
+    //         // responseContent = (await Http.GetFromJsonAsync<List<AnnouncementResponseModel>>("announcement")).ToString();
+    //         
+    //         // announcements = await Http.GetFromJsonAsync<List<AnnouncementResponseModel>>("announcement");
+    //         
+    //         if (responseContent != null)
+    //         {
+    //             announcements = responseContent;
+    //         }
+    //     }
+    //     else
+    //     {
+    //         responseContent = "Error: " + response.ReasonPhrase;
+    //     }
+    // }
+    }
+
+
+    // -----------------------------
+
+
+    private AnnouncementResponseModel selectedAnnouncement;
     private List<AnnouncementResponseModel> announcements = new();
+    // private string searchText = string.Empty;
 
     protected override async Task OnInitializedAsync()
     {
-        announcements = await Http.GetFromJsonAsync<List<AnnouncementResponseModel>>("announcement?orderBy=startDate");
+    // announcements = await Http.GetFromJsonAsync<List<AnnouncementResponseModel>>("announcement?orderBy=startDate");
+        announcements = await Http.GetFromJsonAsync<List<AnnouncementResponseModel>>("announcement");
     }
 
     private async Task DeleteCurrentAnnouncementAsync(int announcementId)
@@ -51,5 +159,38 @@
     // SERVER
         announcements = await Http.GetFromJsonAsync<List<AnnouncementResponseModel>>("announcement");
     }
+
+    private async Task SearchAnnouncement(string? searchText)
+    {
+    //var response = await Http.GetFromJsonAsync<List<AnnouncementResponseModel>>("announcement");
+
+        var queryParams = new Dictionary<string, string>();
+
+
+        if (!string.IsNullOrEmpty(searchText))
+        {
+            queryParams["searchText"] = searchText;
+        }
+
+        var queryString = string.Join("&", queryParams.Select(kvp => $"{kvp.Key}={Uri.EscapeDataString(kvp.Value)}"));
+
+        var apiUrl = "announcement" + (!string.IsNullOrEmpty(queryString) ? "?" + queryString : "");
+
+        var response = await Http.GetFromJsonAsync<List<AnnouncementResponseModel>>(apiUrl);
+    }
+
+
+    // private void HandleSearch(AnnouncementResponseModel announcementResponseModel)
+    // {
+    //     if(announcementResponseModel == null) return;
+    //     selectedAnnouncement = announcementResponseModel;
+    //     NavManager.NavigateTo($"announcements/{selectedAnnouncement.Id}");
+    // }
+    // private async Task<IEnumerable<AnnouncementResponseModel>> SearchAnnouncement(string searchText)
+    // {
+    //     var response = await Http.GetFromJsonAsync<List<AnnouncementResponseModel>>($"announcement/search/{searchText}");
+    //
+    //     return response;
+    // }
 
 }

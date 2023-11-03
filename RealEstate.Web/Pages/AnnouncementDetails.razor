@@ -4,8 +4,10 @@
 <h3>AnnouncementDetails</h3>
 
 <button class="btn btn-light">
-    <a href="announcements">Go to Announcements</a>
+    <a href="/announcements">Go to Announcements</a>
 </button>
+
+<button @onclick="SendQuery">Send Query</button>
 
 @if (announcement != null)
 {
@@ -36,6 +38,8 @@ else
 
 @code {
 
+    private List<AnnouncementResponseModel> responseContent = new();
+
     [Parameter]
     public int Id { get; set; }
 
@@ -45,5 +49,11 @@ else
     {
         announcement = await Http.GetFromJsonAsync<AnnouncementResponseModel>($"/announcement/{Id}");
     }
+
+    private async Task SendQuery()
+    {
+        responseContent = await Http.GetFromJsonAsync<List<AnnouncementResponseModel>>("announcement");
+    }
+
 
 }

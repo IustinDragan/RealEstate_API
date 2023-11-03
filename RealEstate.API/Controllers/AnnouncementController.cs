@@ -42,7 +42,7 @@ public class AnnouncementController : ControllerBase
     [Authorize(Roles = "SalesAgent, Customer")]
     public async Task<IActionResult> GetAllAnnouncementsAsync([FromQuery] ReadAnnouncementRequestModel requestModel)
     {
-        var announcementEntity = await _announcementService.RealAllAsync(requestModel);
+        var announcementEntity = await _announcementService.ReadAllAsync(requestModel);
 
         return Ok(announcementEntity);
     }
@@ -54,6 +54,13 @@ public class AnnouncementController : ControllerBase
 
         return Ok(announcementEntityById);
     }
+
+    // [HttpGet("search/{searchText}")]
+    // public async Task<IActionResult> SearchAnnouncements(string searchText)
+    // {
+    //     return Ok(await _announcementService.SearchAsync(searchText));
+    //
+    // }
 
     [HttpPut("{id}")]
     public async Task<IActionResult> UpdateAnnouncementAsync(int id,

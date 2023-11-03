@@ -10,9 +10,10 @@
         </Found>
         <NotFound>
             <PageTitle>Not found</PageTitle>
-            <LayoutView Layout="@typeof(MainLayout)">
-                <p role="alert">Sorry, there's nothing at this address.</p>
-            </LayoutView>
+            <RealEstate.Web.Pages.NotFoundPage></RealEstate.Web.Pages.NotFoundPage>
+            @* <LayoutView Layout="@typeof(MainLayout)"> *@
+            @*     <p role="alert">Sorry, there's nothing at this address.</p> *@
+            @* </LayoutView> *@
         </NotFound>
     </Router>
 </CascadingAuthenticationState>
