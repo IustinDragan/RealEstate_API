@@ -10,10 +10,12 @@ public interface IAnnouncementService
     Task<AnnouncementResponseModel> UpdateAsync(int id,
         UpdateAnnouncementRequestModel requestModel);
 
-    Task<List<AnnouncementResponseModel>> RealAllAsync(
+    Task<List<AnnouncementResponseModel>> ReadAllAsync(
         ReadAnnouncementRequestModel requestModel);
 
     Task<AnnouncementResponseModel> ReadByIdAsync(int id);
+
+    //Task<List<Announcement>> SearchAsync(string searchText);
 
     Task DeleteAsync(int id);
 }

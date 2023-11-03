@@ -7,7 +7,7 @@ public enum HeatingSource
     // Radiator = 3,
     // Stove = 4, //soba
     // HeatPump = 5 //pompa de caldura
-    
+
     CentralaPublic = 1, //centrala termica publica
     CentralaPrivata = 2, //centrala termica privata
     Radiator = 3,

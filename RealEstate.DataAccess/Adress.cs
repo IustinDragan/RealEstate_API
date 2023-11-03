@@ -25,6 +25,6 @@ public class Adress
     public override string ToString()
     {
         return
-            $"Strada: {Street}, Numarul {StreetNumber}, Tara: {District}, Oras: {City}, Etaj: {Floors}, Scara: {Scale}";
+            $"Strada: {Street}, Numarul {StreetNumber}, Tara: {District}, Oras: {City}, Localitate: {Locality}, Etaj: {Floors}, Scara: {Scale}";
     }
 }

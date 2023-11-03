@@ -7,7 +7,7 @@ public enum HouseLandDetails
     // GroundFloorPlanPlusTwo = 3,
     // UrbanLand = 4, //teren intravilan
     // ExtraUrbanLand = 5 //teren extravilan
-                       
+
     Parter = 1,
     DouaEtaje = 2,
     TreiEtaje = 3,
