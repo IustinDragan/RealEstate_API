@@ -846,3 +846,4 @@ C:\Users\idragan\RiderProjects\RealEstate_API\RealEstate.Web\obj\Debug\net7.0\Re
 C:\Users\idragan\RiderProjects\RealEstate_API\RealEstate.Web\obj\Debug\net7.0\refint\RealEstate.Web.dll
 C:\Users\idragan\RiderProjects\RealEstate_API\RealEstate.Web\obj\Debug\net7.0\RealEstate.Web.pdb
 C:\Users\idragan\RiderProjects\RealEstate_API\RealEstate.Web\obj\Debug\net7.0\ref\RealEstate.Web.dll
+C:\Users\idragan\RiderProjects\RealEstate_API\RealEstate.Web\obj\Debug\net7.0\scopedcss\Pages\CreateAnnouncement.razor.rz.scp.css
