@@ -26,6 +26,49 @@ align-items: center;
     font-family: "Comic Sans MS", sans-serif;
     font-weight: bold;
     text-align: center;
+    font-size: 25px;
+    color: tomato;
+}
+
+.details-for-announcement[b-kmqpv2oy7c]{
+    font-family: "Comic Sans MS", sans-serif;
+    text-align: left;
+}
+
+.details-for-announcement-det[b-kmqpv2oy7c]{
+    font-family: "Comic Sans MS", sans-serif;
+    text-align: left;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.img-presentation-announcement[b-kmqpv2oy7c]{
+    background-image: url('https://flowerdayhomes.co.nz/wp-content/uploads/2022/03/Awataha-Flowerday-website-Feature-Image-2000x900-1.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: contain;
+    height: 55vh; /* This will make the div take up the full viewport height */
+    width: 100%; /* This will make the div take up the full width of its container */
+    position: relative;
+}
+
+.button-container[b-kmqpv2oy7c] {
+    background: tomato;
+    width: 15px;
+    display: flex;
+    justify-content: center;
+    border-radius: 80%;
+}
+
+.button-container button[b-kmqpv2oy7c] {
+    background: tomato;
+    padding: 10px 10px;
+    border: none;
+    outline: none;
+    color: #fff;
+    letter-spacing: 1px;
+    cursor: pointer;
+    margin-left: 50px;
 }
 
 /*.table-details table {*/
