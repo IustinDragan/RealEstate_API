@@ -1,35 +1,88 @@
 ﻿@page "/announcements/{Id:int}"
 @using RealEstate.Web.Models
 @inject HttpClient Http
-<h3>AnnouncementDetails</h3>
 
 <button class="btn btn-light">
-    <a href="/announcements">Go to Announcements</a>
+    <a href="/announcements">Mergi la anunturi</a>
 </button>
 
-<button @onclick="SendQuery">Send Query</button>
 
+<br/>
 @if (announcement != null)
 {
-    <div class="announcement-details">
-        <p>Title: @announcement.Title</p>
-        <p>Pret: @announcement.Property.Price </p>
-        <p>Numar camere: @announcement.Property.RoomsNumber</p>
-        <p>Numar bai: @announcement.Property.BathroomsNumber</p>
-        <p>Suprafata teren: @announcement.Property.LandArea</p>
-        <p>Suprafata utila: @announcement.Property.HouseUsableArea</p>
-        <p>Suprafata totala: @announcement.Property.HouseTotalArea</p>
-        <p>An constructie: @announcement.Property.ConstructionYear</p>
-        <p>Numar etaje cladire: @announcement.Property.FloorsTotalNumber</p>
-        <p>Etaj apartament: @announcement.Property.ApartamentFloor</p>
-        <p>Lift: @announcement.Property.Elevator</p>
-        <p>Tipul proprietatii: @announcement.Property.PropertyType</p>
-        <p>Tip teren: @announcement.Property.HouseLandDetails</p>
-        <p>Tip incalzire: @announcement.Property.HeatingSource</p>
-        <p>Utilitati: @announcement.Property.Utilities</p>
-        <p>Adresa: @announcement.Property.Adress</p>
-        <p>Detalii: @announcement.Property.Details </p>
+    <div class="container">
+        <div class="card-body">
+            <div class="form-group row">
+                <div class="col-sm-10-title">
+                    <span >@announcement.Title</span>
+                </div>
+            </div>
+        </div>
     </div>
+    
+    <div class="table-ditails">
+        <table class="table table-hover">
+            <tbody>
+            <tr>
+                <th scope="row">Pret</th>
+                <td  colspan="2">@announcement?.Property.Price</td>
+                <th scope="row">Teren</th>
+                <td  colspan="2">@announcement?.Property.LandArea</td>
+            </tr>
+            <tr>
+                <th scope="row">An Constructie</th>
+                <td colspan="2">@announcement?.Property.ConstructionYear</td>
+                <th scope="row">Suprafata utila</th>
+                <td colspan="2">@announcement?.Property.HouseUsableArea</td>
+            </tr>
+            <tr>
+                <th scope="row">Camere</th>
+                <td colspan="2">@announcement?.Property.RoomsNumber</td>
+                <th scope="row">Bai</th>
+                <td colspan="2">@announcement?.Property.BathroomsNumber</td>
+            </tr>
+            <tr>
+                <th scope="row">Etaje</th>
+                <td colspan="2">@announcement?.Property.FloorsTotalNumber</td>
+                <th scope="row">Tip Proprietate</th>
+                <td colspan="2">@announcement?.Property.PropertyType</td>
+            </tr>
+            <tr>
+                <th scope="row">Sursa de incalzire</th>
+                <td colspan="2">@announcement?.Property.HeatingSource</td>
+                <th scope="row">Utilitati</th>
+                <td colspan="2">@announcement?.Property.Utilities</td>
+            </tr>
+            <tr>
+              <th scope="row">Tip Teren</th>
+                <td colspan="2">@announcement?.Property.HouseLandDetails</td>
+                <th scope="row">Suprafata totala locuinta</th>
+                <td colspan="2">@announcement?.Property.HouseTotalArea</td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+    
+    
+    @* <div class="announcement-details"> *@
+    @*     <p>Title: @announcement.Title</p> *@
+    @*     <p>Pret: @announcement.Property.Price </p> *@
+    @*     <p>Numar camere: @announcement.Property.RoomsNumber</p> *@
+    @*     <p>Numar bai: @announcement.Property.BathroomsNumber</p> *@
+    @*     <p>Suprafata teren: @announcement.Property.LandArea</p> *@
+    @*     <p>Suprafata utila: @announcement.Property.HouseUsableArea</p> *@
+    @*     <p>Suprafata totala: @announcement.Property.HouseTotalArea</p> *@
+    @*     <p>An constructie: @announcement.Property.ConstructionYear</p> *@
+    @*     <p>Numar etaje cladire: @announcement.Property.FloorsTotalNumber</p> *@
+    @*     <p>Etaj apartament: @announcement.Property.ApartamentFloor</p> *@
+    @*     <p>Lift: @announcement.Property.Elevator</p> *@
+    @*     <p>Tipul proprietatii: @announcement.Property.PropertyType</p> *@
+    @*     <p>Tip teren: @announcement.Property.HouseLandDetails</p> *@
+    @*     <p>Tip incalzire: @announcement.Property.HeatingSource</p> *@
+    @*     <p>Utilitati: @announcement.Property.Utilities</p> *@
+    @*     <p>Adresa: @announcement.Property.Adress</p> *@
+    @*     <p>Detalii: @announcement.Property.Details </p> *@
+    @* </div> *@
 }
 else
 {

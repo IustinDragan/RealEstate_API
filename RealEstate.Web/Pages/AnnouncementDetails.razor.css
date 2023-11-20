@@ -4,5 +4,41 @@
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-
 }
+
+.cover-img {
+background-image: url('https://www.psc.org.nz/wp-content/uploads/Banner-FamilyWorks.jpg');
+background-repeat: no-repeat;
+background-size: cover;
+object-fit: contain;
+height: 55vh; /* This will make the div take up the full viewport height */
+width: 110%; /* This will make the div take up the full width of its container */
+position: relative;
+
+z-index: 2;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.col-sm-10-title{
+    font-family: "Comic Sans MS", sans-serif;
+    font-weight: bold;
+    text-align: center;
+}
+
+/*.table-details table {*/
+/*    width: 10%; !* Set the width to 100% or your desired value *!*/
+/*    margin-bottom: 1rem;*/
+/*    color: #212529;*/
+/*    background-color: transparent;*/
+/*    border-collapse: collapse;*/
+/*}*/
+
+/*!* Adjust the size of individual cells *!*/
+/*.table-details th,*/
+/*.table-details td {*/
+/*    padding: 0.75rem; !* Set the padding to your desired value *!*/
+/*    text-align: left;*/
+/*    border-top: 1px solid #dee2e6;*/
+/*}*/
