@@ -38,7 +38,7 @@
     background-size: cover;
     object-fit: contain;
     height: 55vh; /* This will make the div take up the full viewport height */
-    width: 110%; /* This will make the div take up the full width of its container */
+    width: 100%; /* This will make the div take up the full width of its container */
     position: relative;
 }
 
