@@ -86,7 +86,7 @@ a, .btn-link {
 .loading-progress circle:last-child {
     stroke: #1b6ec2;
     /*stroke-dasharray: calc(3.141 * var(--blazor-load-percentage, 0%) * 0.8), 500%;*/
-    stroke-dasharray: calc(3.141  * 0.8), 500%;
+    stroke-dasharray: calc(3.141 * 0.8), 500%;
     transition: stroke-dasharray 0.05s ease-in-out;
 }
 
@@ -98,6 +98,6 @@ a, .btn-link {
 }
 
 .loading-progress-text:after {
-    content:  "Loading";
+    content: "Loading";
     /*content: var(--blazor-load-percentage-text, "Loading");*/
 }

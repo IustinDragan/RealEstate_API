@@ -14,11 +14,10 @@
 <br/>
 @if (announcement != null)
 {
-    
     <div class="img-presentation-announcement">
 
     </div>
-    
+
 
     <div class="container">
         <div class="card-body">
@@ -35,9 +34,9 @@
     <br/>
     <div class="details-for-announcement">
         <div class="details-for-announcement-det">
-            <text>Detalii</text>       
+            <text>Detalii</text>
         </div>
-        
+
         <br/>
         <text>@announcement.Property.Details</text>
     </div>
@@ -48,9 +47,9 @@
             <tbody>
             <tr>
                 <th scope="row">Pret</th>
-                <td  colspan="2">@announcement?.Property.Price</td>
+                <td colspan="2">@announcement?.Property.Price</td>
                 <th scope="row">Teren</th>
-                <td  colspan="2">@announcement?.Property.LandArea</td>
+                <td colspan="2">@announcement?.Property.LandArea</td>
             </tr>
             <tr>
                 <th scope="row">An Constructie</th>
@@ -77,16 +76,16 @@
                 <td colspan="2">@announcement?.Property.Utilities</td>
             </tr>
             <tr>
-              <th scope="row">Tip Teren</th>
+                <th scope="row">Tip Teren</th>
                 <td colspan="2">@announcement?.Property.HouseLandDetails</td>
                 <th scope="row">Suprafata totala locuinta</th>
                 <td colspan="2">@announcement?.Property.HouseTotalArea</td>
             </tr>
-          </tbody>
+            </tbody>
         </table>
     </div>
-    
-    
+
+
     @* <div class="announcement-details"> *@
     @*     <p>Title: @announcement.Title</p> *@
     @*     <p>Pret: @announcement.Property.Price </p> *@

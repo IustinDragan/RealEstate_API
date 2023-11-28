@@ -34,7 +34,9 @@ public class AnnouncementRepository : IAnnouncementRepository
         return updatedEntity.Entity;
     }
 
-    public async Task<List<Announcement>> ReadAllAsync(string? orderBy, string? searchText, int page, int pageCount)
+    public async Task<List<Announcement>> ReadAllAsync(string? orderBy, string? searchText, double? price,
+        double? maxValue, int page,
+        int pageCount)
     {
         var orderByConfiguration = new Dictionary<string, Expression<Func<Announcement, object>>>
         {
@@ -51,6 +53,7 @@ public class AnnouncementRepository : IAnnouncementRepository
             { "apartamentfloor", x => x.Property.ApartamentFloor },
             { "elevator", x => x.Property.Elevator },
             { "price", x => x.Property.Price },
+            { "maxValue", x => x.Property.maxValue },
             { "description", x => x.Property.Details },
             { "propertytype", x => x.Property.PropertyType },
             { "houselanddetails", x => x.Property.HouseLandDetails },
@@ -67,6 +70,19 @@ public class AnnouncementRepository : IAnnouncementRepository
 
         if (!string.IsNullOrEmpty(searchText))
             query = query.Where(p => p.Title.Contains(searchText) || p.Property.Details.Contains(searchText));
+
+        if (price.HasValue && maxValue.HasValue)
+        {
+            query = query.Where(p => p.Property.Price >= price && p.Property.Price <= maxValue);
+        }
+        else
+        {
+            // if (price.HasValue )
+            //     query = query.Where(p => p.Property.Price.Equals(price));
+            if (price.HasValue)
+                query = query.Where(p => p.Property.Price >= price);
+            else if (maxValue.HasValue) query = query.Where(p => p.Property.Price <= maxValue);
+        }
 
         if (!string.IsNullOrEmpty(orderBy))
         {

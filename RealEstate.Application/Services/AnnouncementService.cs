@@ -24,6 +24,7 @@ public class AnnouncementService : IAnnouncementService
     public async Task<List<AnnouncementResponseModel>> ReadAllAsync(ReadAnnouncementRequestModel requestModel)
     {
         var announcements = await _announcementRepository.ReadAllAsync(requestModel.OrderBy, requestModel.SearchText,
+            requestModel.price, requestModel.maxValue,
             requestModel.page, requestModel.PageCount);
 
 

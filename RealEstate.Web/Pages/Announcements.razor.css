@@ -4,6 +4,11 @@
     margin: 20px;
 }
 
+.search-price-container {
+    text-align: center;
+    margin: 20px;
+}
+
 #searchInput {
     padding: 10px;
     width: 300px;
@@ -189,7 +194,7 @@ figcaption {
     padding-left: 20px; /* Add left padding to create space from the left edge */
 }
 
-.overlay a{
+.overlay a {
     display: none;
     width: 140px;
     padding: 15px 0;
@@ -349,7 +354,7 @@ figcaption {
 
 .price .label {
     font-weight: bold; /* Apply a bold font to the label */
-    color: #333; 
+    color: #333;
 }
 
 .price .price-value {
@@ -365,6 +370,7 @@ figcaption {
     .card {
         grid-column-end: span 6;
     }
+
     /* card-content style */
 }
 
@@ -374,14 +380,17 @@ figcaption {
         grid-column-gap: 10px;
         grid-row-gap: 30px;
     }
+
     .card {
         grid-column-end: span 12;
     }
+
     /* icons-home style */
     .card-content {
         font-size: 16px;
         /*font-family: "Calibri Light", serif;*/
     }
+
     /* price style */
     .price span:last-of-type {
         color: var(--price-text-color);
@@ -394,18 +403,28 @@ figcaption {
         grid-template-columns: 20px repeat(12, minmax(auto, 1fr)) 20px;
         grid-gap: 10px;
     }
+
     .cards {
         grid-template-columns: repeat(12, minmax(auto, 1fr));
         grid-column-gap: 10px;
         grid-row-gap: 30px;
     }
+
     .card {
         grid-column-end: span 12;
     }
+
     /* card-content style */
 }
 
 .search-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-price-container {
     width: 100%;
     display: flex;
     align-items: center;
@@ -419,7 +438,20 @@ figcaption {
     display: flex;
 }
 
+.search-price-container div {
+    background: #fff;
+    width: 600px;
+    height: 55px;
+    display: flex;
+}
+
 .search-container input {
+    flex: 1;
+    border: none;
+    outline: none;
+}
+
+.search-price-container input {
     flex: 1;
     border: none;
     outline: none;
@@ -435,8 +467,24 @@ figcaption {
     cursor: pointer;
 }
 
+.search-price-container button {
+    background: tomato;
+    padding: 10px 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
 .search-container .fa-magnifying-glass {
     align-self: center;
+    padding: 10px 20px;
+    color: #777;
+}
+
+.search-price-container .fa-magnifying-glass {
+    align-self: flex-start;
     padding: 10px 20px;
     color: #777;
 }
@@ -461,6 +509,8 @@ figcaption {
     cursor: pointer;
     margin-left: 50px;
 }
-.custom-font-details{
+
+.custom-font-details {
     font-family: Open Sans, serif;
 }
+
