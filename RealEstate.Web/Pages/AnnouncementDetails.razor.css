@@ -7,21 +7,21 @@
 }
 
 .cover-img {
-background-image: url('https://www.psc.org.nz/wp-content/uploads/Banner-FamilyWorks.jpg');
-background-repeat: no-repeat;
-background-size: cover;
-object-fit: contain;
-height: 55vh; /* This will make the div take up the full viewport height */
-width: 110%; /* This will make the div take up the full width of its container */
-position: relative;
+    background-image: url('https://www.psc.org.nz/wp-content/uploads/Banner-FamilyWorks.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: contain;
+    height: 55vh; /* This will make the div take up the full viewport height */
+    width: 110%; /* This will make the div take up the full width of its container */
+    position: relative;
 
-z-index: 2;
-display: flex;
-justify-content: center;
-align-items: center;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.col-sm-10-title{
+.col-sm-10-title {
     font-family: "Comic Sans MS", sans-serif;
     font-weight: bold;
     text-align: center;
@@ -29,19 +29,19 @@ align-items: center;
     color: tomato;
 }
 
-.details-for-announcement{
+.details-for-announcement {
     font-family: "Comic Sans MS", sans-serif;
     text-align: left;
 }
 
-.details-for-announcement-det{
+.details-for-announcement-det {
     font-family: "Comic Sans MS", sans-serif;
     text-align: left;
     font-size: 25px;
     font-weight: bold;
 }
 
-.img-presentation-announcement{
+.img-presentation-announcement {
     background-image: url('https://flowerdayhomes.co.nz/wp-content/uploads/2022/03/Awataha-Flowerday-website-Feature-Image-2000x900-1.png');
     background-repeat: no-repeat;
     background-size: cover;

@@ -6,7 +6,8 @@ public interface IAnnouncementRepository
 
     public Task<Announcement> UpdateAsync(Announcement announcement);
 
-    Task<List<Announcement>> ReadAllAsync(string? orderBy, string? searchText, int page, int pageCount);
+    Task<List<Announcement>> ReadAllAsync(string? orderBy, string? searchText, double? price, double? maxValue,
+        int page, int pageCount);
 
     public Task<Announcement> ReadByIdAsync(int id);
 
