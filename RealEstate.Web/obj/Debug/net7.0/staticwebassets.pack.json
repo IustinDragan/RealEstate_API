@@ -65,6 +65,22 @@
       "PackagePath": "staticwebassets\\favicon.png"
     },
     {
+      "Id": "C:\\Users\\idragan\\RiderProjects\\RealEstate_API\\RealEstate.Web\\wwwroot\\first_page_img1.jpg",
+      "PackagePath": "staticwebassets\\first_page_img1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\idragan\\RiderProjects\\RealEstate_API\\RealEstate.Web\\wwwroot\\first_page_img2.png",
+      "PackagePath": "staticwebassets\\first_page_img2.png"
+    },
+    {
+      "Id": "C:\\Users\\idragan\\RiderProjects\\RealEstate_API\\RealEstate.Web\\wwwroot\\first_page_img3.png",
+      "PackagePath": "staticwebassets\\first_page_img3.png"
+    },
+    {
+      "Id": "C:\\Users\\idragan\\RiderProjects\\RealEstate_API\\RealEstate.Web\\wwwroot\\first_page_img4.jpg",
+      "PackagePath": "staticwebassets\\first_page_img4.jpg"
+    },
+    {
       "Id": "C:\\Users\\idragan\\RiderProjects\\RealEstate_API\\RealEstate.Web\\wwwroot\\icon-192.png",
       "PackagePath": "staticwebassets\\icon-192.png"
     },
