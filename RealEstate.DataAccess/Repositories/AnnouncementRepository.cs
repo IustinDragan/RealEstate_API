@@ -53,7 +53,7 @@ public class AnnouncementRepository : IAnnouncementRepository
             { "apartamentfloor", x => x.Property.ApartamentFloor },
             { "elevator", x => x.Property.Elevator },
             { "price", x => x.Property.Price },
-            { "maxValue", x => x.Property.maxValue },
+            // { "maxValue", x => x.Property.maxValue },
             { "description", x => x.Property.Details },
             { "propertytype", x => x.Property.PropertyType },
             { "houselanddetails", x => x.Property.HouseLandDetails },

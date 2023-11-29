@@ -28,10 +28,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmV0Y2hEYXRhLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/idragan/RiderProjects/RealEstate_API/RealEstate.Web/Pages/Index.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/idragan/RiderProjects/RealEstate_API/RealEstate.Web/Shared/SurveyPrompt.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFN1cnZleVByb21wdC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
@@ -51,6 +47,10 @@ build_metadata.AdditionalFiles.CssScope = b-h5mzox5osu
 [C:/Users/idragan/RiderProjects/RealEstate_API/RealEstate.Web/Pages/CreateAnnouncement.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3JlYXRlQW5ub3VuY2VtZW50LnJhem9y
 build_metadata.AdditionalFiles.CssScope = b-uu1fmmhrh7
+
+[C:/Users/idragan/RiderProjects/RealEstate_API/RealEstate.Web/Pages/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-oue2qkxdid
 
 [C:/Users/idragan/RiderProjects/RealEstate_API/RealEstate.Web/Pages/Login.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW4ucmF6b3I=

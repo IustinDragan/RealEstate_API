@@ -1,9 +1,255 @@
 ﻿@page "/"
+@using RealEstate.Web.Models
+@using RealEstate.Web.Models.Enums
+@inject HttpClient Http
+@inject NavigationManager NavManager
 
-<PageTitle>Index</PageTitle>
+<PageTitle>
+    Acasa
+</PageTitle>
 
-<h1>Hello, world!</h1>
+<!-- google font -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,500;0,600;0,700;1,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+@* <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> *@
 
-Welcome to your new app.
 
-<SurveyPrompt Title="How is Blazor working for you?"/>
+<div class="header-main-filter">
+    <div class="img-presentation-firstPage">
+        <img src="first_page_img4.jpg">
+    </div>
+
+</div>
+
+<br/>
+<div class="header-main-presentation">
+    <p>Alege locul căruia să îi spui acasă din cele mai bune proprietăţi</p>
+</div>
+
+
+<div class="header-text-presentation">
+    <p class="text-first">
+        Cele mai noi anunturi:
+    </p>
+</div>
+
+<div class="row">
+    @if (announcements.Count == 0)
+    {
+        <div class="col-12">
+            <p class="text-muted">No announcements found. Still loading...</p>
+        </div>
+    }
+    else
+    {
+        <div class="container">
+            <div class="cards">
+                @foreach (var announcement in announcements.Take(6))
+                {
+                    <section class="card">
+                        <figure>
+                            <div class="img-overlay hot-home">
+                                <img src="https://media-cldnry.s-nbcnews.com/image/upload/t_fit-560w,f_auto,q_auto:best/newscms/2018_30/1355945/home-exterior-today-180726-tease.jpg" alt="Trulli">
+                                @* <div class="cont"> *@
+                                @* <div class="icons-img"> *@
+                                @*     <button> *@
+                                @*         <i class="fas fa-heart"></i> *@
+                                @*     </button> *@
+                                @*     <button> *@
+                                @*         <i class="fas fa-share"></i> *@
+                                @*     </button> *@
+                                @* </div> *@
+                                @* </div> *@
+                            </div>
+                            <figcaption>@announcement.Title</figcaption>
+                        </figure>
+                        <div class="card-content">
+                            <section class="icons-home">
+                                <div class="name-icon">
+                                    <span>Camere</span>
+                                    <div class="icon">
+                                        <i class="fas fa-bed"></i>
+                                        <span>@announcement.Property.RoomsNumber</span>
+                                    </div>
+                                </div>
+                                <div class="name-icon">
+                                    <span>Bai</span>
+                                    <div class="icon">
+                                        <i class="fas fa-sink"></i>
+                                        <span>@announcement.Property.BathroomsNumber</span>
+                                    </div>
+                                </div>
+                                <div class="name-icon">
+                                    <span>Suprafata</span>
+                                    <div class="icon">
+                                        <i class="fas fa-vector-square"></i>
+                                        <span>@announcement.Property.HouseUsableArea </span>
+                                    </div>
+                                </div>
+                            </section>
+                            <section class="price">
+                                <span class="label">Pret</span>
+                                <span class="price-value">@announcement.Property.Price EUR</span>
+                            </section>
+                            <br/>
+                            <button class="btn btn-outline-primary" @onclick="@(() => { NavManager.NavigateTo($"/announcements/{announcement.Id}"); })">Detalii</button>
+                        </div>
+                    </section>
+                }
+            </div>
+        </div>
+    }
+</div>
+
+
+@* Apartamente----------------------------- *@
+
+<div class="header-text-presentation">
+    <p class="text-first">
+        Apartamente noi:
+    </p>
+</div>
+
+<div class="row">
+    @if (announcements.Count == 0)
+    {
+        <div class="col-12">
+            <p class="text-muted">No announcements found. Still loading...</p>
+        </div>
+    }
+    else
+    {
+        <div class="container">
+            <div class="cards">
+                @foreach (var announcement in announcements.Take(Math.Max(3, announcements.Count())))
+                {
+                    if (announcement.Property.PropertyType == PropertyType.Apartament)
+                    {
+                        <section class="card">
+                            <figure>
+                                <div class="img-overlay hot-home">
+                                    <img src="https://media-cldnry.s-nbcnews.com/image/upload/t_fit-560w,f_auto,q_auto:best/newscms/2018_30/1355945/home-exterior-today-180726-tease.jpg" alt="Trulli">
+                                </div>
+                                <figcaption>@announcement.Title</figcaption>
+                            </figure>
+                            <div class="card-content">
+                                <section class="icons-home">
+                                    <div class="name-icon">
+                                        <span>Camere</span>
+                                        <div class="icon">
+                                            <i class="fas fa-bed"></i>
+                                            <span>@announcement.Property.RoomsNumber</span>
+                                        </div>
+                                    </div>
+                                    <div class="name-icon">
+                                        <span>Bai</span>
+                                        <div class="icon">
+                                            <i class="fas fa-sink"></i>
+                                            <span>@announcement.Property.BathroomsNumber</span>
+                                        </div>
+                                    </div>
+                                    <div class="name-icon">
+                                        <span>Suprafata</span>
+                                        <div class="icon">
+                                            <i class="fas fa-vector-square"></i>
+                                            <span>@announcement.Property.HouseUsableArea </span>
+                                        </div>
+                                    </div>
+                                </section>
+                                <section class="price">
+                                    <span class="label">Pret</span>
+                                    <span class="price-value">@announcement.Property.Price EUR</span>
+                                </section>
+                                <br/>
+                                <button class="btn btn-outline-primary" @onclick="@(() => { NavManager.NavigateTo($"/announcements/{announcement.Id}"); })">Detalii</button>
+                            </div>
+                        </section>
+                    }
+                }
+            </div>
+        </div>
+    }
+</div>
+@* Apartamente----------------------------- *@
+
+@* Casa----------------------------- *@
+
+<div class="header-text-presentation">
+    <p class="text-first">
+        Case noi:
+    </p>
+</div>
+
+<div class="row">
+    @if (announcements.Count == 0)
+    {
+        <div class="col-12">
+            <p class="text-muted">No announcements found. Still loading...</p>
+        </div>
+    }
+    else
+    {
+        <div class="container">
+            <div class="cards">
+                @foreach (var announcement in announcements.Take(3))
+                {
+                    if (announcement.Property.PropertyType == PropertyType.Casa)
+                    {
+                        <section class="card">
+                            <figure>
+                                <div class="img-overlay hot-home">
+                                    <img src="https://media-cldnry.s-nbcnews.com/image/upload/t_fit-560w,f_auto,q_auto:best/newscms/2018_30/1355945/home-exterior-today-180726-tease.jpg" alt="Trulli">
+                                </div>
+                                <figcaption>@announcement.Title</figcaption>
+                            </figure>
+                            <div class="card-content">
+                                <section class="icons-home">
+                                    <div class="name-icon">
+                                        <span>Camere</span>
+                                        <div class="icon">
+                                            <i class="fas fa-bed"></i>
+                                            <span>@announcement.Property.RoomsNumber</span>
+                                        </div>
+                                    </div>
+                                    <div class="name-icon">
+                                        <span>Bai</span>
+                                        <div class="icon">
+                                            <i class="fas fa-sink"></i>
+                                            <span>@announcement.Property.BathroomsNumber</span>
+                                        </div>
+                                    </div>
+                                    <div class="name-icon">
+                                        <span>Suprafata</span>
+                                        <div class="icon">
+                                            <i class="fas fa-vector-square"></i>
+                                            <span>@announcement.Property.HouseUsableArea </span>
+                                        </div>
+                                    </div>
+                                </section>
+                                <section class="price">
+                                    <span class="label">Pret</span>
+                                    <span class="price-value">@announcement.Property.Price EUR</span>
+                                </section>
+                                <br/>
+                                <button class="btn btn-outline-primary" @onclick="@(() => { NavManager.NavigateTo($"/announcements/{announcement.Id}"); })">Detalii</button>
+                            </div>
+                        </section>
+                    }
+                }
+            </div>
+        </div>
+    }
+</div>
+@* Casa----------------------------- *@
+
+@code{
+
+    private List<AnnouncementResponseModel> announcements = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        announcements = await Http.GetFromJsonAsync<List<AnnouncementResponseModel>>("announcement");
+    }
+}
