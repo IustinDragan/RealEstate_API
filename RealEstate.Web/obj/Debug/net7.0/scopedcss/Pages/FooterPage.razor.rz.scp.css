@@ -1,0 +1,110 @@
+#bottom-footer[b-rwsq6byx1w] {
+    background-color: #2B2B2B;
+    padding: 30px;
+}
+
+#bottom-footer[b-rwsq6byx1w] {
+    position: relative;
+    height: auto;
+    padding: 250px 0 40px 0;
+    font-size: 12px;
+    line-height: 24px;
+    text-align: center;
+    background-color: rgb(161, 181, 194);
+}
+
+#bottom-footer[b-rwsq6byx1w] {
+    position: relative;
+    height: auto;
+    padding: 40px 0;
+}
+
+#bottom-footer[b-rwsq6byx1w] {
+    height: 194px;
+    padding: 30px 30px;
+    font-size: 12px;
+    line-height: 24px;
+    background-color: #2b2b2b;
+    text-align: center;
+}
+
+#bottom-footer .promo-app[b-rwsq6byx1w], #bottom-footer .bottom-footer-app-links[b-rwsq6byx1w] {
+    padding: 0 15px;
+}
+
+ul[b-rwsq6byx1w] {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+
+/*chatgpt:*/
+
+#bottom-footer[b-rwsq6byx1w] {
+    background-color: #2b2b2b;
+    color: #fff;
+    padding: 40px 0;
+}
+
+.container-footer[b-rwsq6byx1w] {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.row[b-rwsq6byx1w] {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.container-social[b-rwsq6byx1w],
+.promo-app[b-rwsq6byx1w],
+.copy-right[b-rwsq6byx1w],
+.linkuri-legale[b-rwsq6byx1w] {
+    flex: 1;
+}
+
+.heading[b-rwsq6byx1w] {
+    display: block;
+    font-size: 18px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.social[b-rwsq6byx1w],
+ul[b-rwsq6byx1w] {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.social li[b-rwsq6byx1w],
+ul li[b-rwsq6byx1w] {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+a[b-rwsq6byx1w] {
+    color: #fff;
+    text-decoration: none;
+}
+
+.copy-right hr[b-rwsq6byx1w] {
+    border-top: 1px solid #fff;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.linkuri-legale ul li a[b-rwsq6byx1w] {
+    color: #fff;
+    text-decoration: none;
+}
+
+.linkuri-legale ul li a:hover[b-rwsq6byx1w] {
+    text-decoration: underline;
+    color: #fff;
+}

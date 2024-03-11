@@ -89,8 +89,20 @@
       "PackagePath": "staticwebassets\\index.html"
     },
     {
+      "Id": "C:\\Users\\idragan\\RiderProjects\\RealEstate_API\\RealEstate.Web\\wwwroot\\martin-phillips-three-phones.png",
+      "PackagePath": "staticwebassets\\martin-phillips-three-phones.png"
+    },
+    {
+      "Id": "C:\\Users\\idragan\\RiderProjects\\RealEstate_API\\RealEstate.Web\\wwwroot\\martin-phillips-three-phones_edited2.png",
+      "PackagePath": "staticwebassets\\martin-phillips-three-phones_edited2.png"
+    },
+    {
       "Id": "C:\\Users\\idragan\\RiderProjects\\RealEstate_API\\RealEstate.Web\\wwwroot\\sample-data\\weather.json",
       "PackagePath": "staticwebassets\\sample-data\\weather.json"
+    },
+    {
+      "Id": "C:\\Users\\idragan\\RiderProjects\\RealEstate_API\\RealEstate.Web\\wwwroot\\sfwpexperts.com-Conversion-Rate-Optimization-Guide-8-Tips-To-Improve-Website-Conversion2-556x343.png",
+      "PackagePath": "staticwebassets\\sfwpexperts.com-Conversion-Rate-Optimization-Guide-8-Tips-To-Improve-Website-Conversion2-556x343.png"
     },
     {
       "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.RealEstate.Web.Microsoft.AspNetCore.StaticWebAssets.props",

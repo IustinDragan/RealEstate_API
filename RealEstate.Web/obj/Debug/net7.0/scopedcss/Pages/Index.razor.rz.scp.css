@@ -344,6 +344,142 @@ figcaption[b-oue2qkxdid] {
     /*height: 50vh;*/
     max-width: 100%;
     height: auto;
-    margin:0;
+    margin: 0;
     padding: 0;
+
+    position: relative; /* Set the image container to relative positioning */
+    /*display: inline-block;*/
+}
+
+/*---start: Img si text dupa proprietati----*/
+.after-properties-overall[b-oue2qkxdid] {
+    display: flex;
+}
+
+.after-properties-img[b-oue2qkxdid] {
+    margin-left: 80px; /* Adjust the value as needed */
+}
+
+.after-properties-img img[b-oue2qkxdid] {
+    /*max-width: 100%;*/
+    height: auto;
+}
+
+.after-properties-text[b-oue2qkxdid] {
+    flex: 1;
+    padding: 20px; /* Optional: Add padding for spacing */
+}
+
+.after-properties-img img[b-oue2qkxdid] {
+    max-width: 100%;
+    height: auto;
+}
+
+.after-properties-overall[b-oue2qkxdid] {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px; /* Optional: Add gap for spacing */
+}
+
+.after-properties-img img[b-oue2qkxdid] {
+    max-width: 100%;
+    height: auto;
+}
+
+/*--- finish: Img si text dupa proprietati----*/
+
+
+.phones-img[b-oue2qkxdid] {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /*height: 50vh;*/
+    max-width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+}
+
+
+/*search 2:*/
+/* Style for the imobiliare search bar */
+.imobiliare-search-bar[b-oue2qkxdid] {
+    display: flex;
+    align-items: center;
+    max-width: 600px; /* Adjust the width as needed */
+    margin: 20px auto; /* Adjust the margin as needed */
+    border: 1px solid #e1e1e1;
+    border-radius: 25px;
+    overflow: hidden;
+
+    position: absolute; /* Set the search bar to absolute positioning */
+    top: 20%; /* Position it 50% from the top of the parent container */
+    left: 70%; /* Position it 50% from the left of the parent container */
+    /*transform: translate(-50%, -50%); !* Center the search bar *!*/
+    /*background-color: tomato; !* Add a background color to the search bar if needed *!*/
+    /*padding: 10px;*/
+}
+
+/* Style for the search input */
+.imobiliare-search-bar input[b-oue2qkxdid] {
+    flex: 1;
+    padding: 15px;
+    border: none;
+    outline: none;
+    /*background-color: tomato;*/
+    /*culoarea background-ului din search*/
+}
+
+/* Style for the search button */
+.imobiliare-search-bar button[b-oue2qkxdid] {
+    background-color: #fcfcfc;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+}
+
+/* Style for the search icon inside the button */
+.imobiliare-search-bar button i[b-oue2qkxdid] {
+    color: #555;
+}
+
+/* Add hover effect to the search button */
+.imobiliare-search-bar button:hover[b-oue2qkxdid] {
+    /*background-color: #f1f1f1;*/
+    background-color: tomato;
+}
+
+body[b-oue2qkxdid] {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.testimonials-container[b-oue2qkxdid] {
+    background-color: #f4f4f4;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.testimonial[b-oue2qkxdid] {
+    max-width: 600px;
+    margin: auto;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    position: absolute;
+    top: 50%;
+    left: calc(76% + 60px);
+    transform: translate(-50%, -50%);
+}
+
+.testimonial p[b-oue2qkxdid] {
+    font-style: italic;
+}
+
+.testimonial-text p[b-oue2qkxdid] {
+    font-style: italic;
+    font-weight: bold;
 }

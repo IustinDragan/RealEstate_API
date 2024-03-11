@@ -1,0 +1,30 @@
+body[b-o8owvmkwi4] {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.testimonials-container[b-o8owvmkwi4] {
+    background-color: #f4f4f4;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.testimonial[b-o8owvmkwi4] {
+    max-width: 600px;
+    margin: auto;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.testimonial p[b-o8owvmkwi4] {
+    font-style: italic;
+}
+
+.testimonial-text p[b-o8owvmkwi4] {
+    font-style: italic;
+    font-weight: bold;
+}

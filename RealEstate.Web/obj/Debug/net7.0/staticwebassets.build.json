@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Fgt+dJgwbPiibkM7XNzI7Q3hdzIMCp5aRYh3JvzIxlI=",
+  "Hash": "R9P9kUR6msg+CG3LS8sNQ2JkdCfYFjGmfqo2RMYwkd4=",
   "Source": "RealEstate.Web",
   "BasePath": "/",
   "Mode": "Root",
@@ -7361,6 +7361,40 @@
       "OriginalItemSpec": "wwwroot\\index.html"
     },
     {
+      "Identity": "C:\\Users\\idragan\\RiderProjects\\RealEstate_API\\RealEstate.Web\\wwwroot\\martin-phillips-three-phones_edited2.png",
+      "SourceId": "RealEstate.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\idragan\\RiderProjects\\RealEstate_API\\RealEstate.Web\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "martin-phillips-three-phones_edited2.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\martin-phillips-three-phones_edited2.png"
+    },
+    {
+      "Identity": "C:\\Users\\idragan\\RiderProjects\\RealEstate_API\\RealEstate.Web\\wwwroot\\martin-phillips-three-phones.png",
+      "SourceId": "RealEstate.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\idragan\\RiderProjects\\RealEstate_API\\RealEstate.Web\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "martin-phillips-three-phones.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\martin-phillips-three-phones.png"
+    },
+    {
       "Identity": "C:\\Users\\idragan\\RiderProjects\\RealEstate_API\\RealEstate.Web\\wwwroot\\sample-data\\weather.json",
       "SourceId": "RealEstate.Web",
       "SourceType": "Discovered",
@@ -7376,6 +7410,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\sample-data\\weather.json"
+    },
+    {
+      "Identity": "C:\\Users\\idragan\\RiderProjects\\RealEstate_API\\RealEstate.Web\\wwwroot\\sfwpexperts.com-Conversion-Rate-Optimization-Guide-8-Tips-To-Improve-Website-Conversion2-556x343.png",
+      "SourceId": "RealEstate.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\idragan\\RiderProjects\\RealEstate_API\\RealEstate.Web\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "sfwpexperts.com-Conversion-Rate-Optimization-Guide-8-Tips-To-Improve-Website-Conversion2-556x343.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\sfwpexperts.com-Conversion-Rate-Optimization-Guide-8-Tips-To-Improve-Website-Conversion2-556x343.png"
     }
   ]
 }

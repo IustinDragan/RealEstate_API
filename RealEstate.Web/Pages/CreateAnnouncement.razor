@@ -3,417 +3,431 @@
 @using RealEstate.Web.Models.Enums
 @inject HttpClient Http
 
+
+<EditForm Model="@_announcementRequestModel" OnValidSubmit="HandleValidSubmitAsync">
+
+
 <div class="container">
-    <div class="cover-img">
 
-        <div class="adauga-anunt-h3" align="center">
-            <text>Adaugă acum anunţul tău</text>
-        </div>
-
-        <div class="adauga-anunt-h1" align="center">
-            <text>Urmează paşii, e mai simplu ca niciodată</text>
-        </div>
-    </div>
-</div>
-
-
-@* <h3 align="center">Adaugă acum anunţul tău</h3> *@
-@* <h2 align="center">urmează paşii, e mai simplu ca niciodată</h2> *@
-
-<EditForm class="d-flex flex-column align-items-center" Model="@announcementRequestModel" OnValidSubmit="HandleValidSubmitAsync">
-@* <DataAnnotationsValidator/> *@
-
-@* <div> *@
-@*     <img src="https://www.shanehomes.com/wp-content/uploads/2021/12/buying-a-new-house-vs-old.jpg"/> *@
-@* </div> *@
-
-@* <div> *@
-@*     <div class="icon-house-"> *@
-@*         <svg xmlns="http://www.w3.org/2000/svg" width="116" height="116" fill="currentColor" class="bi bi-house-check-fill" viewBox="0 0 16 16"> *@
-@*           <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5Z"/> *@
-@*           <path d="m8 3.293 4.712 4.712A4.5 4.5 0 0 0 8.758 15H3.5A1.5 1.5 0 0 1 2 13.5V9.293l6-6Z"/> *@
-@*           <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm1.679-4.493-1.335 2.226a.75.75 0 0 1-1.174.144l-.774-.773a.5.5 0 0 1 .708-.707l.547.547 1.17-1.951a.5.5 0 1 1 .858.514Z"/> *@
-@*         </svg> *@
-@* *@
-@*     </div> *@
-@* </div> *@
-<div class="container">
 <div class="card-body">
-    <div class="form-group row">
-        <label for="colFormLabel" class="col-sm-2 col-form-label">Titlu</label>
-        <div class="col-sm-10">
-            <InputText class="form-control form-control" id="title" placeholder="" @bind-Value="@announcementRequestModel.Title"></InputText>
-        </div>
-    </div>
-</div>
-<div class="card-body">
-    <div class="form-group row">
-        <label for="colFormLabel" class="col-sm-2 col-form-label">Data inceput:</label>
-        <div class="col-sm-10">
-            <InputDate class="form-control form-control" id="startDate" placeholder="" @bind-Value="@announcementRequestModel.StartDate"></InputDate>
-        </div>
-    </div>
-</div>
-<div class="card-body">
-    <div class="form-group row">
-        <label for="colFormLabel" class="col-sm-2 col-form-label">Data sfarsit:</label>
-        <div class="col-sm-10">
-            <InputDate class="form-control form-control" id="endDate" placeholder="" @bind-Value="@announcementRequestModel.EndDate"></InputDate>
-        </div>
-    </div>
-</div>
-<div class="card-body">
-    <div class="form-group row">
-        <label for="colFormLabel" class="col-sm-2 col-form-label">Pret (EUR):</label>
-        <div class="col-sm-10">
-            <InputNumber class="form-control form-control" id="price" placeholder="" @bind-Value="@announcementRequestModel.Property.Price"></InputNumber>
-        </div>
-    </div>
-</div>
-<div class="card-body">
-    <div class="form-group row">
-        <label for="colFormLabel" class="col-sm-2 col-form-label">Numar canere:</label>
-        <div class="col-sm-10">
-            <InputNumber class="form-control form-control" id="roomsNumber" placeholder="" @bind-Value="@announcementRequestModel.Property.RoomsNumber"></InputNumber>
-        </div>
-    </div>
-</div>
-<div class="card-body">
-    <div class="form-group row">
-        <label for="colFormLabel" class="col-sm-2 col-form-label">Numar bai:</label>
-        <div class="col-sm-10">
-            <InputNumber class="form-control form-control" id="bathroomsNumber" placeholder="" @bind-Value="@announcementRequestModel.Property.BathroomsNumber"></InputNumber>
-        </div>
-    </div>
-</div>
-<div class="card-body">
-    <div class="form-group row">
-        <label for="colFormLabel" class="col-sm-2 col-form-label">Suprafata teren:</label>
-        <div class="col-sm-10">
-            <InputNumber class="form-control form-control" id="landArea" placeholder="" @bind-Value="@announcementRequestModel.Property.LandArea"></InputNumber>
-        </div>
-    </div>
-</div>
-<div class="card-body">
-    <div class="form-group row">
-        <label for="colFormLabel" class="col-sm-2 col-form-label">Suprafata utila locuinta:</label>
-        <div class="col-sm-10">
-            <InputNumber class="form-control form-control" id="houseUsableArea" placeholder="" @bind-Value="@announcementRequestModel.Property.HouseUsableArea"></InputNumber>
-        </div>
-    </div>
-</div>
-<div class="card-body">
-    <div class="form-group row">
-        <label for="colFormLabel" class="col-sm-2 col-form-label">Suprafata totala locuinta:</label>
-        <div class="col-sm-10">
-            <InputNumber class="form-control form-control" id="houseTotalArea" placeholder="" @bind-Value="@announcementRequestModel.Property.HouseTotalArea"></InputNumber>
-        </div>
-    </div>
-</div>
-<div class="card-body">
-    <div class="form-group row">
-        <label for="colFormLabel" class="col-sm-2 col-form-label">An constructie: </label>
-        <div class="col-sm-10">
-            <InputNumber class="form-control form-control" id="constructionYear" placeholder="" @bind-Value="@announcementRequestModel.Property.ConstructionYear"></InputNumber>
-        </div>
-    </div>
-</div>
-<div class="card-body">
-    <div class="form-group row">
-        <label for="colFormLabel" class="col-sm-2 col-form-label">Numar etaje: </label>
-        <div class="col-sm-10">
-            <InputNumber class="form-control form-control" id="numarEtaje:" placeholder="" @bind-Value="@announcementRequestModel.Property.FloorsTotalNumber"></InputNumber>
-        </div>
-    </div>
-</div>
-<div class="card-body">
-    <div class="form-group row">
-        <label for="colFormLabel" class="col-sm-2 col-form-label">Etajul apartamentului: </label>
-        <div class="col-sm-10">
-            <InputNumber class="form-control form-control" id="apartamentFloor" placeholder="" @bind-Value="@announcementRequestModel.Property.ApartamentFloor"></InputNumber>
-        </div>
-    </div>
-</div>
-<div class="card-body">
-    <div class="form-group row">
-        <label for="colFormLabel" class="col-sm-2 col-form-label">Lift: </label>
-        <div class="col-sm-10">
-            <InputCheckbox id="elevator" placeholder="" @bind-Value="@announcementRequestModel.Property.Elevator"></InputCheckbox>
-        </div>
-    </div>
-</div>
-<div class="card-body">
-    <div class="form-group row">
-        <label for="colFormLabel" class="col-sm-2 col-form-label">Detalii:</label>
-        <div class="col-sm-10">
-            <InputText class="form-control form-control" id="details" placeholder="" @bind-Value="@announcementRequestModel.Property.Details"></InputText>
-        </div>
-    </div>
-</div>
-<div class="card-body">
-    <div class="form-group row">
-        <label for="colFormLabel" class="col-sm-2 col-form-label">Tip de proprietate:</label>
-        <div class="col-sm-10">
-            <InputSelect id="propertyType" @bind-Value="@announcementRequestModel.Property.PropertyType">
-                @foreach (var propertyType in Enum.GetValues<PropertyType>())
-                {
-                    <option value="@propertyType">@propertyType</option>
-                }
-            </InputSelect>
-        </div>
-    </div>
-</div>
-<div class="card-body">
-    <div class="form-group row">
-        <label for="colFormLabel" class="col-sm-2 col-form-label">Detalii teren:</label>
-        <div class="col-sm-10">
-            <InputSelect id="houseLandDetails" @bind-Value="@announcementRequestModel.Property.HouseLandDetails">
-                @foreach (var houseLandDetails in Enum.GetValues<HouseLandDetails>())
-                {
-                    <option value="@houseLandDetails">@houseLandDetails</option>
-                }
-            </InputSelect>
-        </div>
-    </div>
-</div>
-<div class="card-body">
-    <div class="form-group row">
-        <label for="colFormLabel" class="col-sm-2 col-form-label">Sursa de incalzire:</label>
-        <div class="col-sm-10">
-            <InputSelect id="heatingSource" @bind-Value="@announcementRequestModel.Property.HeatingSource">
-                @foreach (var heatingSource in Enum.GetValues<HeatingSource>())
-                {
-                    <option value="@heatingSource">@heatingSource</option>
-                }
-            </InputSelect>
-        </div>
-    </div>
-</div>
-<div class="card-body">
-    <div class="form-group row">
-        <label for="colFormLabel" class="col-sm-2 col-form-label">Utilitati:</label>
-        <div class="col-sm-10">
-            <InputSelect id="utilities" @bind-Value="@announcementRequestModel.Property.Utilities">
-                @foreach (var utilities in Enum.GetValues<Utilities>())
-                {
-                    <option value="@utilities">@utilities</option>
-                }
-            </InputSelect>
-        </div>
-    </div>
-</div>
-<div class="card-body">
-    <div class="form-group row">
-        <label for="colFormLabel" class="col-sm-2 col-form-label">Strada:</label>
-        <div class="col-sm-10">
-            <InputText class="form-control form-control" id="street" placeholder="" @bind-Value="@announcementRequestModel.Property.Adress.Street"></InputText>
-        </div>
-    </div>
-</div>
-<div class="card-body">
-    <div class="form-group row">
-        <label for="colFormLabel" class="col-sm-2 col-form-label">Numarul strazii:</label>
-        <div class="col-sm-10">
-            <InputNumber class="form-control form-control" id="streetNumber" placeholder="" @bind-Value="@announcementRequestModel.Property.Adress.StreetNumber"></InputNumber>
-        </div>
-    </div>
-</div>
-<div class="card-body">
-    <div class="form-group row">
-        <label for="colFormLabel" class="col-sm-2 col-form-label">Judet:</label>
-        <div class="col-sm-10">
-            <InputText class="form-control form-control" id="district" placeholder="" @bind-Value="@announcementRequestModel.Property.Adress.District"></InputText>
-        </div>
-    </div>
-</div>
-<div class="card-body">
-    <div class="form-group row">
-        <label for="colFormLabel" class="col-sm-2 col-form-label">Oras:</label>
-        <div class="col-sm-10">
-            <InputText class="form-control form-control" id="city" placeholder="" @bind-Value="@announcementRequestModel.Property.Adress.City"></InputText>
-        </div>
-    </div>
-</div>
-<div class="card-body">
-    <div class="form-group row">
-        <label for="colFormLabel" class="col-sm-2 col-form-label">Localitate:</label>
-        <div class="col-sm-10">
-            <InputText class="form-control form-control" id="locality" placeholder="" @bind-Value="@announcementRequestModel.Property.Adress.Locality"></InputText>
-        </div>
-    </div>
-</div>
-<div class="card-body">
-    <div class="form-group row">
-        <label for="colFormLabel" class="col-sm-2 col-form-label">Etaj:</label>
-        <div class="col-sm-10">
-            <InputNumber class="form-control form-control" id="floors" placeholder="" @bind-Value="@announcementRequestModel.Property.Adress.Floors"></InputNumber>
-        </div>
-    </div>
-</div>
-<div class="card-body">
-    <div class="form-group row">
-        <label for="colFormLabel" class="col-sm-2 col-form-label">Scara:</label>
-        <div class="col-sm-10">
-            <InputText class="form-control form-control" id="scale" placeholder="" @bind-Value="@announcementRequestModel.Property.Adress.Scale"></InputText>
-        </div>
-    </div>
-</div>
-<div class="card-body">
-    <div class="form-group row">
-        <label for="colFormLabel" class="col-sm-2 col-form-label">Numarul apartamentului:</label>
-        <div class="col-sm-10">
-            <InputNumber class="form-control form-control" id="apartamentNumber" placeholder="" @bind-Value="@announcementRequestModel.Property.Adress.AppartamentNumber"></InputNumber>
+    <div class="column">
+        <div class="card">
+            <div class="card-body form-control">
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label comic-sans-bold">Titlu</label>
+                    <div class="col-sm-10">
+                        <InputText class="form-control" id="title" @bind-Value="@_announcementRequestModel.Title"/>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
 
 
+<div class="row">
+<div class="col-md-6">
+    <!-- First column content -->
+    <div class="card">
+        <div class="card-body">
+            <!-- Your form fields for the first column -->
+
+            <!-- Add more form fields as needed -->
+            @* Coloana 1, Element 2 *@
+            <div class="column">
+                <div class="card">
+                    <div class="card-body form-control">
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label comic-sans-bold">Pret (EUR):</label>
+                            <div class="col-sm-10">
+                                <InputNumber class="all-form-control" id="price" placeholder="" @bind-Value="@_announcementRequestModel.Property.Price"></InputNumber>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @* Coloana 1, Element 3: *@
+            <div class="column">
+                <div class="card">
+                    <div class="card-body form-control">
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label comic-sans-bold">Numar canere:</label>
+                            <div class="col-sm-10">
+                                <InputNumber class="all-form-control" id="roomsNumber" placeholder="" @bind-Value="@_announcementRequestModel.Property.RoomsNumber"></InputNumber>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @* Coloana 1, Element 4: *@
+            <div class="column">
+                <div class="card">
+                    <div class="card-body form-control">
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label comic-sans-bold">An constructie: </label>
+                            <div class="col-sm-10">
+                                <InputNumber class="all-form-control" id="constructionYear" placeholder="" @bind-Value="@_announcementRequestModel.Property.ConstructionYear"></InputNumber>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @* Coloana 1, Element 5: *@
+            <div class="column">
+                <div class="card">
+                    <div class="card-body form-control">
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label comic-sans-bold">Numar etaje: </label>
+                            <div class="col-sm-10">
+                                <InputNumber class="all-form-control" id="numarEtaje:" placeholder="" @bind-Value="@_announcementRequestModel.Property.FloorsTotalNumber"></InputNumber>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @* Coloana 1, Element 6: *@
+            <div class="column">
+                <div class="card">
+                    <div class="card-body form-control">
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label comic-sans-bold">Etajul apartamentului: </label>
+                            <div class="col-sm-10">
+                                <InputNumber class="all-form-control" id="apartamentFloor" placeholder="" @bind-Value="@_announcementRequestModel.Property.ApartamentFloor"></InputNumber>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            @* Coloana 1, Element 7: *@
+            <div class="column">
+                <div class="card">
+                    <div class="card-body form-control">
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label comic-sans-bold">Suprafata utila locuinta:</label>
+                            <div class="col-sm-10">
+                                <InputNumber class="all-form-control" id="houseUsableArea" placeholder="" @bind-Value="@_announcementRequestModel.Property.HouseUsableArea"></InputNumber>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @* Coloana 1, Element 8: *@
+            <div class="column">
+                <div class="card">
+                    <div class="card-body form-control">
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label comic-sans-bold">Suprafata totala locuinta:</label>
+                            <div class="col-sm-10">
+                                <InputNumber class="all-form-control" id="houseTotalArea" placeholder="" @bind-Value="@_announcementRequestModel.Property.HouseTotalArea"></InputNumber>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @* Coloana 1, Element 9: *@
+            <div class="column">
+                <div class="card">
+                    <div class="card-body form-control">
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label comic-sans-bold">Lift: </label>
+                            <div class="col-sm-10">
+                                <InputCheckbox id="elevator" placeholder="" @bind-Value="@_announcementRequestModel.Property.Elevator"></InputCheckbox>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @* Coloana 1, Element 10: *@
+
+
+            <div class="column">
+                <div class="card">
+                    <div class="card-body form-control">
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label comic-sans-bold">Localitate:</label>
+                            <div class="col-sm-10">
+                                <InputText class="all-form-control" id="locality" placeholder="" @bind-Value="@_announcementRequestModel.Property.Adress.Locality"></InputText>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @* Coloana 1, Element 11: *@
+            <div class="column">
+                <div class="card">
+                    <div class="card-body form-control">
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label comic-sans-bold">Etaj:</label>
+                            <div class="col-sm-10">
+                                <InputNumber class="all-form-control" id="floors" placeholder="" @bind-Value="@_announcementRequestModel.Property.Adress.Floors"></InputNumber>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @* Coloana 1, Element 12: *@
+            <div class="column">
+                <div class="card">
+                    <div class="card-body form-control">
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label comic-sans-bold">Scara:</label>
+                            <div class="col-sm-10">
+                                <InputText class="all-form-control" id="scale" placeholder="" @bind-Value="@_announcementRequestModel.Property.Adress.Scale"></InputText>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @* Coloana 1, Element 13: *@
+            <div class="column">
+                <div class="card">
+                    <div class="card-body form-control">
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label comic-sans-bold">Numarul apartamentului:</label>
+                            <div class="col-sm-10">
+                                <InputNumber class="all-form-control" id="apartamentNumber" placeholder="" @bind-Value="@_announcementRequestModel.Property.Adress.AppartamentNumber"></InputNumber>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
-@* <div class="m-2"> *@
-@*     <label for="title">Titlu: </label> *@
-@*     <InputText id="title" @bind-Value="@announcementRequestModel.Title"></InputText> *@
-@*     $1$ <ValidationMessage For="@(() => announcementRequestModel.Title)"></ValidationMessage> #1# *@
-@* </div> *@
-@* <div class="m-2"> *@
-@*     <label for="startDate: ">Data inceput: </label> *@
-@*     <InputDate id="startDate" @bind-Value="@announcementRequestModel.StartDate"></InputDate> *@
-@*     $1$ <ValidationMessage For="@(() => announcementRequestModel.StartDate)"></ValidationMessage> #1# *@
-@* </div> *@
-@* <div class="m-2"> *@
-@*     <label for="endDate">Data sfarsit: </label> *@
-@*     <InputDate id="endDate" @bind-Value="@announcementRequestModel.EndDate"></InputDate> *@
-@*     $1$ <ValidationMessage For="@(() => announcementRequestModel.EndDate)"></ValidationMessage> #1# *@
-@* </div> *@
-@* <div class="m-2"> *@
-@*     <label for="roomsNumber">Numar camere: </label> *@
-@*     <InputNumber id="roomsNumber" @bind-Value="@announcementRequestModel.Property.RoomsNumber"></InputNumber> *@
-@* </div> *@
-@* <div class="m-2"> *@
-@*     <label for="bathroomNumber">Numar bai: </label> *@
-@*     <InputNumber id="bathroomNumber" @bind-Value="@announcementRequestModel.Property.BathroomsNumber"></InputNumber> *@
-@* </div> *@
-@* <div class="m-2"> *@
-@*     <label for="landArea">Suprafata teren: </label> *@
-@*     <InputNumber id="landArea" @bind-Value="@announcementRequestModel.Property.LandArea"></InputNumber> *@
-@* </div> *@
-@* <div class="m-2"> *@
-@*     <label for="houseUsableArea">Suprafata utila locuinta: </label> *@
-@*     <InputNumber id="houseUsableArea" @bind-Value="@announcementRequestModel.Property.HouseUsableArea"></InputNumber> *@
-@* </div> *@
-@* <div class="m-2"> *@
-@*     <label for="houseTotalArea">Suprafata totala locuinta: </label> *@
-@*     <InputNumber id="houseTotalArea" @bind-Value="@announcementRequestModel.Property.HouseTotalArea"></InputNumber> *@
-@* </div> *@
-@* <div class="m-2"> *@
-@*     <label for="constructionYear">An constructie: </label> *@
-@*     <InputNumber id="constructionYear" @bind-Value="@announcementRequestModel.Property.ConstructionYear"></InputNumber> *@
-@* </div> *@
-@* <div class="m-2"> *@
-@*     <label for="floorTotalNumber">Numar etaje: </label> *@
-@*     <InputNumber id="floorTotalNumber" @bind-Value="@announcementRequestModel.Property.FloorsTotalNumber"></InputNumber> *@
-@* </div> *@
-@* <div class="m-2"> *@
-@*     <label for="apartamentFloor">Etajul apartamentului: </label> *@
-@*     <InputNumber id="apartamentFloor" @bind-Value="@announcementRequestModel.Property.ApartamentFloor"></InputNumber> *@
-@* </div> *@
-@* <div class="m-2"> *@
-@*     <label for="elevator">lift: </label> *@
-@*     <InputCheckbox id="elevator" @bind-Value="@announcementRequestModel.Property.Elevator"></InputCheckbox> *@
-@* <input type="checkbox" @onchange="eventArgs => { CheckboxClicked(eventArgs.Value); }" /> *@
-@* <TextEdit Text="@(announcementRequestModel.Property.Elevator ? "Yes" : "No")" Disabled="true"> </TextEdit> *@
-@* </div> *@
-@* <div class="m-2"> *@
-@*     <label for="details">Detalii : </label> *@
-@*     <InputText id="details" @bind-Value="@announcementRequestModel.Property.Details"></InputText> *@
-@* </div> *@
-@* <div class="m-2"> *@
-@*     <label for="price">Pret : </label> *@
-@*     <InputNumber id="price" @bind-Value="@announcementRequestModel.Property.Price"></InputNumber> *@
-@* </div> *@
-@* <div class="m-2"> *@
-@*     <label for="propertyType">Tip de proprietate: </label> *@
-@*     <InputSelect id="propertyType" @bind-Value="@announcementRequestModel.Property.PropertyType"> *@
-@*         @foreach (var propertyType in Enum.GetValues<PropertyType>()) *@
-@*         { *@
-@*             <option value="@propertyType">@propertyType</option> *@
-@*         } *@
-@*     </InputSelect> *@
-@* </div> *@
-@* <div class="m-2"> *@
-@*     <label for="houseLandDetails">Detalii teren: </label> *@
-@*     <InputSelect id="houseLandDetails" @bind-Value="@announcementRequestModel.Property.HouseLandDetails"> *@
-@*         @foreach (var houseLandDetails in Enum.GetValues<HouseLandDetails>()) *@
-@*         { *@
-@*             <option value="@houseLandDetails">@houseLandDetails</option> *@
-@*         } *@
-@*     </InputSelect> *@
-@* </div> *@
-@* <div class="m-2"> *@
-@*     <label for="heatingSource">Sursa de incalzire: </label> *@
-@*     <InputSelect id="heatingSource" @bind-Value="@announcementRequestModel.Property.HeatingSource"> *@
-@*         @foreach (var heatingSource in Enum.GetValues<HeatingSource>()) *@
-@*         { *@
-@*             <option value="@heatingSource">@heatingSource</option> *@
-@*         } *@
-@*     </InputSelect> *@
-@* </div> *@
-@* <div class="m-2"> *@
-@*     <label for="utilities">Utilitati: </label> *@
-@*     <InputSelect id="utilities" @bind-Value="@announcementRequestModel.Property.Utilities"> *@
-@*         @foreach (var utilities in Enum.GetValues<Utilities>()) *@
-@*         { *@
-@*             <option value="@utilities">@utilities</option> *@
-@*         } *@
-@*     </InputSelect> *@
-@* </div> *@
+@* <div class="col-md-6"> *@
+<!-- Second column content -->
+<div class="col-md-6">
+<!-- First column content -->
+<div class="card">
+<div class="card-body">
+<!-- Your form fields for the first column -->
 
-@* <div class="m-2"> *@
-@*     <label for="street">Strada : </label> *@
-@*     <InputText id="street" @bind-Value="@announcementRequestModel.Property.Adress.Street"></InputText> *@
-@* </div> *@
-@* <div class="m-2"> *@
-@*     <label for="streetNumber">Numar : </label> *@
-@*     <InputNumber id="streetNumber" @bind-Value="@announcementRequestModel.Property.Adress.StreetNumber"></InputNumber> *@
-@* </div> *@
-@* <div class="m-2"> *@
-@*     <label for="district">Judet : </label> *@
-@*     <InputText id="district" @bind-Value="@announcementRequestModel.Property.Adress.District"></InputText> *@
-@* </div> *@
-@* <div class="m-2"> *@
-@*     <label for="city">Oras : </label> *@
-@*     <InputText id="city" @bind-Value="@announcementRequestModel.Property.Adress.City"></InputText> *@
-@* </div> *@
-@* <div class="m-2"> *@
-@*     <label for="locality">Localitate : </label> *@
-@*     <InputText id="locality" @bind-Value="@announcementRequestModel.Property.Adress.Locality"></InputText> *@
-@* </div> *@
-@* <div class="m-2"> *@
-@*     <label for="floors">Etaj : </label> *@
-@*     <InputNumber id="floors" @bind-Value="@announcementRequestModel.Property.Adress.Floors"></InputNumber> *@
-@* </div> *@
-@* <div class="m-2"> *@
-@*     <label for="scale">Scara : </label> *@
-@*     <InputText id="scale" @bind-Value="@announcementRequestModel.Property.Adress.Scale"></InputText> *@
-@* </div> *@
-@* <div class="m-2"> *@
-@*     <label for="appartamentNumber">Numarul locuintei : </label> *@
-@*     <InputNumber id="appartamentNumber" @bind-Value="@announcementRequestModel.Property.Adress.AppartamentNumber"></InputNumber> *@
-@* </div> *@
+<!-- Add more form fields as needed -->
+@* Coloana 1, Element 2 *@
+<div class="column">
+    <div class="card">
+        <div class="card-body form-control">
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label comic-sans-bold">Data Inceput:</label>
+                <div class="col-sm-10">
+                    <InputDate class="all-form-control" id="startDate" placeholder="" @bind-Value="@_announcementRequestModel.StartDate"></InputDate>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Add more form fields as needed -->
+<div class="column">
+    <div class="card">
+        <div class="card-body form-control">
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label comic-sans-bold">Data sfarsit:</label>
+                <div class="col-sm-10">
+                    <InputDate class="all-form-control" id="endDate" placeholder="" @bind-Value="@_announcementRequestModel.EndDate"></InputDate>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@*  Coloana 2, Element 3: *@
+<div class="column">
+    <div class="card">
+        <div class="card-body form-control">
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label comic-sans-bold">Numar bai:</label>
+                <div class="col-sm-10">
+                    <InputNumber class="all-form-control" id="bathroomsNumber" placeholder="" @bind-Value="@_announcementRequestModel.Property.BathroomsNumber"></InputNumber>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@* Coloana 2, Element 4: *@
+<div class="column">
+    <div class="card">
+        <div class="card-body form-control">
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label comic-sans-bold">Suprafata teren:</label>
+                <div class="col-sm-10">
+                    <InputNumber class="all-form-control" id="landArea" placeholder="" @bind-Value="@_announcementRequestModel.Property.LandArea"></InputNumber>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@* Coloana 2, Element 5: *@
+
+<div class="column">
+    <div class="card">
+        <div class="card-body form-control">
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label comic-sans-bold">Detalii:</label>
+                <div class="col-sm-10">
+                    <InputText class="all-form-control" id="details" placeholder="" @bind-Value="@_announcementRequestModel.Property.Details"></InputText>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@* Coloana 2, Element 6: *@
+<div class="column">
+    <div class="card">
+        <div class="card-body form-control">
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label comic-sans-bold">Tip de proprietate:</label>
+                <div class="col-sm-10">
+                    <InputSelect id="propertyType" @bind-Value="@_announcementRequestModel.Property.PropertyType">
+                        @foreach (var propertyType in Enum.GetValues<PropertyType>())
+                        {
+                            <option value="@propertyType">@propertyType</option>
+                        }
+                    </InputSelect>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@* Coloana 2, Element 7: *@
+<div class="column">
+    <div class="card">
+        <div class="card-body form-control">
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label comic-sans-bold">Detalii teren:</label>
+                <div class="col-sm-10">
+                    <InputSelect id="houseLandDetails" @bind-Value="@_announcementRequestModel.Property.HouseLandDetails">
+                        @foreach (var houseLandDetails in Enum.GetValues<HouseLandDetails>())
+                        {
+                            <option value="@houseLandDetails">@houseLandDetails</option>
+                        }
+                    </InputSelect>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@* Coloana 2, Element 8: *@
+<div class="column">
+    <div class="card">
+        <div class="card-body form-control">
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label comic-sans-bold">Sursa de incalzire:</label>
+                <div class="col-sm-10">
+                    <InputSelect id="heatingSource" @bind-Value="@_announcementRequestModel.Property.HeatingSource">
+                        @foreach (var heatingSource in Enum.GetValues<HeatingSource>())
+                        {
+                            <option value="@heatingSource">@heatingSource</option>
+                        }
+                    </InputSelect>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@* Coloana 2, Element 9: *@
+<div class="column">
+    <div class="card">
+        <div class="card-body form-control">
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label comic-sans-bold">Utilitati:</label>
+                <div class="col-sm-10">
+                    <InputSelect id="utilities" @bind-Value="@_announcementRequestModel.Property.Utilities">
+                        @foreach (var utilities in Enum.GetValues<Utilities>())
+                        {
+                            <option value="@utilities">@utilities</option>
+                        }
+                    </InputSelect>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@* Coloana 2, Element 10: *@
+
+<div class="column">
+    <div class="card">
+        <div class="card-body form-control">
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label comic-sans-bold">Strada:</label>
+                <div class="col-sm-10">
+                    <InputText class="all-form-control" id="street" placeholder="" @bind-Value="@_announcementRequestModel.Property.Adress.Street"></InputText>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@* Coloana 2, Element 11: *@
+<div class="column">
+    <div class="card">
+        <div class="card-body form-control">
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label comic-sans-bold">Numarul strazii:</label>
+                <div class="col-sm-10">
+                    <InputNumber class="all-form-control" id="streetNumber" placeholder="" @bind-Value="@_announcementRequestModel.Property.Adress.StreetNumber"></InputNumber>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@* Coloana 2, Element 12: *@
+<div class="column">
+    <div class="card">
+        <div class="card-body form-control">
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label comic-sans-bold">Judet:</label>
+                <div class="col-sm-10">
+                    <InputText class="all-form-control" id="district" placeholder="" @bind-Value="@_announcementRequestModel.Property.Adress.District"></InputText>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@* Coloana 2, Element 13: *@
+<div class="column">
+    <div class="card">
+        <div class="card-body form-control">
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label comic-sans-bold">Oras:</label>
+                <div class="col-sm-10">
+                    <InputText class="all-form-control" id="city" placeholder="" @bind-Value="@_announcementRequestModel.Property.Adress.City"></InputText>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 
-<button type="submit" class="btn btn-primary">Creeaza anunt</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="text-center">
+    <button type="submit" class="btn btn-primary comic-sans-bold">Creeaza anunt</button>
+</div>
 
 
 </EditForm>
 
+
+<br/>
+<br/>
+<FooterPage></FooterPage>
+
 @code {
-    private CreateAnnouncementRequestModel announcementRequestModel = new();
+    private CreateAnnouncementRequestModel _announcementRequestModel = new();
 
     public async Task HandleValidSubmitAsync()
     {
-        await Http.PostAsJsonAsync("announcement", announcementRequestModel);
-        announcementRequestModel = new CreateAnnouncementRequestModel();
+        await Http.PostAsJsonAsync("announcement", _announcementRequestModel);
+        _announcementRequestModel = new CreateAnnouncementRequestModel();
     }
 
 }

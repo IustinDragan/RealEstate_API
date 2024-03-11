@@ -6,6 +6,11 @@
 @* <button class="btn btn-light"> *@
 @*     <a href="/announcements">Mergi la anunturi</a> *@
 @* </button> *@
+<div class="header-main-filter">
+    <div class="img-presentation-firstPage-announcement">
+        <img src="first_page_img4.jpg">
+    </div>
+</div>
 
 <div class="button-container">
     <button class="btn btn-outline-primary" @onclick="@(() => { NavManager.NavigateTo("/announcements"); })">Toate anunturile</button>
@@ -84,32 +89,14 @@
             </tbody>
         </table>
     </div>
-
-
-    @* <div class="announcement-details"> *@
-    @*     <p>Title: @announcement.Title</p> *@
-    @*     <p>Pret: @announcement.Property.Price </p> *@
-    @*     <p>Numar camere: @announcement.Property.RoomsNumber</p> *@
-    @*     <p>Numar bai: @announcement.Property.BathroomsNumber</p> *@
-    @*     <p>Suprafata teren: @announcement.Property.LandArea</p> *@
-    @*     <p>Suprafata utila: @announcement.Property.HouseUsableArea</p> *@
-    @*     <p>Suprafata totala: @announcement.Property.HouseTotalArea</p> *@
-    @*     <p>An constructie: @announcement.Property.ConstructionYear</p> *@
-    @*     <p>Numar etaje cladire: @announcement.Property.FloorsTotalNumber</p> *@
-    @*     <p>Etaj apartament: @announcement.Property.ApartamentFloor</p> *@
-    @*     <p>Lift: @announcement.Property.Elevator</p> *@
-    @*     <p>Tipul proprietatii: @announcement.Property.PropertyType</p> *@
-    @*     <p>Tip teren: @announcement.Property.HouseLandDetails</p> *@
-    @*     <p>Tip incalzire: @announcement.Property.HeatingSource</p> *@
-    @*     <p>Utilitati: @announcement.Property.Utilities</p> *@
-    @*     <p>Adresa: @announcement.Property.Adress</p> *@
-    @*     <p>Detalii: @announcement.Property.Details </p> *@
-    @* </div> *@
 }
 else
 {
     <p> Announcement not found </p>
 }
+<br/>
+<br/>
+<FooterPage></FooterPage>
 
 @code {
 
