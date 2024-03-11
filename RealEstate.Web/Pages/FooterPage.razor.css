@@ -1,0 +1,110 @@
+﻿#bottom-footer {
+    background-color: #2B2B2B;
+    padding: 30px;
+}
+
+#bottom-footer {
+    position: relative;
+    height: auto;
+    padding: 250px 0 40px 0;
+    font-size: 12px;
+    line-height: 24px;
+    text-align: center;
+    background-color: rgb(161, 181, 194);
+}
+
+#bottom-footer {
+    position: relative;
+    height: auto;
+    padding: 40px 0;
+}
+
+#bottom-footer {
+    height: 194px;
+    padding: 30px 30px;
+    font-size: 12px;
+    line-height: 24px;
+    background-color: #2b2b2b;
+    text-align: center;
+}
+
+#bottom-footer .promo-app, #bottom-footer .bottom-footer-app-links {
+    padding: 0 15px;
+}
+
+ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+
+/*chatgpt:*/
+
+#bottom-footer {
+    background-color: #2b2b2b;
+    color: #fff;
+    padding: 40px 0;
+}
+
+.container-footer {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.container-social,
+.promo-app,
+.copy-right,
+.linkuri-legale {
+    flex: 1;
+}
+
+.heading {
+    display: block;
+    font-size: 18px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.social,
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.social li,
+ul li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.copy-right hr {
+    border-top: 1px solid #fff;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.linkuri-legale ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.linkuri-legale ul li a:hover {
+    text-decoration: underline;
+    color: #fff;
+}

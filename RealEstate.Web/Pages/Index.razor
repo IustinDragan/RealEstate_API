@@ -3,6 +3,7 @@
 @using RealEstate.Web.Models.Enums
 @inject HttpClient Http
 @inject NavigationManager NavManager
+@inject IJSRuntime JSRuntime
 
 <PageTitle>
     Acasa
@@ -12,15 +13,30 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,500;0,600;0,700;1,300&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-@* <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> *@
+
+@* <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-LXubIEFdY5ccfIMFf5z4ZI+YwU6+cq6bl+72jOM5PFaig/GI0CCW9KsPtoV1Vgq6uohOYQzq0U7Pu3d0CgzW/w==" crossorigin="anonymous" referrerpolicy="no-referrer" /> *@
+@*-pe asta l-am comentat*@
 
 
 <div class="header-main-filter">
     <div class="img-presentation-firstPage">
         <img src="first_page_img4.jpg">
+        @* search bar 2 *@
+        <div class="imobiliare-search-bar">
+            <input type="text" placeholder="Caută...">
+            <button>
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+        <div class="testimonial-container">
+            <div class="testimonial">
+                <div class="testimonial-text">
+                    <p>@DisplayedTestimonial.Quote</p>
+                </div>
+                <p>- @DisplayedTestimonial.Author, @DisplayedTestimonial.Title</p>
+            </div>
+        </div>
     </div>
-
 </div>
 
 <br/>
@@ -39,7 +55,7 @@
     @if (announcements.Count == 0)
     {
         <div class="col-12">
-            <p class="text-muted">No announcements found. Still loading...</p>
+            <p class="text-muted">Nu sunt anunturi disponibile. Inca se incarca...</p>
         </div>
     }
     else
@@ -244,6 +260,44 @@
 </div>
 @* Casa----------------------------- *@
 
+<br/>
+<br/>
+<br/>
+<div class="after-properties-overall">
+    <div class="after-properties-img">
+        <img src="sfwpexperts.com-Conversion-Rate-Optimization-Guide-8-Tips-To-Improve-Website-Conversion2-556x343.png"/>
+    </div>
+    <div class="after-properties-text">
+        <h1>
+            Contul meu - simplifică totul pentru tine
+        </h1>
+        <br/>
+        <h5>
+            • Contactezi instant proprietăţile care te interesează şi primeşti răspuns rapid!
+        </h5>
+        <br/>
+        <h5>
+            • Organizezi anunţurile favorite, decizie potrivită
+        </h5>
+        <br/>
+        <h5>
+            • Alerte anunţuri noi, căutare eficientă
+        </h5>
+    </div>
+</div>
+<br/>
+<div class="phones-img">
+    <img src="martin-phillips-three-phones_edited2.png">
+</div>
+<br/>
+<br/>
+
+
+<TestimonialsPage></TestimonialsPage>
+<br/>
+<br/>
+<FooterPage></FooterPage>
+
 @code{
 
     private List<AnnouncementResponseModel> announcements = new();
@@ -252,4 +306,41 @@
     {
         announcements = await Http.GetFromJsonAsync<List<AnnouncementResponseModel>>("announcement");
     }
+
+    //aici
+    private TestimonialsPage2.TestimonialModel DisplayedTestimonial { get; set; } = new(); // Default empty testimonial
+
+    private int currentIndex;
+    private Timer timer;
+
+    // Import Testimonials from TestimonialsPage and start the timer
+    protected override void OnInitialized()
+    {
+    // Import testimonials from the TestimonialsPage
+        var testimonialsPage = new TestimonialsPage2();
+        Testimonials = testimonialsPage.Testimoniale;
+
+    // Start the timer to change testimonial every 5 seconds
+        timer = new Timer(ChangeTestimonial, null, 0, 5000);
+    }
+
+    private void ChangeTestimonial(object state)
+    {
+    // Update the displayed testimonial every 5 seconds
+        currentIndex = (currentIndex + 1) % Testimonials.Count;
+        DisplayedTestimonial = Testimonials[currentIndex];
+
+    // Notify Blazor to re-render the component
+        InvokeAsync(() => StateHasChanged());
+    }
+
+    // Import Testimonials from TestimonialsPage
+    private List<TestimonialsPage2.TestimonialModel> Testimonials = new();
+
+    // Clean up the timer when the component is disposed
+    public void Dispose()
+    {
+        timer?.Dispose();
+    }
+
 }

@@ -1,0 +1,33 @@
+﻿@page "/TestimonialsPage2"
+
+
+<div class="testimonials-container">
+    @foreach (var testimonial in Testimoniale)
+    {
+        <div class="testimonial">
+            <div class="testimonial-text">
+                <p>@testimonial.Quote</p>
+            </div>
+            <p>- @testimonial.Author, @testimonial.Title</p>
+        </div>
+    }
+</div>
+
+@code {
+
+    public List<TestimonialModel> Testimoniale = new()
+    {
+        new TestimonialModel { Quote = "\"Am avut o experiență fantastică cu acest serviciu. Echipa a fost receptivă și a livrat dincolo de așteptările mele.\"", Author = "Radu Catoiu", Title = "Client Mulțumit" },
+        new TestimonialModel { Quote = "\"Calitatea muncii lor este remarcabilă. Recomand cu căldură serviciile lor oricui caută excelență.\"", Author = "Virgil Smilciu", Title = "Client Satisfăcut" },
+        new TestimonialModel { Quote = "\"Colaborarea cu compania voastră de imobiliare a fost o alegere excelentă. Profesionalismul și dedicarea echipei au făcut întregul proces extrem de ușor și plăcut.\"", Author = "Ana Popescu", Title = "Cumpărător Mulțumit" }
+    };
+
+    // Testimonial model class
+    public class TestimonialModel
+    {
+        public string Quote { get; set; }
+        public string Author { get; set; }
+        public string Title { get; set; }
+    }
+
+}

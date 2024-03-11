@@ -7,19 +7,29 @@
     flex-wrap: wrap;
 }
 
-.cover-img[b-kmqpv2oy7c] {
-    background-image: url('https://www.psc.org.nz/wp-content/uploads/Banner-FamilyWorks.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    object-fit: contain;
-    height: 55vh; /* This will make the div take up the full viewport height */
-    width: 110%; /* This will make the div take up the full width of its container */
-    position: relative;
+/*.cover-img {*/
+/*    background-image: url('https://www.psc.org.nz/wp-content/uploads/Banner-FamilyWorks.jpg');*/
+/*    background-repeat: no-repeat;*/
+/*    background-size: cover;*/
+/*    object-fit: contain;*/
+/*    height: 55vh; !* This will make the div take up the full viewport height *!*/
+/*    width: 110%; !* This will make the div take up the full width of its container *!*/
+/*    position: relative;*/
 
-    z-index: 2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/*    z-index: 2;*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*}*/
+.img-presentation-firstPage-announcement[b-kmqpv2oy7c] {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /*height: 50vh;*/
+    max-width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
 }
 
 .col-sm-10-title[b-kmqpv2oy7c] {
@@ -604,69 +614,330 @@ figcaption[b-h5mzox5osu] {
 }
 
 /* /Pages/CreateAnnouncement.razor.rz.scp.css */
-.adauga-anunt-h3[b-uu1fmmhrh7] {
-    color: #000000;
-    font-size: 24px;
-    line-height: 28px;
-    font-weight: 300;
-    text-align: left;
+/*!*.adauga-anunt-h3 {*!*/
+/*!*    color: #000000;*!*/
+/*!*    font-size: 24px;*!*/
+/*!*    line-height: 28px;*!*/
+/*!*    font-weight: 300;*!*/
+/*!*    text-align: left;*!*/
+/*!*}*!*/
+
+/*!*.adauga-anunt-h1 {*!*/
+/*!*    !*color: #76818E;*!*!*/
+/*!*    color: darkred;*!*/
+/*!*    font-size: 16px;*!*/
+/*!*    line-height: 28px;*!*/
+/*!*    font-weight: 300;*!*/
+/*!*    text-align: left;*!*/
+/*!*}*!*/
+
+/*!*.cover-img {*!*/
+/*    !*display: block;*!*/
+/*    !*margin-left: 0%;*!*/
+/*    !*margin-right: 0%;*!*/
+/*    !*width: 50%;*!*/
+/*    !*object-fit: fill;*!*/
+/*    !*max-width: 100%;*!*/
+/*    !*height: auto;*!*/
+
+/*    !*background-image: url("https://images.unsplash.com/photo-1491336238524-c990bd671778");*!*/
+/*    !*background-size: cover;*!*/
+/*    !*background-repeat: no-repeat;*!*/
+/*    !*object-fit: fill;*!*/
+/*    !*width: 300%;*!*/
+/*    !*height: 70%;*!*/
+
+/*    !*object-fit: cover;*!*/
+
+/*!*    background-image: url('https://flowerdayhomes.co.nz/wp-content/uploads/2022/03/Awataha-Flowerday-website-Feature-Image-2000x900-1.png');*!*/
+/*!*    background-repeat: no-repeat;*!*/
+/*!*    background-size: cover;*!*/
+/*!*    object-fit: contain;*!*/
+/*!*    height: 55vh; !* This will make the div take up the full viewport height *!*!*/
+/*!*    width: 100%; !* This will make the div take up the full width of its container *!*!*/
+/*!*    position: relative;*!*/
+/*!*}*!*/
+
+/*.img-presentation-firstPage {*/
+/*    background-size: cover;*/
+/*    background-position: center;*/
+/*    background-repeat: no-repeat;*/
+/*    !*height: 50vh;*!*/
+/*    max-width: 100%;*/
+/*    height: auto;*/
+/*    margin: 0;*/
+/*    padding: 0;*/
+
+/*    !*position: relative; !* Set the image container to relative positioning *!*!*/
+/*    !*display: inline-block;*!*/
+/*}*/
+/*.card-body {*/
+/*    align: left;*/
+/*}*/
+
+/*.container {*/
+/*    text-align: left;*/
+/*}*/
+
+
+/*[class^="icon-portal-"]:before, [class*=" icon-portal-"]:before {*/
+/*    font-family: "omnifont" !important;*/
+/*    font-style: normal !important;*/
+/*    font-weight: normal !important;*/
+/*    font-variant: normal !important;*/
+/*    text-transform: none !important;*/
+/*    speak: none;*/
+/*    line-height: 1;*/
+/*    -webkit-font-smoothing: antialiased;*/
+/*    -moz-osx-font-smoothing: grayscale;*/
+/*}*/
+
+/*.all-form-control {*/
+/*    width: 200px; !* Adjust the width as needed *!*/
+/*    height: 40px; !* Adjust the height as needed *!*/
+/*    padding: 10px;*/
+/*    border: 2px solid tomato;*/
+/*    border-radius: 8px; !* Adjust the border-radius for rounded corners *!*/
+/*    font-size: 16px; !* Adjust the font size as needed *!*/
+/*    color: #333; !* Text color *!*/
+/*    background-color: #fff; !* Background color *!*/
+/*    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); !* Adjust box shadow as needed *!*/
+/*    transition: border-color 0.3s ease; !* Optional: Add a transition effect for border color *!*/
+/*}*/
+
+/*.all-form-control:hover {*/
+/*    border-color: darkred; !* Optional: Change border color on hover *!*/
+/*}*/
+
+/*body {*/
+/*    font-family: Arial, sans-serif;*/
+/*    margin: 20px;*/
+/*    display: grid;*/
+/*    grid-template-columns: repeat(3, 1fr);*/
+/*    gap: 20px;*/
+/*}*/
+
+/*.card {*/
+/*    background-color: #f4f4f4;*/
+/*    border-radius: 8px;*/
+/*    padding: 20px;*/
+/*    margin-bottom: 20px;*/
+/*}*/
+
+
+/*----------------------*/
+/*.form-column {*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    gap: 1rem;*/
+/*}*/
+
+/*!* Border styling for form elements *!*/
+/*.form-control {*/
+/*    border: 1px solid #ccc;*/
+/*    border-radius: 0.25rem;*/
+/*    padding: 0.5rem;*/
+/*}*/
+
+/*!* Button styling *!*/
+/*.submit-button {*/
+/*    background-color: #007bff;*/
+/*    color: white;*/
+/*    border: none;*/
+/*    padding: 0.5rem 1rem;*/
+/*    border-radius: 0.25rem;*/
+/*    cursor: pointer;*/
+/*    transition: background-color 0.2s ease;*/
+/*}*/
+
+/*.submit-button:hover {*/
+/*    background-color: #0056b3; !* Slightly darker shade on hover *!*/
+/*}*/
+/*------------------------*/
+/*.grid.container {*/
+/*    display: grid;*/
+/*    grid-template-columns: repeat(2, 1fr);*/
+/*    gap: 20px;*/
+/*}*/
+
+
+/*-------------------*/
+/*.flex-container {*/
+/*    display: flex;*/
+/*    flex-direction: row;*/
+/*    justify-content: space-between;*/
+/*}*/
+/*.flex-column {*/
+/*    flex:50%;*/
+/*}*/
+
+/*.two-column-form {*/
+/*    display: grid;*/
+/*    grid-template-columns: repeat(2, 1fr);*/
+/*    gap: 20px; !* Adjust as needed *!*/
+/*}*/
+
+/*.column {*/
+/*    width: 100%;*/
+/*}*/
+
+/*body {*/
+/*    font-family: "Comic Sans MS", cursive, sans-serif;*/
+/*}*/
+
+/* Apply Comic Sans font and bold font weight to specific elements */
+.comic-sans-bold[b-uu1fmmhrh7] {
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-size: 12px;
+    /*font-weight: bold;*/
 }
 
-.adauga-anunt-h1[b-uu1fmmhrh7] {
-    /*color: #76818E;*/
-    color: darkred;
-    font-size: 16px;
-    line-height: 28px;
-    font-weight: 300;
-    text-align: left;
-}
 
-.cover-img[b-uu1fmmhrh7] {
-    /*display: block;*/
-    /*margin-left: 0%;*/
-    /*margin-right: 0%;*/
-    /*width: 50%;*/
-    /*object-fit: fill;*/
-    /*max-width: 100%;*/
-    /*height: auto;*/
-
-    /*background-image: url("https://images.unsplash.com/photo-1491336238524-c990bd671778");*/
-    /*background-size: cover;*/
-    /*background-repeat: no-repeat;*/
-    /*object-fit: fill;*/
-    /*width: 300%;*/
-    /*height: 70%;*/
-
-    /*object-fit: cover;*/
-
-    background-image: url('https://flowerdayhomes.co.nz/wp-content/uploads/2022/03/Awataha-Flowerday-website-Feature-Image-2000x900-1.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    object-fit: contain;
-    height: 55vh; /* This will make the div take up the full viewport height */
-    width: 110%; /* This will make the div take up the full width of its container */
-    position: relative;
-}
-
-.card-body[b-uu1fmmhrh7] {
-    align: left;
-}
+/*-----------------*/
 
 .container[b-uu1fmmhrh7] {
-    text-align: left;
+    margin-top: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    padding: 10px 20px;
+    background-color: #f2f2f2;
 }
 
+.card[b-uu1fmmhrh7] {
+    margin-bottom: 20px;
+    background-color: #f2f2f2;
+}
 
-[class^="icon-portal-"][b-uu1fmmhrh7]:before, [class*=" icon-portal-"][b-uu1fmmhrh7]:before {
-    font-family: "omnifont" !important;
-    font-style: normal !important;
-    font-weight: normal !important;
-    font-variant: normal !important;
-    text-transform: none !important;
-    speak: none;
-    line-height: 1;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+.form-group[b-uu1fmmhrh7] {
+    margin-bottom: 15px;
+}
+
+/* Apply grey background to form controls */
+.form-control[b-uu1fmmhrh7] {
+    background-color: #f2f2f2; /* Grey background color */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    padding: 10px 20px;
+}
+
+.btn[b-uu1fmmhrh7] {
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    background-color: tomato;
+}
+
+/* Add more custom styles as needed */
+/* /Pages/FooterPage.razor.rz.scp.css */
+#bottom-footer[b-rwsq6byx1w] {
+    background-color: #2B2B2B;
+    padding: 30px;
+}
+
+#bottom-footer[b-rwsq6byx1w] {
+    position: relative;
+    height: auto;
+    padding: 250px 0 40px 0;
+    font-size: 12px;
+    line-height: 24px;
+    text-align: center;
+    background-color: rgb(161, 181, 194);
+}
+
+#bottom-footer[b-rwsq6byx1w] {
+    position: relative;
+    height: auto;
+    padding: 40px 0;
+}
+
+#bottom-footer[b-rwsq6byx1w] {
+    height: 194px;
+    padding: 30px 30px;
+    font-size: 12px;
+    line-height: 24px;
+    background-color: #2b2b2b;
+    text-align: center;
+}
+
+#bottom-footer .promo-app[b-rwsq6byx1w], #bottom-footer .bottom-footer-app-links[b-rwsq6byx1w] {
+    padding: 0 15px;
+}
+
+ul[b-rwsq6byx1w] {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+
+/*chatgpt:*/
+
+#bottom-footer[b-rwsq6byx1w] {
+    background-color: #2b2b2b;
+    color: #fff;
+    padding: 40px 0;
+}
+
+.container-footer[b-rwsq6byx1w] {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.row[b-rwsq6byx1w] {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.container-social[b-rwsq6byx1w],
+.promo-app[b-rwsq6byx1w],
+.copy-right[b-rwsq6byx1w],
+.linkuri-legale[b-rwsq6byx1w] {
+    flex: 1;
+}
+
+.heading[b-rwsq6byx1w] {
+    display: block;
+    font-size: 18px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.social[b-rwsq6byx1w],
+ul[b-rwsq6byx1w] {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.social li[b-rwsq6byx1w],
+ul li[b-rwsq6byx1w] {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+a[b-rwsq6byx1w] {
+    color: #fff;
+    text-decoration: none;
+}
+
+.copy-right hr[b-rwsq6byx1w] {
+    border-top: 1px solid #fff;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.linkuri-legale ul li a[b-rwsq6byx1w] {
+    color: #fff;
+    text-decoration: none;
+}
+
+.linkuri-legale ul li a:hover[b-rwsq6byx1w] {
+    text-decoration: underline;
+    color: #fff;
 }
 /* /Pages/Index.razor.rz.scp.css */
 .overlay[b-oue2qkxdid],
@@ -1015,8 +1286,144 @@ figcaption[b-oue2qkxdid] {
     /*height: 50vh;*/
     max-width: 100%;
     height: auto;
-    margin:0;
+    margin: 0;
     padding: 0;
+
+    position: relative; /* Set the image container to relative positioning */
+    /*display: inline-block;*/
+}
+
+/*---start: Img si text dupa proprietati----*/
+.after-properties-overall[b-oue2qkxdid] {
+    display: flex;
+}
+
+.after-properties-img[b-oue2qkxdid] {
+    margin-left: 80px; /* Adjust the value as needed */
+}
+
+.after-properties-img img[b-oue2qkxdid] {
+    /*max-width: 100%;*/
+    height: auto;
+}
+
+.after-properties-text[b-oue2qkxdid] {
+    flex: 1;
+    padding: 20px; /* Optional: Add padding for spacing */
+}
+
+.after-properties-img img[b-oue2qkxdid] {
+    max-width: 100%;
+    height: auto;
+}
+
+.after-properties-overall[b-oue2qkxdid] {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px; /* Optional: Add gap for spacing */
+}
+
+.after-properties-img img[b-oue2qkxdid] {
+    max-width: 100%;
+    height: auto;
+}
+
+/*--- finish: Img si text dupa proprietati----*/
+
+
+.phones-img[b-oue2qkxdid] {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /*height: 50vh;*/
+    max-width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+}
+
+
+/*search 2:*/
+/* Style for the imobiliare search bar */
+.imobiliare-search-bar[b-oue2qkxdid] {
+    display: flex;
+    align-items: center;
+    max-width: 600px; /* Adjust the width as needed */
+    margin: 20px auto; /* Adjust the margin as needed */
+    border: 1px solid #e1e1e1;
+    border-radius: 25px;
+    overflow: hidden;
+
+    position: absolute; /* Set the search bar to absolute positioning */
+    top: 20%; /* Position it 50% from the top of the parent container */
+    left: 70%; /* Position it 50% from the left of the parent container */
+    /*transform: translate(-50%, -50%); !* Center the search bar *!*/
+    /*background-color: tomato; !* Add a background color to the search bar if needed *!*/
+    /*padding: 10px;*/
+}
+
+/* Style for the search input */
+.imobiliare-search-bar input[b-oue2qkxdid] {
+    flex: 1;
+    padding: 15px;
+    border: none;
+    outline: none;
+    /*background-color: tomato;*/
+    /*culoarea background-ului din search*/
+}
+
+/* Style for the search button */
+.imobiliare-search-bar button[b-oue2qkxdid] {
+    background-color: #fcfcfc;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+}
+
+/* Style for the search icon inside the button */
+.imobiliare-search-bar button i[b-oue2qkxdid] {
+    color: #555;
+}
+
+/* Add hover effect to the search button */
+.imobiliare-search-bar button:hover[b-oue2qkxdid] {
+    /*background-color: #f1f1f1;*/
+    background-color: tomato;
+}
+
+body[b-oue2qkxdid] {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.testimonials-container[b-oue2qkxdid] {
+    background-color: #f4f4f4;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.testimonial[b-oue2qkxdid] {
+    max-width: 600px;
+    margin: auto;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    position: absolute;
+    top: 50%;
+    left: calc(76% + 60px);
+    transform: translate(-50%, -50%);
+}
+
+.testimonial p[b-oue2qkxdid] {
+    font-style: italic;
+}
+
+.testimonial-text p[b-oue2qkxdid] {
+    font-style: italic;
+    font-weight: bold;
 }
 /* /Pages/Login.razor.rz.scp.css */
 html[b-nejwiy6q2a] {
@@ -1245,6 +1652,68 @@ body[b-nejwiy6q2a] {
 .contant_box_404[b-9cny6iwg7i] {
     margin-top: -50px;
 }
+/* /Pages/TestimonialsPage.razor.rz.scp.css */
+body[b-o8owvmkwi4] {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.testimonials-container[b-o8owvmkwi4] {
+    background-color: #f4f4f4;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.testimonial[b-o8owvmkwi4] {
+    max-width: 600px;
+    margin: auto;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.testimonial p[b-o8owvmkwi4] {
+    font-style: italic;
+}
+
+.testimonial-text p[b-o8owvmkwi4] {
+    font-style: italic;
+    font-weight: bold;
+}
+/* /Pages/TestimonialsPage2.razor.rz.scp.css */
+body[b-63tj3i3gzm] {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.testimonials-container[b-63tj3i3gzm] {
+    background-color: #f4f4f4;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.testimonial[b-63tj3i3gzm] {
+    max-width: 600px;
+    margin: auto;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.testimonial p[b-63tj3i3gzm] {
+    font-style: italic;
+}
+
+.testimonial-text p[b-63tj3i3gzm] {
+    font-style: italic;
+    font-weight: bold;
+}
 /* /Shared/MainLayout.razor.rz.scp.css */
 .page[b-p98c1wqpsg] {
     position: relative;
@@ -1326,10 +1795,11 @@ main[b-p98c1wqpsg] {
     .top-row[b-p98c1wqpsg], article[b-p98c1wqpsg] {
         /*padding-left: 2rem !important;*/
         /*padding-right: 1.5rem !important;        */
-        padding-left: 0  !important;
-        padding-right: 0  !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
     }
-    .header-text[b-p98c1wqpsg]{
+
+    .header-text[b-p98c1wqpsg] {
         text-align: center;
         font-weight: bold;
         font-size: 18px;

@@ -6,19 +6,29 @@
     flex-wrap: wrap;
 }
 
-.cover-img[b-kmqpv2oy7c] {
-    background-image: url('https://www.psc.org.nz/wp-content/uploads/Banner-FamilyWorks.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    object-fit: contain;
-    height: 55vh; /* This will make the div take up the full viewport height */
-    width: 110%; /* This will make the div take up the full width of its container */
-    position: relative;
+/*.cover-img {*/
+/*    background-image: url('https://www.psc.org.nz/wp-content/uploads/Banner-FamilyWorks.jpg');*/
+/*    background-repeat: no-repeat;*/
+/*    background-size: cover;*/
+/*    object-fit: contain;*/
+/*    height: 55vh; !* This will make the div take up the full viewport height *!*/
+/*    width: 110%; !* This will make the div take up the full width of its container *!*/
+/*    position: relative;*/
 
-    z-index: 2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/*    z-index: 2;*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*}*/
+.img-presentation-firstPage-announcement[b-kmqpv2oy7c] {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /*height: 50vh;*/
+    max-width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
 }
 
 .col-sm-10-title[b-kmqpv2oy7c] {
