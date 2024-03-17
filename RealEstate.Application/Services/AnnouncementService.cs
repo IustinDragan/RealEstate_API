@@ -25,6 +25,8 @@ public class AnnouncementService : IAnnouncementService
     {
         var announcements = await _announcementRepository.ReadAllAsync(requestModel.OrderBy, requestModel.SearchText,
             requestModel.price, requestModel.maxValue,
+            requestModel.roomsNumber,
+            requestModel.city,
             requestModel.page, requestModel.PageCount);
 
 

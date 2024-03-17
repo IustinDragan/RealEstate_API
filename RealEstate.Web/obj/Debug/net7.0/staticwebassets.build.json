@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "R9P9kUR6msg+CG3LS8sNQ2JkdCfYFjGmfqo2RMYwkd4=",
+  "Hash": "b7Nq2x+edCyaSRov5YDVN4LGBqwDXMSCPYvaOZ2+aRE=",
   "Source": "RealEstate.Web",
   "BasePath": "/",
   "Mode": "Root",
@@ -7038,6 +7038,23 @@
       "OriginalItemSpec": "C:\\Users\\idragan\\RiderProjects\\RealEstate_API\\RealEstate.Web\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\RealEstate.Web.bundle.scp.css"
     },
     {
+      "Identity": "C:\\Users\\idragan\\RiderProjects\\RealEstate_API\\RealEstate.Web\\wwwroot\\about.jpg",
+      "SourceId": "RealEstate.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\idragan\\RiderProjects\\RealEstate_API\\RealEstate.Web\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "about.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\about.jpg"
+    },
+    {
       "Identity": "C:\\Users\\idragan\\RiderProjects\\RealEstate_API\\RealEstate.Web\\wwwroot\\css\\app.css",
       "SourceId": "RealEstate.Web",
       "SourceType": "Discovered",
@@ -7376,23 +7393,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\martin-phillips-three-phones_edited2.png"
-    },
-    {
-      "Identity": "C:\\Users\\idragan\\RiderProjects\\RealEstate_API\\RealEstate.Web\\wwwroot\\martin-phillips-three-phones.png",
-      "SourceId": "RealEstate.Web",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\idragan\\RiderProjects\\RealEstate_API\\RealEstate.Web\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "martin-phillips-three-phones.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\martin-phillips-three-phones.png"
     },
     {
       "Identity": "C:\\Users\\idragan\\RiderProjects\\RealEstate_API\\RealEstate.Web\\wwwroot\\sample-data\\weather.json",

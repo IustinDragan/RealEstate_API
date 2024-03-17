@@ -1,5 +1,5 @@
 ﻿Use
-    RealEstateDatabase;
+RealEstateDatabase;
 
 Drop table Users;
 

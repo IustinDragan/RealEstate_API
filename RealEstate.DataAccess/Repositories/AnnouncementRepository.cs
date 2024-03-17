@@ -35,8 +35,8 @@ public class AnnouncementRepository : IAnnouncementRepository
     }
 
     public async Task<List<Announcement>> ReadAllAsync(string? orderBy, string? searchText, double? price,
-        double? maxValue, int page,
-        int pageCount)
+        double? maxValue, int? roomsNumber, string? city,
+        int page, int pageCount)
     {
         var orderByConfiguration = new Dictionary<string, Expression<Func<Announcement, object>>>
         {
@@ -70,6 +70,12 @@ public class AnnouncementRepository : IAnnouncementRepository
 
         if (!string.IsNullOrEmpty(searchText))
             query = query.Where(p => p.Title.Contains(searchText) || p.Property.Details.Contains(searchText));
+
+        if (roomsNumber.HasValue)
+            query = query.Where(p => p.Property.RoomsNumber == roomsNumber);
+
+        if (!string.IsNullOrEmpty(city))
+            query = query.Where(p => p.Property.Adress.City.Contains(city));
 
         if (price.HasValue && maxValue.HasValue)
         {

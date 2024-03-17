@@ -847,7 +847,9 @@ C:\Users\idragan\RiderProjects\RealEstate_API\RealEstate.Web\obj\Debug\net7.0\re
 C:\Users\idragan\RiderProjects\RealEstate_API\RealEstate.Web\obj\Debug\net7.0\RealEstate.Web.pdb
 C:\Users\idragan\RiderProjects\RealEstate_API\RealEstate.Web\obj\Debug\net7.0\ref\RealEstate.Web.dll
 C:\Users\idragan\RiderProjects\RealEstate_API\RealEstate.Web\obj\Debug\net7.0\scopedcss\Pages\CreateAnnouncement.razor.rz.scp.css
-C:\Users\idragan\RiderProjects\RealEstate_API\RealEstate.Web\obj\Debug\net7.0\scopedcss\Pages\Index.razor.rz.scp.css
 C:\Users\idragan\RiderProjects\RealEstate_API\RealEstate.Web\obj\Debug\net7.0\scopedcss\Pages\FooterPage.razor.rz.scp.css
 C:\Users\idragan\RiderProjects\RealEstate_API\RealEstate.Web\obj\Debug\net7.0\scopedcss\Pages\TestimonialsPage.razor.rz.scp.css
 C:\Users\idragan\RiderProjects\RealEstate_API\RealEstate.Web\obj\Debug\net7.0\scopedcss\Pages\TestimonialsPage2.razor.rz.scp.css
+C:\Users\idragan\RiderProjects\RealEstate_API\RealEstate.Web\obj\Debug\net7.0\scopedcss\Pages\Acasa.razor.rz.scp.css
+C:\Users\idragan\RiderProjects\RealEstate_API\RealEstate.Web\obj\Debug\net7.0\scopedcss\Pages\Filtreaza.razor.rz.scp.css
+C:\Users\idragan\RiderProjects\RealEstate_API\RealEstate.Web\obj\Debug\net7.0\scopedcss\Pages\AboutUs.razor.rz.scp.css
