@@ -24,10 +24,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291bnRlci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/idragan/RiderProjects/RealEstate_API/RealEstate.Web/Pages/FetchData.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmV0Y2hEYXRhLnJhem9y
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/idragan/RiderProjects/RealEstate_API/RealEstate.Web/Shared/SurveyPrompt.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFN1cnZleVByb21wdC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
@@ -35,6 +31,14 @@ build_metadata.AdditionalFiles.CssScope =
 [C:/Users/idragan/RiderProjects/RealEstate_API/RealEstate.Web/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/idragan/RiderProjects/RealEstate_API/RealEstate.Web/Pages/AboutUs.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWJvdXRVcy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-pakmqzqsz5
+
+[C:/Users/idragan/RiderProjects/RealEstate_API/RealEstate.Web/Pages/Acasa.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNhc2EucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-3mhftnf4cs
 
 [C:/Users/idragan/RiderProjects/RealEstate_API/RealEstate.Web/Pages/AnnouncementDetails.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQW5ub3VuY2VtZW50RGV0YWlscy5yYXpvcg==
@@ -48,13 +52,13 @@ build_metadata.AdditionalFiles.CssScope = b-h5mzox5osu
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3JlYXRlQW5ub3VuY2VtZW50LnJhem9y
 build_metadata.AdditionalFiles.CssScope = b-uu1fmmhrh7
 
+[C:/Users/idragan/RiderProjects/RealEstate_API/RealEstate.Web/Pages/Filtreaza.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmlsdHJlYXphLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-xmlxh59paf
+
 [C:/Users/idragan/RiderProjects/RealEstate_API/RealEstate.Web/Pages/FooterPage.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRm9vdGVyUGFnZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-rwsq6byx1w
-
-[C:/Users/idragan/RiderProjects/RealEstate_API/RealEstate.Web/Pages/Index.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
-build_metadata.AdditionalFiles.CssScope = b-oue2qkxdid
 
 [C:/Users/idragan/RiderProjects/RealEstate_API/RealEstate.Web/Pages/Login.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW4ucmF6b3I=

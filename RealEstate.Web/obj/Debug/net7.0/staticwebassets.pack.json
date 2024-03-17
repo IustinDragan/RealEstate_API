@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets\\RealEstate.Web.styles.css"
     },
     {
+      "Id": "C:\\Users\\idragan\\RiderProjects\\RealEstate_API\\RealEstate.Web\\wwwroot\\about.jpg",
+      "PackagePath": "staticwebassets\\about.jpg"
+    },
+    {
       "Id": "C:\\Users\\idragan\\RiderProjects\\RealEstate_API\\RealEstate.Web\\wwwroot\\css\\app.css",
       "PackagePath": "staticwebassets\\css\\app.css"
     },
@@ -87,10 +91,6 @@
     {
       "Id": "C:\\Users\\idragan\\RiderProjects\\RealEstate_API\\RealEstate.Web\\wwwroot\\index.html",
       "PackagePath": "staticwebassets\\index.html"
-    },
-    {
-      "Id": "C:\\Users\\idragan\\RiderProjects\\RealEstate_API\\RealEstate.Web\\wwwroot\\martin-phillips-three-phones.png",
-      "PackagePath": "staticwebassets\\martin-phillips-three-phones.png"
     },
     {
       "Id": "C:\\Users\\idragan\\RiderProjects\\RealEstate_API\\RealEstate.Web\\wwwroot\\martin-phillips-three-phones_edited2.png",

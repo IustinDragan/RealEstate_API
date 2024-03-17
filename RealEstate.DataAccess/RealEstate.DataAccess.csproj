@@ -11,4 +11,8 @@
         <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.10"/>
     </ItemGroup>
 
+    <ItemGroup>
+        <Content Include="obj\rider.project.restore.info"/>
+    </ItemGroup>
+
 </Project>

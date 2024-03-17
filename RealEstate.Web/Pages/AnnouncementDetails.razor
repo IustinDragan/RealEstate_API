@@ -6,11 +6,7 @@
 @* <button class="btn btn-light"> *@
 @*     <a href="/announcements">Mergi la anunturi</a> *@
 @* </button> *@
-<div class="header-main-filter">
-    <div class="img-presentation-firstPage-announcement">
-        <img src="first_page_img4.jpg">
-    </div>
-</div>
+
 
 <div class="button-container">
     <button class="btn btn-outline-primary" @onclick="@(() => { NavManager.NavigateTo("/announcements"); })">Toate anunturile</button>
@@ -19,11 +15,6 @@
 <br/>
 @if (announcement != null)
 {
-    <div class="img-presentation-announcement">
-
-    </div>
-
-
     <div class="container">
         <div class="card-body">
             <div class="form-group row">

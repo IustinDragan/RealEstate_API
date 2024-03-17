@@ -27,4 +27,8 @@
         <ProjectReference Include="..\RealEstate.Application\RealEstate.Application.csproj"/>
     </ItemGroup>
 
+    <ItemGroup>
+        <Content Include="obj\rider.project.restore.info"/>
+    </ItemGroup>
+
 </Project>

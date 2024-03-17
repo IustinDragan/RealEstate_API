@@ -1,0 +1,273 @@
+﻿@page "/Filtreaza"
+@using RealEstate.Web.Models
+@using System.Text
+@inject HttpClient Http
+@inject NavigationManager NavManager
+
+<PageTitle>Filtrare avansata</PageTitle>
+
+<div class="search-container">
+    <div>
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input @bind="_searchText" placeholder="Titlu">
+        <button @onclick="Search">Cauta</button>
+    </div>
+</div>
+
+
+<div class="search-price-container">
+    <div>
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="number" @bind="_minPrice" @bind:event="oninput" placeholder="Minim">
+        <input type="number" @bind="_maxPrice" @bind:event="oninput" placeholder="Maxim">
+        <button @onclick="FilterPrice">Cauta</button>
+
+    </div>
+</div>
+
+<div class="search-container">
+    <div>
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input @bind="_searchCity" placeholder="Oras">
+        <button @onclick="FilterCity">Cauta</button>
+    </div>
+</div>
+
+<div class="search-container">
+    <div>
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input @bind="_searchPropertyType" placeholder="Tip proprietate">
+        <button @onclick="FilterPropertyType">Cauta</button>
+    </div>
+</div>
+
+<div class="search-container">
+    <div>
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input @bind="_roomsNumber" placeholder="Numar camere">
+        <button @onclick="FilterPropertyRoomsNumber">Cauta</button>
+    </div>
+</div>
+
+
+<div class="row">
+    @if (_announcements.Count == 0)
+    {
+    }
+    else
+    {
+        <div class="container">
+            <div class="cards">
+                @foreach (var announcement in _announcements)
+                {
+                    <section class="card">
+                        <figure>
+                            <div class="img-overlay hot-home">
+                                <img src="https://media-cldnry.s-nbcnews.com/image/upload/t_fit-560w,f_auto,q_auto:best/newscms/2018_30/1355945/home-exterior-today-180726-tease.jpg" alt="Trulli">
+                                <div class="cont">
+                                    <div class="icons-img">
+                                        <button>
+                                            <i class="fas fa-heart"></i>
+                                        </button>
+                                        <button>
+                                            <i class="fas fa-share"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <figcaption>@announcement.Title</figcaption>
+                        </figure>
+                        <div class="card-content">
+                            <p class="custom-font-details">@announcement.Property.Details</p>
+
+                            <section class="icons-home">
+                                <div class="name-icon">
+                                    <span>Camere</span>
+                                    <div class="icon">
+                                        <i class="fas fa-bed"></i>
+                                        <span>@announcement.Property.RoomsNumber</span>
+                                    </div>
+                                </div>
+                                <div class="name-icon">
+                                    <span>Bai</span>
+                                    <div class="icon">
+                                        <i class="fas fa-sink"></i>
+                                        <span>@announcement.Property.BathroomsNumber</span>
+                                    </div>
+                                </div>
+                                <div class="name-icon">
+                                    <span>Suprafata</span>
+                                    <div class="icon">
+                                        <i class="fas fa-vector-square"></i>
+                                        <span>@announcement.Property.HouseUsableArea </span>
+                                    </div>
+                                </div>
+                            </section>
+                            <section class="price">
+                                <span class="label">Pret</span>
+                                <span class="price-value">@announcement.Property.Price EUR</span>
+                            </section>
+                            <br/>
+                            <button class="btn btn-outline-primary" @onclick="@(() => { NavManager.NavigateTo($"/announcements/{announcement.Id}"); })">Detalii</button>
+                        </div>
+                    </section>
+                }
+            </div>
+        </div>
+    }
+</div>
+
+
+@code {
+
+    private readonly string _startDate = string.Empty;
+    private string _searchText = string.Empty;
+    private string _queryString = string.Empty;
+    private string _queryStringForPrice = string.Empty;
+    // private List<AnnouncementResponseModel> _responseContent = new();
+
+    private string _searchCity = string.Empty;
+    private string _queryStringForCity = string.Empty;
+
+    private string _searchPropertyType = string.Empty;
+    private string _queryStringForPropertyType = string.Empty;
+
+    private int? _roomsNumber;
+    private string _queryStringForRoomsNumber = string.Empty;
+
+
+    private double? _minPrice;
+    private double? _maxPrice;
+
+
+    private async Task Search()
+    {
+        _queryString = BuildQueryString(_searchText);
+        var apiUrl = _queryString;
+
+        _announcements = await Http.GetFromJsonAsync<List<AnnouncementResponseModel>>(apiUrl);
+    }
+
+    private async Task FilterPrice()
+    {
+        _queryStringForPrice = BuildQueryStringForPrice(_minPrice, _maxPrice);
+        var apiUrl = _queryStringForPrice;
+
+        _announcements = await Http.GetFromJsonAsync<List<AnnouncementResponseModel>>(apiUrl);
+    }
+
+    private async Task FilterCity()
+    {
+        _queryStringForCity = BuildQueryForCity(_searchCity);
+        var apiUrl = _queryStringForCity;
+
+        _announcements = await Http.GetFromJsonAsync<List<AnnouncementResponseModel>>(apiUrl);
+    }
+
+
+    private async Task FilterPropertyType()
+    {
+        _queryStringForPropertyType = BuildQueryForPropertyType(_searchPropertyType);
+        var apiUrl = _queryStringForPropertyType;
+
+        _announcements = await Http.GetFromJsonAsync<List<AnnouncementResponseModel>>(apiUrl);
+    }
+
+    private async Task FilterPropertyRoomsNumber()
+    {
+        _queryStringForRoomsNumber = BuildQueryStringForRoomsNumber(_roomsNumber);
+        var apiUrl = _queryStringForRoomsNumber;
+
+        _announcements = await Http.GetFromJsonAsync<List<AnnouncementResponseModel>>(apiUrl);
+    }
+
+    private string BuildQueryString(string searchText)
+    {
+        var queryBuilder = new StringBuilder("announcement?");
+
+        if (!string.IsNullOrEmpty(_startDate))
+        {
+            queryBuilder.Append($"startDate={_startDate}&");
+        }
+
+        if (!string.IsNullOrEmpty(searchText))
+        {
+            queryBuilder.Append($"searchText={searchText}&");
+        }
+
+        if (queryBuilder.Length > 0)
+        {
+            queryBuilder.Length--;
+        }
+
+    // var apiUrl = "announcement" + (!string.IsNullOrEmpty(_queryString) ? "?" + _queryString : "");
+
+        return queryBuilder.ToString();
+    }
+
+    private string BuildQueryForCity(string? searchCity)
+    {
+        var queryBuilder = new StringBuilder("announcement?");
+
+        if (!string.IsNullOrEmpty(searchCity))
+        {
+            queryBuilder.Append($"city={searchCity}");
+        }
+
+        return queryBuilder.ToString();
+    }
+
+    private string BuildQueryForPropertyType(string? searchPropertyType)
+    {
+        var queryBuilder = new StringBuilder("announcement?");
+
+        if (!string.IsNullOrEmpty(searchPropertyType))
+        {
+            queryBuilder.Append($"searchText={searchPropertyType}");
+        }
+
+        return queryBuilder.ToString();
+    }
+
+    private string BuildQueryStringForPrice(double? minPrice, double? maxPrice)
+    {
+        var queryBuilder = new StringBuilder("announcement?");
+
+        if (minPrice.HasValue)
+        {
+            queryBuilder.Append($"price={minPrice}&");
+        }
+
+        if (maxPrice.HasValue)
+        {
+            queryBuilder.Append($"maxValue={maxPrice}&");
+        }
+
+        if (queryBuilder.Length > 0)
+        {
+            queryBuilder.Length--;
+        }
+
+        return queryBuilder.ToString();
+    }
+
+    private string BuildQueryStringForRoomsNumber(int? roomsNumber)
+    {
+        var queryBuilder = new StringBuilder("announcement?");
+
+        if (roomsNumber.HasValue)
+        {
+            queryBuilder.Append($"roomsNumber={roomsNumber}");
+        }
+
+        return queryBuilder.ToString();
+    }
+
+    // private AnnouncementResponseModel selectedAnnouncement;
+    private List<AnnouncementResponseModel> _announcements = new();
+
+
+    // protected override async Task OnInitializedAsync()
+    // {}
+
+}
