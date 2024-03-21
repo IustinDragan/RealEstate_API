@@ -1,5 +1,6 @@
 ﻿using System.Linq.Expressions;
 using Microsoft.EntityFrameworkCore;
+using RealEstate.DataAccess.Entities;
 using RealEstate.DataAccess.Repositories.Interfaces;
 
 namespace RealEstate.DataAccess.Repositories;
@@ -16,7 +17,7 @@ public class AnnouncementRepository : IAnnouncementRepository
 
     public async Task<Announcement> InsertAsync(Announcement announcement)
     {
-        var addedEntity = await _databaseContext.Announcement.AddAsync(announcement);
+        var addedEntity = await _databaseContext.Announcements.AddAsync(announcement);
 
         await _databaseContext.SaveChangesAsync();
 
@@ -26,7 +27,7 @@ public class AnnouncementRepository : IAnnouncementRepository
     public async Task<Announcement> UpdateAsync(Announcement announcement)
     {
         var updatedEntity = _databaseContext
-            .Announcement
+            .Announcements
             .Update(announcement);
 
         await _databaseContext.SaveChangesAsync();
@@ -66,7 +67,7 @@ public class AnnouncementRepository : IAnnouncementRepository
             { "floors", x => x.Property.Adress.Floors }
         };
 
-        var query = _databaseContext.Announcement.Include(a => a.Property).ThenInclude(p => p.Adress).AsQueryable();
+        var query = _databaseContext.Announcements.Include(a => a.Property).ThenInclude(p => p.Adress).AsQueryable();
 
         if (!string.IsNullOrEmpty(searchText))
             query = query.Where(p => p.Title.Contains(searchText) || p.Property.Details.Contains(searchText));
@@ -153,7 +154,7 @@ public class AnnouncementRepository : IAnnouncementRepository
     public async Task<Announcement?> ReadByIdAsync(int id)
     {
         return await _databaseContext
-            .Announcement
+            .Announcements
             .Where(x => x.Id == id)
             .Include(a => a.Property)
             .ThenInclude(p => p.Adress)
@@ -170,7 +171,7 @@ public class AnnouncementRepository : IAnnouncementRepository
     {
         var announcement = await ReadByIdAsync(id);
 
-        _databaseContext.Announcement.Remove(announcement);
+        _databaseContext.Announcements.Remove(announcement);
 
         await _databaseContext.SaveChangesAsync();
     }

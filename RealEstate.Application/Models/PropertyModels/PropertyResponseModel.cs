@@ -1,4 +1,5 @@
 ﻿using RealEstate.DataAccess;
+using RealEstate.DataAccess.Entities;
 using RealEstate.DataAccess.Enums;
 
 namespace RealEstate.Application.Models.PropertyModels;

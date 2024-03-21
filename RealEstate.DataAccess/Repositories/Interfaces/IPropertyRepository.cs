@@ -1,4 +1,6 @@
-﻿namespace RealEstate.DataAccess.Repositories.Interfaces;
+﻿using RealEstate.DataAccess.Entities;
+
+namespace RealEstate.DataAccess.Repositories.Interfaces;
 
 public interface IPropertyRepository
 {

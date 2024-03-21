@@ -1,4 +1,6 @@
-﻿namespace RealEstate.DataAccess.Repositories.Interfaces;
+﻿using RealEstate.DataAccess.Entities;
+
+namespace RealEstate.DataAccess.Repositories.Interfaces;
 
 public interface IUserRepository
 {
@@ -15,4 +17,8 @@ public interface IUserRepository
     Task DeleteAsync(int id);
 
     Task<User?> GetByUsername(string username);
+
+    Task<UserAnnouncement?> GetFavoriteAnnouncementAsync(int userId, int announcementId);
+
+    Task AddFavoriteAnnouncementAsync(UserAnnouncement userAnnouncement);
 }
