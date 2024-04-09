@@ -68,6 +68,7 @@ builder.Services.AddDbContext<DatabaseContext>(dbContextOptions =>
     dbContextOptions.UseSqlServer(builder.Configuration["ConnectionStrings:RealEstateDBConnectionString"]));
 
 //initializare user repository
+builder.Services.AddScoped<ICurrentUserService, CurrentUserService>();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IValidator<CreateUsersRequestModel>, CreateUserRequestModelValidator>();
 builder.Services.AddScoped<IValidator<CreateAdressRequestModel>, AddressRequestModelValidator>();
@@ -77,6 +78,7 @@ builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IPropertyRepository, PropertyRepository>();
 builder.Services.AddScoped<IPropertyService, PropertyService>();
 
+builder.Services.AddHttpContextAccessor();
 
 builder.Services.AddControllers()
     .AddJsonOptions(options =>

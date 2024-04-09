@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using RealEstate.DataAccess.Entities;
 using RealEstate.DataAccess.Repositories.Interfaces;
 
 namespace RealEstate.DataAccess.Repositories;
@@ -62,5 +63,17 @@ public class UserRepository : IUserRepository
         // return await _databaseContext.Users.Include(c => c.Company)
         //     .Where(x => x.FirstName == username || x.LastName == username)
         //     .FirstOrDefaultAsync();
+    }
+
+    public async Task<UserAnnouncement?> GetFavoriteAnnouncementAsync(int userId, int announcementId)
+    {
+        return await _databaseContext.UsersAnnouncements
+            .Where(x => x.AnnouncementId == announcementId && x.UserId == userId)
+            .FirstOrDefaultAsync();
+    }
+
+    public async Task AddFavoriteAnnouncementAsync(UserAnnouncement userAnnouncement)
+    {
+        await _databaseContext.UsersAnnouncements.AddAsync(userAnnouncement);
     }
 }

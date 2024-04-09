@@ -3,6 +3,7 @@ using System.Security.Claims;
 using System.Text;
 using Microsoft.IdentityModel.Tokens;
 using RealEstate.DataAccess;
+using RealEstate.DataAccess.Entities;
 
 namespace RealEstate.Application.Helpers;
 

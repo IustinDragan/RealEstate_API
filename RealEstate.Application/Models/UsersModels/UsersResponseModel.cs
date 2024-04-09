@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using RealEstate.DataAccess;
+using RealEstate.DataAccess.Entities;
 using RealEstate.DataAccess.Enums;
 
 namespace RealEstate.Application.Models.UsersModels;

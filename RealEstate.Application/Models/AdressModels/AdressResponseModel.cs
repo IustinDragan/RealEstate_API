@@ -1,4 +1,5 @@
 ﻿using RealEstate.DataAccess;
+using RealEstate.DataAccess.Entities;
 
 namespace RealEstate.Application.Models.AdressModels;
 

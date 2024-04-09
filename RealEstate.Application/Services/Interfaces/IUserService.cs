@@ -16,4 +16,6 @@ public interface IUserService
     Task DeleteUserAsync(int id);
 
     Task<bool> isEmailUniqueAsync(string email);
+
+    Task<int?> AddAnnouncementToFavoriteAsync(int userId, int announcementId);
 }

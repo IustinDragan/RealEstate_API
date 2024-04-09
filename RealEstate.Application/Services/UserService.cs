@@ -2,6 +2,7 @@
 using RealEstate.Application.Helpers;
 using RealEstate.Application.Models.UsersModels;
 using RealEstate.Application.Services.Interfaces;
+using RealEstate.DataAccess.Entities;
 using RealEstate.DataAccess.Enums;
 using RealEstate.DataAccess.Repositories.Interfaces;
 using RealEstate.Shared.Models.Users;
@@ -11,10 +12,12 @@ namespace RealEstate.Application.Services;
 public class UserService : IUserService
 {
     private readonly IUserRepository _userRepository;
+    private readonly ICurrentUserService _currentUserService;
 
-    public UserService(IUserRepository userRepository)
+    public UserService(IUserRepository userRepository, ICurrentUserService currentUserService)
     {
         _userRepository = userRepository;
+        _currentUserService = currentUserService;
     }
 
     public async Task<IEnumerable<UsersResponseModel>> RealAllUsersAsync()
@@ -123,5 +126,32 @@ public class UserService : IUserService
             return false;
 
         return true;
+    }
+
+    public async Task<int?> AddAnnouncementToFavoriteAsync(int userId, int announcementId)
+    {
+        var currentUserId = _currentUserService.UserId;
+
+        if (currentUserId != userId)
+        {
+            throw new Exception("You can't add favorite announcements for someone else.");
+        }
+
+        var userAnnouncement = await this._userRepository.GetFavoriteAnnouncementAsync(userId, announcementId);
+
+        if (userAnnouncement is not null)
+        {
+            throw new Exception("This announcement is already added to favorites.");
+        }
+
+        userAnnouncement = new UserAnnouncement
+        {
+            UserId = userId,
+            AnnouncementId = announcementId
+        };
+
+        await this._userRepository.AddFavoriteAnnouncementAsync(userAnnouncement);
+
+        return announcementId;
     }
 }

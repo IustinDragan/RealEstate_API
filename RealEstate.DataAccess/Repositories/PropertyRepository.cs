@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using RealEstate.DataAccess.Entities;
 using RealEstate.DataAccess.Repositories.Interfaces;
 
 namespace RealEstate.DataAccess.Repositories;
@@ -14,7 +15,7 @@ public class PropertyRepository : IPropertyRepository
 
     public async Task<Property> InsertAsync(Property property)
     {
-        var addedEntity = await _databaseContext.Property.AddAsync(property);
+        var addedEntity = await _databaseContext.Properties.AddAsync(property);
 
         await _databaseContext.SaveChangesAsync();
 
@@ -23,7 +24,7 @@ public class PropertyRepository : IPropertyRepository
 
     public async Task<Property> UpdateAsync(Property property)
     {
-        var updatedEntity = _databaseContext.Property.Update(property);
+        var updatedEntity = _databaseContext.Properties.Update(property);
 
         await _databaseContext.SaveChangesAsync();
 
@@ -32,32 +33,32 @@ public class PropertyRepository : IPropertyRepository
 
     public async Task<List<Property>> ReadAllAsync(string? orderBy, int page, int pageCount)
     {
-        var query = _databaseContext.Property.Include(a => a.Adress).OrderBy(x => x.Price);
+        var query = _databaseContext.Properties.Include(a => a.Adress).OrderBy(x => x.Price);
 
         if (orderBy != null)
             switch (orderBy)
             {
                 case "city":
-                    query = _databaseContext.Property.Include(a => a.Adress).OrderByDescending(x => x.Adress.City);
+                    query = _databaseContext.Properties.Include(a => a.Adress).OrderByDescending(x => x.Adress.City);
                     break;
                 case "street":
-                    query = _databaseContext.Property.Include(a => a.Adress).OrderByDescending(x => x.Adress.Street);
+                    query = _databaseContext.Properties.Include(a => a.Adress).OrderByDescending(x => x.Adress.Street);
                     break;
                 case "district":
-                    query = _databaseContext.Property.Include(a => a.Adress).OrderByDescending(x => x.Adress.District);
+                    query = _databaseContext.Properties.Include(a => a.Adress).OrderByDescending(x => x.Adress.District);
                     break;
                 case "roomsNumber":
-                    query = _databaseContext.Property.Include(a => a.Adress).OrderByDescending(x => x.RoomsNumber);
+                    query = _databaseContext.Properties.Include(a => a.Adress).OrderByDescending(x => x.RoomsNumber);
                     break;
                 case "bathroomsNumber":
-                    query = _databaseContext.Property.Include(a => a.Adress).OrderByDescending(x => x.BathroomsNumber);
+                    query = _databaseContext.Properties.Include(a => a.Adress).OrderByDescending(x => x.BathroomsNumber);
                     ;
                     break;
                 case "constructionYear":
-                    query = _databaseContext.Property.Include(a => a.Adress).OrderByDescending(x => x.ConstructionYear);
+                    query = _databaseContext.Properties.Include(a => a.Adress).OrderByDescending(x => x.ConstructionYear);
                     break;
                 default:
-                    query = _databaseContext.Property.Include(a => a.Adress).OrderByDescending(x => x.Price);
+                    query = _databaseContext.Properties.Include(a => a.Adress).OrderByDescending(x => x.Price);
                     break;
             }
 
@@ -67,7 +68,7 @@ public class PropertyRepository : IPropertyRepository
     public async Task<Property?> ReadByIdAsync(int id)
     {
         return await _databaseContext
-            .Property
+            .Properties
             .Where(x => x.Id == id)
             .Include(a => a.Adress)
             .FirstOrDefaultAsync();
@@ -77,7 +78,7 @@ public class PropertyRepository : IPropertyRepository
     {
         var property = await ReadByIdAsync(id);
 
-        _databaseContext.Property.Remove(property);
+        _databaseContext.Properties.Remove(property);
 
         await _databaseContext.SaveChangesAsync();
     }

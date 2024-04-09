@@ -100,6 +100,19 @@ public class UsersController : ControllerBase
         return Ok(userEntityByIdforUpdate);
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="announcementId">Announcement id</param>
+    /// <returns></returns>
+    [HttpPut("{userId}/favorites/{announcementId}")]
+    public async Task<IActionResult> AddToFavorite(int userId, int announcementId)
+    {
+        var response = await _userService.AddAnnouncementToFavoriteAsync(userId, announcementId);
+
+        return Ok(response);
+    }
+
     [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteUsersByIdAsync(int id)
     {

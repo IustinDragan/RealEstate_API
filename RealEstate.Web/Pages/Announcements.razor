@@ -1,8 +1,9 @@
-﻿@page "/Announcements"
+﻿@page "/announcements"
 @using RealEstate.Web.Models
 @using System.Text
 @inject HttpClient Http
 @inject NavigationManager NavManager
+@attribute [Authorize(Roles = "Customer,SalesAgent")]
 
 <!-- link css -->
 @* <link rel="stylesheet" href="css/main.css"> *@
@@ -19,9 +20,14 @@
 @* <script src="_content/Microsoft.AspNetCore.Components.Web.Extensions/script.js"></script> *@
 
 
-<div class="button-container">
-    <button class="btn btn-outline-primary" @onclick="@(() => { NavManager.NavigateTo("/announcement/create"); })">Adauga anunt</button>
-</div>
+<AuthorizeView Roles="SalesAgent">
+    <Authorized>
+        <div class="button-container">
+            <button class="btn btn-outline-primary" @onclick="@(() => { NavManager.NavigateTo("/announcements/create"); })">Adauga anunt</button>
+        </div>
+    </Authorized>
+</AuthorizeView>
+
 <div class="search-container">
     <div>
         <i class="fa-solid fa-magnifying-glass"></i>
